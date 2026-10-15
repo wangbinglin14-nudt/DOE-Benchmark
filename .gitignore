@@ -1,0 +1,53 @@
+# Local environments and Python-generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.pytest_tmp*/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Build output and temporary working files
+build/
+dist/
+site/
+node_modules/
+_tmp/
+tmp/
+*.bak
+*.bak.*
+*.tmp
+*.swp
+Thumbs.db
+.DS_Store
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.p12
+
+# Private authoring and review material
+.agents/
+.claude/
+.codex/
+.playwright-mcp/
+paper-reviews/
+editorial/
+translate/
+99_archive/
+
+# Internal planning and author/server handoff documents
+/code/docs/PROJECT_STATUS.md
+/code/docs/GAP_ANALYSIS_TO_NATURE_SUB.md
+/code/docs/AUDIT_AND_REMEDIATION_PLAN.md
+/code/docs/SERVER_RUN_HANDOFF.md
+/code/docs/PUBLICATION_LAUNCH_PREFLIGHT.md
+/code/docs/working-notes/
+/code/docs/_dev_notes/

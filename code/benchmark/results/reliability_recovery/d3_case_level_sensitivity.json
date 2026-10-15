@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "budget_mult": 10,
+  "n_cases": 16,
+  "n_runs": 9570,
+  "n_positive_cases": 12,
+  "n_negative_cases": 4,
+  "n_zero_cases": 0,
+  "equal_case_mean_signed_bias": 0.026260038377192985,
+  "equal_case_bootstrap_ci_lo": 0.0015303456688596502,
+  "equal_case_bootstrap_ci_hi": 0.05853581606359648,
+  "equal_case_bootstrap_B": 10000,
+  "bootstrap_seed": 1000,
+  "wilcoxon_case_level_statistic": 106.0,
+  "wilcoxon_case_level_one_sided_greater_p": 0.02532958984375,
+  "holm_family_threshold": 0.016666666666666666,
+  "holm_pass": false,
+  "source": "benchmark/results/reliability_recovery/reliability_long.csv",
+  "source_sha256": "3e63885504158b31d03f3a746392ca9a3008cd6f31fd8ee45fa52a116122e7dc",
+  "script": "scripts/derive_d3_case_level_sensitivity.py"
+}

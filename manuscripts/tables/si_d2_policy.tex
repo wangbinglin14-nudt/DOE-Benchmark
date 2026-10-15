@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Supplementary Table S5.} D2 response-feature groups and denominator policy.}
+\label{tab:si_d2_policy}
+\SITableFont
+\begin{tabular}{@{}lp{0.68\linewidth}@{}}
+\toprule
+\textbf{Item} & \textbf{Policy} \\
+\midrule
+Primary analysis & All 20 methods remain in each feature group's denominator for the D2 headline. Error medians pool successful runs; a method without a qualifying median at any tested budget is non-passing. Failed and timed-out runs are counted separately, without a synthetic NRMSE penalty. \\
+Exploratory bucket & Response-feature groups with fewer than three registered cases are treated as exploratory; they are reported separately and not counted in the headline numerator or denominator. \\
+Accuracy target & Written $\varepsilon$, with $\varepsilon=0.20$ for the registered analysis. $\tau$ denotes the D1 Kendall rank correlation and is never used for the D2 target. \\
+\bottomrule
+\end{tabular}
+\end{table}

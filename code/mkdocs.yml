@@ -1,0 +1,42 @@
+site_name: DOE-Benchmark
+site_description: Physics-grounded DOE benchmark documentation
+repo_url: https://github.com/wangbinglin14-nudt/DOE-Benchmark
+repo_name: wangbinglin14-nudt/DOE-Benchmark
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: README.md
+  - Statistical Analysis Plan: STATISTICAL_ANALYSIS_PLAN.md
+  - Reproducibility: REPRODUCIBILITY.md
+  - FAQ: FAQ.md
+  - Glossary: GLOSSARY.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+validation:
+  links:
+    not_found: ignore

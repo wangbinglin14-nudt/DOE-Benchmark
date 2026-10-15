@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Supplementary Table S6.} Per-method probability-of-failure calibration at the $10d$ budget. Signed bias $\Delta=\widehat{P}_f-P_f$ (positive $=$ over-estimation for the selected output) with its case-cluster bootstrap 95\% CI and one-sided $p$-value adjusted by Holm within the 20-method D3 family, plus held-out balanced accuracy. The Runs column reports successful runs included in the analysis: $16\times30=480$ per method, except BoTorch qEI, for which 30 ten-bar-truss records are marked as timeouts and excluded, leaving 450. All \NumDThreeNTested{} eligible methods are significant after this method-level correction for the registered per-cell estimand; these $p$-values are not independent-case evidence.}
+\label{tab:si_d3_per_method}
+\SITableFont
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+\textbf{Method} & \textbf{Family} & \textbf{Runs} & \textbf{Signed bias [95\% CI]} & \textbf{$p$ (Holm)} & \textbf{Bal.\ acc.} \\
+\midrule
+LHS + GP & Static design & 480 & 0.0121 [-0.0031, 0.0323] & 4.3e-06 & 0.863 \\
+Max-variance AL & Active learning & 480 & 0.0137 [-0.0022, 0.0334] & 5.7e-08 & 0.891 \\
+Random + GP & Static design & 480 & 0.0143 [-0.0028, 0.0365] & 1.3e-08 & 0.860 \\
+EGO (EI) & EGO & 480 & 0.0145 [-0.0029, 0.0389] & 1.0e-10 & 0.845 \\
+Halton + GP & Static design & 480 & 0.0146 [-0.0005, 0.0343] & 3.7e-10 & 0.869 \\
+Sobol' + GP & Static design & 480 & 0.0147 [-0.0020, 0.0365] & 8.2e-08 & 0.861 \\
+SAASBO & BoTorch SAAS & 480 & 0.0147 [-0.0014, 0.0382] & 6.8e-10 & 0.854 \\
+Optimised LHS + GP (RBF kernel) & Static design & 480 & 0.0170 [-0.0087, 0.0450] & 1.5e-13 & 0.810 \\
+AK-MCS & Reliability (AK-MCS) & 480 & 0.0171 [-0.0018, 0.0439] & 1.0e-10 & 0.826 \\
+Optimised LHS + Polynomial (deg. 3) & Static design & 480 & 0.0173 [-0.0160, 0.0626] & 1.6e-04 & 0.824 \\
+Optimised LHS + Polynomial (deg. 5) & Static design & 480 & 0.0180 [-0.0151, 0.0637] & 1.6e-04 & 0.824 \\
+Optimised LHS + GP & Static design & 480 & 0.0190 [0.0031, 0.0396] & 1.7e-15 & 0.859 \\
+BoTorch qEI & BoTorch EI & 450 & 0.0221 [0.0011, 0.0520] & 1.8e-16 & 0.828 \\
+Optimised LHS + RBF & Static design & 480 & 0.0263 [-0.0051, 0.0679] & 8.7e-14 & 0.856 \\
+Optimised LHS + SVR & Static design & 480 & 0.0345 [-0.0001, 0.0824] & 4.1e-17 & 0.770 \\
+Optimised LHS + Random forest & Static design & 480 & 0.0430 [0.0098, 0.0851] & 2.0e-28 & 0.763 \\
+Optimised LHS + MLP & Static design & 480 & 0.0438 [0.0041, 0.0944] & 3.1e-21 & 0.825 \\
+Optimised LHS + Gradient boosting & Static design & 480 & 0.0559 [-0.0069, 0.1250] & 2.3e-19 & 0.704 \\
+Random + Linear & Static design & 480 & 0.0560 [-0.0047, 0.1231] & 1.1e-17 & 0.773 \\
+Optimised LHS + kNN & Static design & 480 & 0.0584 [0.0196, 0.1043] & 3.0e-35 & 0.722 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,53 @@
+# =====================================================================
+# requirements.in — high-level dependency intent for doe-testbed
+# benchmark pipeline.
+#
+# This file declares WHAT we need; `requirements.lock` declares the
+# fully resolved, pinned snapshot.  Regenerate the lock file with:
+#
+#     pip install pip-tools
+#     pip-compile --resolver=backtracking --output-file=requirements.lock requirements.in
+#
+# Or, on a known-good interpreter (Python 3.13.x):
+#
+#     pip freeze > requirements.lock
+#
+# =====================================================================
+
+# ─── Core scientific stack ─────────────────────────────────────────────
+numpy>=1.24,<3
+scipy>=1.10,<2
+pandas>=2.0,<4
+matplotlib>=3.5,<4
+
+# ─── Surrogate / DOE machinery ─────────────────────────────────────────
+scikit-learn>=1.3,<2
+SALib>=1.4,<2
+
+# ─── Aerodynamics back-ends (optional but pulled in for full coverage) ─
+neuralfoil>=0.1,<1
+aerosandbox>=4.0,<5
+casadi>=3.6,<4
+dill>=0.3,<1
+
+# ─── Bayesian optimisation back-ends (qEI / SAASBO) ────────────────────
+torch>=2.0,<3
+gpytorch>=1.11,<2
+botorch>=0.10,<1
+pyro-ppl>=1.8,<2
+
+# ─── Visualisation enhancements ────────────────────────────────────────
+seaborn>=0.13,<1
+
+# ─── Workflow / reproducibility ────────────────────────────────────────
+snakemake>=8.0,<9
+
+# ─── Development / test (kept here so the CI lock includes them) ───────
+pytest>=7,<10
+pytest-cov>=4
+ruff>=0.6,<1
+mypy>=1.10,<2
+
+# ─── Documentation (mkdocs site build in CI) ───────────────────────────
+mkdocs-material>=9.5,<10
+pymdown-extensions>=10,<11

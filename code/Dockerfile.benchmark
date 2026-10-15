@@ -1,0 +1,145 @@
+# =====================================================================
+# Dockerfile.benchmark — reproducible image for the doe-testbed
+# benchmark pipeline.
+#
+# This image bakes:
+#   • Python 3.13.12 (CPython, official slim base; matches the
+#     interpreter used to generate requirements.lock)
+#   • All locked Python dependencies (requirements.lock)
+#   • The doe-testbed package itself (editable install)
+#   • Snakemake for one-shot reproduction
+#   • A non-root user `bench` so reviewers can run the container
+#     without bind-mount permission headaches
+#
+# Build:
+#     docker build -t doe-bench:0.4.0 -f Dockerfile.benchmark .
+#
+# Reproduce the entire benchmark pipeline (≈4 h on 8-core machine):
+#     docker run --rm \
+#         -v "$PWD/results:/work/benchmark/results" \
+#         doe-bench:0.4.0 snakemake --cores 8 all
+#
+# Run only the headline benchmark + report (≈3 h):
+#     docker run --rm \
+#         -v "$PWD/results:/work/benchmark/results" \
+#         doe-bench:0.4.0 snakemake --cores 8 main_report
+#
+# Run a 2-minute smoke (used in CI):
+#     docker run --rm doe-bench:0.4.0 \
+#         python benchmark/scripts/run_full_benchmark.py \
+#         --pool default --n-repeats 2 --budgets 10 \
+#         --output-dir /tmp/smoke
+#
+# Pin the digest in production deployments:
+#     FROM doe-bench:0.4.0@sha256:<DIGEST>
+# =====================================================================
+
+# ─────────────────────────────────────────────────────────────────────
+# Stage 1: build wheels (cached layer)
+# ─────────────────────────────────────────────────────────────────────
+FROM python:3.13.12-slim-bookworm AS builder
+
+# System packages required to compile any Python wheel that does not
+# ship a manylinux binary (rare for our pin set, but keeps the build
+# reproducible across architectures).
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+        build-essential \
+        gcc \
+        gfortran \
+        libopenblas-dev \
+        liblapack-dev \
+        git \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /build
+
+# Upgrade pip + add pip-tools (used by the lock file)
+RUN python -m pip install --no-cache-dir --upgrade pip==24.0 \
+        setuptools==69.5.1 wheel==0.43.0
+
+# Pre-install the locked dependency set.  Copy ONLY the lock file
+# first so this layer caches when the source code changes.
+COPY requirements.lock /build/requirements.lock
+RUN pip wheel --no-cache-dir --wheel-dir /build/wheels \
+              -r /build/requirements.lock
+
+# Add the project source and build its own wheel
+COPY . /build/src
+WORKDIR /build/src
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /build/wheels .
+
+# ─────────────────────────────────────────────────────────────────────
+# Stage 2: runtime image
+# ─────────────────────────────────────────────────────────────────────
+FROM python:3.13.12-slim-bookworm AS runtime
+
+LABEL org.opencontainers.image.title="doe-testbed benchmark" \
+      org.opencontainers.image.description="Physics-grounded engineering test problem benchmark for DOE method evaluation" \
+      org.opencontainers.image.url="https://github.com/wangbinglin14/doe-testbed" \
+      org.opencontainers.image.source="https://github.com/wangbinglin14/doe-testbed" \
+      org.opencontainers.image.licenses="MIT" \
+      org.opencontainers.image.version="0.4.0"
+
+# Minimal runtime libraries
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+        libopenblas0 \
+        liblapack3 \
+        libgomp1 \
+        ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+# Install everything from pre-built wheels — no compiler in runtime image
+COPY --from=builder /build/wheels /tmp/wheels
+COPY --from=builder /build/requirements.lock /tmp/requirements.lock
+RUN python -m pip install --no-cache-dir --no-index --find-links=/tmp/wheels \
+        -r /tmp/requirements.lock \
+ && python -m pip install --no-cache-dir --no-index --find-links=/tmp/wheels doe-testbed \
+ && rm -rf /tmp/wheels /tmp/requirements.lock
+
+# Create non-root user
+ARG UID=1000
+ARG GID=1000
+RUN groupadd --gid ${GID} bench \
+ && useradd --uid ${UID} --gid bench --create-home --shell /bin/bash bench
+
+# Copy the workflow + scripts (read-only)
+COPY --chown=bench:bench Snakefile /work/Snakefile
+COPY --chown=bench:bench Snakefile.config.yaml.example /work/Snakefile.config.yaml.example
+COPY --chown=bench:bench benchmark /work/benchmark
+COPY --chown=bench:bench doe_testbed /work/doe_testbed
+COPY --chown=bench:bench tests /work/tests
+COPY --chown=bench:bench README.md LICENSE CITATION.cff /work/
+
+USER bench
+WORKDIR /work
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    OMP_NUM_THREADS=1 \
+    OPENBLAS_NUM_THREADS=1 \
+    MKL_NUM_THREADS=1 \
+    HOME=/home/bench
+
+# Health check: the package imports and Snakemake parses the workflow
+HEALTHCHECK --interval=1m --timeout=15s --start-period=5s --retries=2 \
+    CMD python -c "import benchmark, doe_testbed" \
+        && snakemake -s /work/Snakefile -n all >/dev/null \
+        || exit 1
+
+# Default: print the version banner and a short usage hint
+CMD ["bash", "-c", "\
+echo '================================================================='; \
+echo '  doe-testbed benchmark image (v0.4.0)'; \
+echo '================================================================='; \
+python -c \"import doe_testbed; print('  doe_testbed', doe_testbed.__version__)\"; \
+python -c \"import benchmark;   print('  benchmark  ', benchmark.__version__)\"; \
+echo ''; \
+echo 'Usage examples:'; \
+echo '  snakemake --cores 8 all                       # full reproduction'; \
+echo '  snakemake --cores 8 main_report               # headline only'; \
+echo '  python -m pytest -q tests benchmark/tests     # run the test suite'; \
+echo ''; \
+echo 'Pass --rm to remove the container after exit.'; \
+echo '================================================================='; \
+exec bash"]

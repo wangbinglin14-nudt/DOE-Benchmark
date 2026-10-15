@@ -1,0 +1,34 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Supplementary Table S8.} Post-hoc case-level sensitivity for D3 at the $10d$ budget. Signed bias is first averaged within each physical case, so the 16 case means are the independent units for the one-sided Wilcoxon test. The Runs column reports successful runs: $20\times30=600$ per case, except the ten-bar truss, which has 570 after excluding the same 30 BoTorch qEI timeout records noted in Table~S6. Twelve of 16 case means are positive; a non-zero value that would round to zero at four decimal places is shown in scientific notation. The equal-case bootstrap interval is reported descriptively. The preregistered first-step cutoff is shown as a numerical reference.}
+\label{tab:si_d3_case_level}
+\SITableFont
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Case} & \textbf{Runs} & \textbf{Mean signed bias} \\
+\midrule
+Airfoil stall polar & 600 & 0.0908 \\
+Transonic airfoil drag & 600 & -0.0007 \\
+Battery thermal management & 600 & $1.67\times10^{-6}$ \\
+Cantilever beam & 600 & 0.0059 \\
+Fin heat sink & 600 & 0.0119 \\
+Fixed-bed reactor & 600 & 0.2149 \\
+Groundwater contamination & 600 & 0.0156 \\
+Laminar flame speed & 600 & 0.0141 \\
+Plate with hole & 600 & 0.0186 \\
+Pressure vessel & 600 & -0.0577 \\
+Rotor blade-element momentum & 600 & 0.0277 \\
+Soil consolidation & 600 & -0.0277 \\
+Supersonic intake & 600 & 0.0262 \\
+Supersonic nozzle & 600 & 0.0580 \\
+Ten-bar truss & 570 & -0.0089 \\
+Tuned mass damper & 600 & 0.0317 \\
+\midrule
+Equal-case mean (all 16 cases) & -- & 0.0263 \\
+Equal-case bootstrap 95\% CI & -- & [0.0015, 0.0585] \\
+Case-level Wilcoxon $p$ (one-sided) & -- & 0.0253 \\
+Preregistered first-step cutoff (reference) & -- & 0.0167 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,198 @@
+# =====================================================================
+# Snakefile — one-shot reproduction of the DOE-Benchmark paper pipeline
+# =====================================================================
+# This workflow chains:
+#
+#   1. run_full_benchmark.py            (the primary 30-repeat sweep)
+#   2. analyze_full_benchmark.py        (Friedman / Nemenyi / report)
+#   3. run_sensitivity_recovery.py      (per-(case, method) Sobol-tau)
+#   4. run_reliability_recovery.py      (Discovery 3 — failure-prob bias)
+#   5. run_sample_complexity.py         (Discovery 2 — n*/d per topology)
+#   6. run_ranking_reversal.py          (Discovery 1 — analytical vs physical)
+#
+# Each step writes intermediate CSVs and a markdown REPORT.md so that
+# every dependency can be checked with `snakemake -n` and re-run
+# independently when needed.
+#
+# Run a Nature-grade reproduction:
+#
+#     snakemake --cores 8 all
+#
+# Run only the headline benchmark + report:
+#
+#     snakemake --cores 8 main_report
+#
+# Configurable knobs are exposed in the `config` block; override them
+# from the CLI with `--config n_repeats=50 pool=nature`.
+# =====================================================================
+
+from pathlib import Path
+
+ROOT = Path(workflow.basedir).resolve()
+RESULTS = ROOT / "benchmark" / "results"
+
+# ─── Configurable parameters ────────────────────────────────────────────
+configfile_path = ROOT / "Snakefile.config.yaml"  # optional; ignored if absent
+if configfile_path.exists():
+    configfile: str(configfile_path)
+
+# ── Pre-registration defaults (paper/preregistration.md §3) ──────────────
+# These defaults match the frozen v0.4.0-prereg protocol exactly.  Override
+# only via --config flags on the snakemake CLI.  Changing the defaults
+# here without an amendment in paper/preregistration_amendments.md is a
+# protocol violation and will be flagged by tests/test_prereg_compliance.py.
+config.setdefault("n_repeats", 30)                  # pre-reg §3
+config.setdefault("budgets", [5, 10, 20, 50])       # pre-reg §3 — 4 levels
+config.setdefault("n_test", 1000)                   # pre-reg §3
+config.setdefault("pool", "nature")                 # pre-reg §3 — 20 methods
+config.setdefault("seed_strategy", "case_repeat")   # pre-reg §3
+config.setdefault("output_subdir", "full_benchmark")
+config.setdefault("ranking_reversal_repeats", 30)
+
+# ── Memory-safety defaults (post-2026-05-09 OOM hardening) ──────────────
+# These knobs are passed through to run_full_benchmark.py so the Snakemake
+# rule honours the same memory-class routing as the bare-CLI launchers.
+config.setdefault("n_jobs", 8)                      # full-speed for "light" partitions
+config.setdefault("bo_n_jobs", 1)                   # SAASBO serial on 16 GB; raise on bigger hosts
+config.setdefault("mem_cap_gb", 12)                 # soft RSS cap (psutil); 0 disables
+config.setdefault("max_wall_clock_h", 96)           # 4-day cap; --skip-existing resumes
+config.setdefault("timeout_per_cell", 600)          # 10 min sklearn cell cap
+config.setdefault("bo_timeout_per_cell", 1800)      # 30 min BoTorch cell cap
+
+OUT = RESULTS / config["output_subdir"]
+
+
+# ─── Top-level aggregator ───────────────────────────────────────────────
+rule all:
+    input:
+        OUT / "results.csv",
+        OUT / "report" / "REPORT.md",
+        RESULTS / "sensitivity_recovery" / "sensitivity_summary.csv",
+        RESULTS / "reliability_recovery" / "REPORT.md",
+        RESULTS / "sample_complexity" / "REPORT.md",
+        RESULTS / "ranking_reversal" / "rank_shift_bootstrap_ci.csv",
+
+
+# ─── Headline benchmark + report ────────────────────────────────────────
+rule main_benchmark:
+    output:
+        csv = OUT / "results.csv",
+    log:
+        OUT / "run.log",
+    params:
+        budgets = " ".join(str(b) for b in config["budgets"]),
+    shell:
+        r"""
+        python benchmark/scripts/run_full_benchmark.py \
+            --pool {config[pool]} \
+            --budgets {params.budgets} \
+            --n-repeats {config[n_repeats]} \
+            --n-test {config[n_test]} \
+            --seed-strategy {config[seed_strategy]} \
+            --n-jobs {config[n_jobs]} \
+            --bo-n-jobs {config[bo_n_jobs]} \
+            --mem-cap-gb {config[mem_cap_gb]} \
+            --timeout-per-cell {config[timeout_per_cell]} \
+            --bo-timeout-per-cell {config[bo_timeout_per_cell]} \
+            --max-wall-clock-h {config[max_wall_clock_h]} \
+            --skip-existing \
+            --output-dir {OUT} 2>&1 | tee {log}
+        """
+
+
+rule main_report:
+    input:
+        csv = OUT / "results.csv",
+    output:
+        md = OUT / "report" / "REPORT.md",
+    log:
+        OUT / "report.log",
+    shell:
+        r"""
+        python benchmark/scripts/generate_report.py {OUT} 2>&1 | tee {log}
+        """
+
+
+# ─── Sensitivity recovery (Sobol-tau against ground truth) ──────────────
+rule sensitivity_recovery:
+    input:
+        csv = OUT / "results.csv",
+    output:
+        summary = RESULTS / "sensitivity_recovery" / "sensitivity_summary.csv",
+    log:
+        RESULTS / "sensitivity_recovery" / "run.log",
+    shell:
+        r"""
+        python benchmark/scripts/run_sensitivity_recovery.py \
+            --pool {config[pool]} \
+            --output-dir {RESULTS}/sensitivity_recovery 2>&1 | tee {log}
+        """
+
+
+# ─── Discovery 3: reliability recovery ──────────────────────────────────
+rule reliability_recovery:
+    input:
+        csv = OUT / "results.csv",
+    output:
+        md = RESULTS / "reliability_recovery" / "REPORT.md",
+    log:
+        RESULTS / "reliability_recovery" / "run.log",
+    shell:
+        r"""
+        python benchmark/scripts/run_reliability_recovery.py \
+            {input.csv} --budget-mult 10 \
+            --output-dir {RESULTS}/reliability_recovery 2>&1 | tee {log}
+        """
+
+
+# ─── Discovery 2: per-topology sample complexity ────────────────────────
+rule sample_complexity:
+    input:
+        csv = OUT / "results.csv",
+    output:
+        md = RESULTS / "sample_complexity" / "REPORT.md",
+    log:
+        RESULTS / "sample_complexity" / "run.log",
+    shell:
+        r"""
+        python benchmark/scripts/run_sample_complexity.py \
+            {input.csv} --threshold 0.20 \
+            --output-dir {RESULTS}/sample_complexity 2>&1 | tee {log}
+        """
+
+
+# ─── Discovery 1: ranking reversal (analytical vs physical) ─────────────
+rule ranking_reversal:
+    output:
+        csv = RESULTS / "ranking_reversal" / "rank_shift_bootstrap_ci.csv",
+    log:
+        RESULTS / "ranking_reversal" / "run.log",
+    params:
+        repeats = config["ranking_reversal_repeats"],
+    shell:
+        r"""
+        python benchmark/scripts/run_ranking_reversal.py \
+            --n-repeats {params.repeats} \
+            --budgets 10 20 \
+            --seed-strategy {config[seed_strategy]} \
+            --output-dir {RESULTS}/ranking_reversal 2>&1 | tee {log}
+        """
+
+
+# ─── Tests (run with `snakemake --cores 1 tests`) ───────────────────────
+rule tests:
+    log:
+        ROOT / "tests.log",
+    shell:
+        r"""
+        python -W ignore -m pytest -q tests benchmark/tests 2>&1 | tee {log}
+        """
+
+
+# ─── Convenience clean-up ───────────────────────────────────────────────
+rule clean:
+    shell:
+        r"""
+        echo 'Refusing to delete benchmark/results/* automatically.'
+        echo 'Manual: rm -r benchmark/results/<dir>'
+        """

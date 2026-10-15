@@ -1,0 +1,8 @@
+{
+  "branin_2d": "rocket_isp_4d",
+  "ishigami_3d": "fin_heat_sink_4d",
+  "friedman_5d": "cantilever_beam_5d",
+  "hartmann_6d": "dam_seepage_6d",
+  "sobol_g_8d": "ten_bar_truss_10d",
+  "wing_weight_10d": "multilayer_wall_8d"
+}

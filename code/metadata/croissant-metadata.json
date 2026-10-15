@@ -1,0 +1,591 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/"
+  },
+  "@type": "sc:Dataset",
+  "name": "DOE-Benchmark headline benchmark archive",
+  "description": "Machine-readable Croissant metadata for the DOE-Benchmark Communications Engineering submission package. The archive contains the frozen 34-case x 20-method x 4-budget x 30-repeat row-level benchmark results, run manifest, figure data, paper numbers, supplementary materials, command history, source fingerprints, and case-validation evidence.",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "0.4.0-dev",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Binglin Wang",
+      "affiliation": "National University of Defense Technology (NUDT), China"
+    }
+  ],
+  "keywords": [
+    "design of experiments",
+    "surrogate modeling",
+    "Bayesian optimization",
+    "physics-grounded benchmark",
+    "scientific computing",
+    "reproducibility"
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "headline_results_csv",
+      "name": "results.csv",
+      "contentUrl": "benchmark/results/full_benchmark/results.csv",
+      "encodingFormat": "text/csv",
+      "description": "Canonical row-level 34-case x 20-method x 4-budget x 30-repeat headline result table generated on the Linux server."
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "run_manifest_json",
+      "name": "RUN_MANIFEST.json",
+      "contentUrl": "benchmark/results/full_benchmark/RUN_MANIFEST.json",
+      "encodingFormat": "application/json",
+      "description": "Machine-readable provenance, environment, command-history, source-hash, result-summary, and artifact-hash manifest."
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "figdata_manifest_json",
+      "name": "figdata_manifest.json",
+      "contentUrl": "paper/figdata/figdata_manifest.json",
+      "encodingFormat": "application/json",
+      "description": "Figure-data lineage manifest derived from the canonical results.csv and downstream D1/D2/D3 analyses."
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "headline_results",
+      "name": "headline_results",
+      "description": "One record per benchmark cell: case, method, budget multiplier, repeat, seed, status, full accuracy metrics, failure category, runtime, resource telemetry, and source fingerprints.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/case_id",
+          "name": "case_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "case_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/case_source_path",
+          "name": "case_source_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "case_source_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/case_source_sha256",
+          "name": "case_source_sha256",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "case_source_sha256"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/domain",
+          "name": "domain",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "domain"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/dim",
+          "name": "dim",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "dim"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/n_output",
+          "name": "n_output",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "n_output"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/method",
+          "name": "method",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "method"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/method_family",
+          "name": "method_family",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "method_family"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/method_source_path",
+          "name": "method_source_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "method_source_path"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/method_source_sha256",
+          "name": "method_source_sha256",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "method_source_sha256"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/budget_mult",
+          "name": "budget_mult",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "budget_mult"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/n_train",
+          "name": "n_train",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "n_train"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/n_test",
+          "name": "n_test",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "n_test"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/repeat",
+          "name": "repeat",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "repeat"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/seed",
+          "name": "seed",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "seed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/test_seed",
+          "name": "test_seed",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "test_seed"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/seed_strategy",
+          "name": "seed_strategy",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "seed_strategy"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/seed_start",
+          "name": "seed_start",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "seed_start"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/result_schema_version",
+          "name": "result_schema_version",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "result_schema_version"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/protocol_digest",
+          "name": "protocol_digest",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "protocol_digest"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/status",
+          "name": "status",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "status"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/failure_category",
+          "name": "failure_category",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "failure_category"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/error",
+          "name": "error",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "error"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/nrmse",
+          "name": "nrmse",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "nrmse"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/rmse",
+          "name": "rmse",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "rmse"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/mae",
+          "name": "mae",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "mae"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/maxae",
+          "name": "maxae",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "maxae"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/q95ae",
+          "name": "q95ae",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "q95ae"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/r2",
+          "name": "r2",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "r2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/t_total_s",
+          "name": "t_total_s",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "t_total_s"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/worker_host",
+          "name": "worker_host",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "worker_host"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/worker_pid",
+          "name": "worker_pid",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "worker_pid"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/cell_started_utc",
+          "name": "cell_started_utc",
+          "dataType": "sc:DateTime",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "cell_started_utc"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/cell_finished_utc",
+          "name": "cell_finished_utc",
+          "dataType": "sc:DateTime",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "cell_finished_utc"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/rss_gb_start",
+          "name": "rss_gb_start",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "rss_gb_start"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/rss_gb_end",
+          "name": "rss_gb_end",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "rss_gb_end"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "headline_results/rss_gb_peak",
+          "name": "rss_gb_peak",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "headline_results_csv"
+            },
+            "extract": {
+              "column": "rss_gb_peak"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "rai:dataLimitations": "The benchmark is a physics-grounded DOE/surrogate-method benchmark, not a collection of externally validated engineering design workflows. P2 cases remain plausibility-only or analytical-control stress tests unless upgraded by case-specific validation notes. Full-scale headline results are pending until the Linux server sweep and return-package gates pass.",
+  "rai:dataBiases": "The suite intentionally over-represents low-cost algebraic, analytical, and surrogate physics cases to make large paired method comparisons affordable. It is not a representative sample of all industrial simulation workloads, high-fidelity CFD/FEA/MDAO workflows, or site-specific engineering validation datasets.",
+  "rai:personalSensitiveInformation": "No human-subject, demographic, health, political, religious, socioeconomic, or personally sensitive data are included. The archive consists of synthetic/physics-generated engineering benchmark rows and derived analysis artifacts.",
+  "rai:dataUseCases": "Intended use: reproducible comparison of DOE, surrogate modelling, Bayesian optimization, active learning, and reliability-oriented sampling methods under the frozen preregistered protocol. Not recommended for certifying engineering designs, validating individual physics solvers, or training models for deployment decisions without independent domain validation.",
+  "rai:dataSocialImpact": "Positive impact: transparent, reproducible, physics-grounded benchmarking may reduce misleading method claims and improve experimental practice. Risks: users may over-interpret plausibility-only cases as validated engineering simulators; evidence-tier labels, web-validation audits, and manuscript limitations mitigate this risk.",
+  "rai:hasSyntheticData": true,
+  "url": "Not yet public. Supply the public archive URL and DOI here before submission (see docs/SUBMISSION_EXTERNAL_INPUT_TEMPLATE_20260901.md); no link is asserted until the deposit is minted."
+}

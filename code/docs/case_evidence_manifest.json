@@ -1,0 +1,308 @@
+[
+  {
+    "case_id": "airfoil_stall_2d",
+    "domain": "aerodynamics",
+    "input_dimension": 4,
+    "source": "doe_testbed/cases/aerodynamics/airfoil_stall_2d.py",
+    "evidence": "doe_testbed/cases/aerodynamics/airfoil_stall_2d.evidence.md",
+    "source_sha256": "88035ceaba53cea3b8934d355db880f75e4b8c7f4bd488bbf920ccf3a30db2e5",
+    "evidence_sha256": "f94ad016220f613490a22f32826a1e234ce0dab3952ac66d9f910b526e4a81a8"
+  },
+  {
+    "case_id": "airfoil_transonic_5d",
+    "domain": "aerodynamics",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/aerodynamics/airfoil_transonic_5d.py",
+    "evidence": "doe_testbed/cases/aerodynamics/airfoil_transonic_5d.evidence.md",
+    "source_sha256": "cf9078fe670750182b4f7264163ef9278c419efc967030c068886a0153f6f2c4",
+    "evidence_sha256": "7ae476acfd297574e0ed3f313a42e6d4bd8bd4bd460799552b04ad05147b7ed7"
+  },
+  {
+    "case_id": "rotor_bemt_6d",
+    "domain": "aerodynamics",
+    "input_dimension": 6,
+    "source": "doe_testbed/cases/aerodynamics/rotor_bemt_6d.py",
+    "evidence": "doe_testbed/cases/aerodynamics/rotor_bemt_6d.evidence.md",
+    "source_sha256": "2ec3c801ddc7fe336f953cf59f9dde8535302f729fe97a375fc0cde7fa847e58",
+    "evidence_sha256": "2388c15f2003921b5b2a0c3b6753c8d67ee9c61b0174716b75ada7c8df87bf9c"
+  },
+  {
+    "case_id": "supersonic_intake_5d",
+    "domain": "aerodynamics",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/aerodynamics/supersonic_intake_5d.py",
+    "evidence": "doe_testbed/cases/aerodynamics/supersonic_intake_5d.evidence.md",
+    "source_sha256": "9b2b1315cfa88aee53dd3cb27cb003e9cf14574e50d8df895611ceadc824312b",
+    "evidence_sha256": "d7ea5f373d37a7851fb3cfdf404827614a917f4b1d13e60e802765b028adb28d"
+  },
+  {
+    "case_id": "waverider_4d",
+    "domain": "aerodynamics",
+    "input_dimension": 4,
+    "source": "doe_testbed/cases/aerodynamics/waverider_4d.py",
+    "evidence": "doe_testbed/cases/aerodynamics/waverider_4d.evidence.md",
+    "source_sha256": "8705dd8af153bf8e2629e30de2ff5fb6d560df65f3d4c1b09f522b27ce39c3b1",
+    "evidence_sha256": "d422c1ceb412523e042a72ced66dd3ae1f14bd8652341417a318b10197b582eb"
+  },
+  {
+    "case_id": "wing_vlm_6d",
+    "domain": "aerodynamics",
+    "input_dimension": 6,
+    "source": "doe_testbed/cases/aerodynamics/wing_vlm_6d.py",
+    "evidence": "doe_testbed/cases/aerodynamics/wing_vlm_6d.evidence.md",
+    "source_sha256": "59851eb49d46baacbf2c1eea7c6d3699af7710cd99f0fbf9504fd9cff8108fba",
+    "evidence_sha256": "ff5ab1a4c627dceb7838d7f1986c2e8464c268d3bc916f3a4f5433ca5feb7623"
+  },
+  {
+    "case_id": "fixed_bed_reactor_6d",
+    "domain": "chemical_process",
+    "input_dimension": 6,
+    "source": "doe_testbed/cases/chemical/fixed_bed_reactor_6d.py",
+    "evidence": "doe_testbed/cases/chemical/fixed_bed_reactor_6d.evidence.md",
+    "source_sha256": "514f5c5c0cc569a98381ffc468e50be8d69c578c7f5a8515d75dc3a9b6e57f4f",
+    "evidence_sha256": "6d99b7d521f1856fce15af7d0fedf93acf9e1560b67986f283cfd8e8ece9984a"
+  },
+  {
+    "case_id": "laminar_flame_speed_5d",
+    "domain": "chemical_process",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/chemical/laminar_flame_speed_5d.py",
+    "evidence": "doe_testbed/cases/chemical/laminar_flame_speed_5d.evidence.md",
+    "source_sha256": "80e2d0f6cc26b09b1072aa19956aaf77e9d0be31b8e0fd67de9b047b3c6a773b",
+    "evidence_sha256": "72fd1e1329a877f3b77d0ac57d9ee33a64460b4dedd0d954b87ef3f54c7a48a1"
+  },
+  {
+    "case_id": "membrane_reactor_5d",
+    "domain": "chemical_process",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/chemical/membrane_reactor_5d.py",
+    "evidence": "doe_testbed/cases/chemical/membrane_reactor_5d.evidence.md",
+    "source_sha256": "c783701685596c2bbe1ca2d722e10cf79c8daf68ba47e3cb894cb7cad58a5026",
+    "evidence_sha256": "0897ebdff14a51a83a7c99cb380cff5b7dbb7d206c1a22cf81822a3f3a21b7f7"
+  },
+  {
+    "case_id": "rocket_isp_4d",
+    "domain": "chemical_process",
+    "input_dimension": 4,
+    "source": "doe_testbed/cases/chemical/rocket_isp_4d.py",
+    "evidence": "doe_testbed/cases/chemical/rocket_isp_4d.evidence.md",
+    "source_sha256": "0b510476170bee1781bceb25efc8b59a4e78a8656dcb7cbb7def3f9568c42b27",
+    "evidence_sha256": "d109fb6cbe902c493d3ce2541123f83aafda26722751452d76c42bbda59e85cd"
+  },
+  {
+    "case_id": "supersonic_nozzle_5d",
+    "domain": "chemical_process",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/chemical/supersonic_nozzle_5d.py",
+    "evidence": "doe_testbed/cases/chemical/supersonic_nozzle_5d.evidence.md",
+    "source_sha256": "335a9a5f692fd2e5cd87567059d48d646c8a4113327fe7ac1e86b21785d7a701",
+    "evidence_sha256": "6968afb7fd45c3b8833e5a491f5387c465584ecca3ec12747986b392314f8951"
+  },
+  {
+    "case_id": "dam_seepage_6d",
+    "domain": "geomechanics",
+    "input_dimension": 6,
+    "source": "doe_testbed/cases/geomechanics/dam_seepage_6d.py",
+    "evidence": "doe_testbed/cases/geomechanics/dam_seepage_6d.evidence.md",
+    "source_sha256": "45a9bb98d67c38734aff662d7f60d3faad657ba9fa3abafcafc1756b839f316b",
+    "evidence_sha256": "3921178cc5c59cb9a253dbd24730db79be508de800659aa39fff0a0c1ff4d11b"
+  },
+  {
+    "case_id": "groundwater_contamination_6d",
+    "domain": "geomechanics",
+    "input_dimension": 6,
+    "source": "doe_testbed/cases/geomechanics/groundwater_contamination_6d.py",
+    "evidence": "doe_testbed/cases/geomechanics/groundwater_contamination_6d.evidence.md",
+    "source_sha256": "69c7fdd4d231c3f81fd2bd4375c9cbd2dafd8c6bd77de6ae0de301bbf45c4fde",
+    "evidence_sha256": "44ce36f0afb60ebdd8a5a23fa9c80c9a3118a64bde232736504c500d712154f0"
+  },
+  {
+    "case_id": "oil_reservoir_9d",
+    "domain": "geomechanics",
+    "input_dimension": 9,
+    "source": "doe_testbed/cases/geomechanics/oil_reservoir_9d.py",
+    "evidence": "doe_testbed/cases/geomechanics/oil_reservoir_9d.evidence.md",
+    "source_sha256": "ceb213b31c17f4cf4cdf9ed623772ae9a72d3d7fb6c48c86921fc0129ee210fd",
+    "evidence_sha256": "5cc40769673764cd39d97459e6e6f00c168845e168690cb627b5cca50f13c8a2"
+  },
+  {
+    "case_id": "soil_consolidation_5d",
+    "domain": "geomechanics",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/geomechanics/soil_consolidation_5d.py",
+    "evidence": "doe_testbed/cases/geomechanics/soil_consolidation_5d.evidence.md",
+    "source_sha256": "c765fdafd89325620e62980758b27181e14fe6c3eedd75f5540bb3ba8afeee9e",
+    "evidence_sha256": "1831523987d02ffc7937cd8a035e8fa1cb9e83e8c33b391557e2cea5838aaf0f"
+  },
+  {
+    "case_id": "battery_thermal_7d",
+    "domain": "heat_transfer",
+    "input_dimension": 7,
+    "source": "doe_testbed/cases/heat_transfer/battery_thermal_7d.py",
+    "evidence": "doe_testbed/cases/heat_transfer/battery_thermal_7d.evidence.md",
+    "source_sha256": "29d437699939fa7e44f834f5fefb1d2e88e4638f8c3ad23209210a7380f99255",
+    "evidence_sha256": "31d2d99d11e19a7727f08d7aa0edca1ccc33862cae647eba5397165302dfd70d"
+  },
+  {
+    "case_id": "casting_solidification_5d",
+    "domain": "heat_transfer",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/heat_transfer/casting_solidification_5d.py",
+    "evidence": "doe_testbed/cases/heat_transfer/casting_solidification_5d.evidence.md",
+    "source_sha256": "5f444d32fa126707c511362d72afcaa18341b580ccf9074529c326cb5e28be2b",
+    "evidence_sha256": "ea79ab51975226086d58e4150873dfaf897365e74cfbd2df4bd45336588dcb35"
+  },
+  {
+    "case_id": "fin_heat_sink_4d",
+    "domain": "heat_transfer",
+    "input_dimension": 4,
+    "source": "doe_testbed/cases/heat_transfer/fin_heat_sink_4d.py",
+    "evidence": "doe_testbed/cases/heat_transfer/fin_heat_sink_4d.evidence.md",
+    "source_sha256": "ff6ddb7545511635e91ca335e485235288a13ac6fa163e54346b81227eb13f6a",
+    "evidence_sha256": "9151380001e5ed521586071e0e624215238406db9b2219c2f0be2c6478485355"
+  },
+  {
+    "case_id": "hetero_conduction_2d",
+    "domain": "heat_transfer",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/heat_transfer/hetero_conduction_2d.py",
+    "evidence": "doe_testbed/cases/heat_transfer/hetero_conduction_2d.evidence.md",
+    "source_sha256": "07a709b222bf347ac306702c6f785e27732b4d72e3d46f2555036bb81d13f2a9",
+    "evidence_sha256": "f16eef488771adff12f5fcf18e85dbe962193970759eec19f71204b9287b0460"
+  },
+  {
+    "case_id": "multilayer_wall_16d",
+    "domain": "heat_transfer",
+    "input_dimension": 16,
+    "source": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+    "evidence": "doe_testbed/cases/heat_transfer/multilayer_wall_16d.evidence.md",
+    "source_sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15",
+    "evidence_sha256": "ed4793933ae9581a297a4924d47a6a4f20fc8a19bcab5e485bcacc9fda6fd03c"
+  },
+  {
+    "case_id": "multilayer_wall_4d",
+    "domain": "heat_transfer",
+    "input_dimension": 4,
+    "source": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+    "evidence": "doe_testbed/cases/heat_transfer/multilayer_wall_4d.evidence.md",
+    "source_sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15",
+    "evidence_sha256": "79dff9c10da4b26f2919b6c34eb3b348866bd5712c4707a8146da271ae2dde25"
+  },
+  {
+    "case_id": "multilayer_wall_8d",
+    "domain": "heat_transfer",
+    "input_dimension": 8,
+    "source": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+    "evidence": "doe_testbed/cases/heat_transfer/multilayer_wall_8d.evidence.md",
+    "source_sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15",
+    "evidence_sha256": "6da50833609a49c7abffc08364306b8cae4cb0843c150bb2509f13c76052db73"
+  },
+  {
+    "case_id": "aircraft_conceptual_8d",
+    "domain": "multidisciplinary",
+    "input_dimension": 8,
+    "source": "doe_testbed/cases/multidisciplinary/aircraft_conceptual_8d.py",
+    "evidence": "doe_testbed/cases/multidisciplinary/aircraft_conceptual_8d.evidence.md",
+    "source_sha256": "e4c5f735d5c92aa6b21ffe6a991dd0414c771fe4bbd31d4d29a5cf3c397cbacb",
+    "evidence_sha256": "cd3f80b6b5417997997d48309bc7aad43ac862708bb279aefbb7ba112489e273"
+  },
+  {
+    "case_id": "pressure_vessel_4d",
+    "domain": "multidisciplinary",
+    "input_dimension": 4,
+    "source": "doe_testbed/cases/multidisciplinary/pressure_vessel_4d.py",
+    "evidence": "doe_testbed/cases/multidisciplinary/pressure_vessel_4d.evidence.md",
+    "source_sha256": "f1c490fd5f6f06b4c6ece4420d2335d781839293879dcc59253c0222cb339049",
+    "evidence_sha256": "b774c1093b7e0e806effd38d9c5b6a6fc8d15ee6b97257adbf2514b43b46e1d4"
+  },
+  {
+    "case_id": "solar_pv_yield_6d",
+    "domain": "multidisciplinary",
+    "input_dimension": 6,
+    "source": "doe_testbed/cases/multidisciplinary/solar_pv_yield_6d.py",
+    "evidence": "doe_testbed/cases/multidisciplinary/solar_pv_yield_6d.evidence.md",
+    "source_sha256": "de4f082afef77d9cb1138e9c2c66d531b22a3058e68d5e1adf0fff574bdf52d1",
+    "evidence_sha256": "c4cd34268948e3bd03c430dba01756f3bba82d8c2cc68cebe2eae7cdb9021cc4"
+  },
+  {
+    "case_id": "wind_turbine_power_6d",
+    "domain": "multidisciplinary",
+    "input_dimension": 6,
+    "source": "doe_testbed/cases/multidisciplinary/wind_turbine_power_6d.py",
+    "evidence": "doe_testbed/cases/multidisciplinary/wind_turbine_power_6d.evidence.md",
+    "source_sha256": "a57d91d1283228e39cb46c9484b1384a4d7be1c61fce73faf7658c40984b38ed",
+    "evidence_sha256": "ac08c33b8ac132fedc4a32f175c2c36063970c590ad476e52239ad2d624b99e9"
+  },
+  {
+    "case_id": "cantilever_beam_5d",
+    "domain": "structures",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/structures/cantilever_beam_5d.py",
+    "evidence": "doe_testbed/cases/structures/cantilever_beam_5d.evidence.md",
+    "source_sha256": "5a80619dd8ce8f76be6169fa1dc698280a05c6e487ffec0af4effb16b7c693e5",
+    "evidence_sha256": "79d798c28464a472e91ffce016f8001fda9611e41090378927e86e5b9a4f849d"
+  },
+  {
+    "case_id": "plate_with_hole_5d",
+    "domain": "structures",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/structures/plate_with_hole_5d.py",
+    "evidence": "doe_testbed/cases/structures/plate_with_hole_5d.evidence.md",
+    "source_sha256": "8c2789cc1c9c6b8b6bcdce8477edaf97ff1fc8defe2589c0e36422567197a077",
+    "evidence_sha256": "040eb741dddd8fdb414cc3db2f588b922c24d37e92151a64f84b0af092603b6c"
+  },
+  {
+    "case_id": "ten_bar_truss_10d",
+    "domain": "structures",
+    "input_dimension": 10,
+    "source": "doe_testbed/cases/structures/ten_bar_truss_10d.py",
+    "evidence": "doe_testbed/cases/structures/ten_bar_truss_10d.evidence.md",
+    "source_sha256": "2fe48f989efa7dab9d1bebdccf189031702b5a02f7f82c92625e46a8115a7e88",
+    "evidence_sha256": "7bfee0e94b976cde74d404d904e436eb3ed8f8541effbeb7aa0d0a504ef5b88b"
+  },
+  {
+    "case_id": "thin_plate_buckling_5d",
+    "domain": "structures",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/structures/thin_plate_buckling_5d.py",
+    "evidence": "doe_testbed/cases/structures/thin_plate_buckling_5d.evidence.md",
+    "source_sha256": "8ab577de3729b2f17a1f7e64e53ec1622386eaff9bddc12407f02bbb948d6f6f",
+    "evidence_sha256": "91ae2c88981f91942e48fcf5fd74dc0803f13edfcd66b9f3d483fd76eae7964e"
+  },
+  {
+    "case_id": "tuned_mass_damper_3d",
+    "domain": "structures",
+    "input_dimension": 3,
+    "source": "doe_testbed/cases/structures/tuned_mass_damper_3d.py",
+    "evidence": "doe_testbed/cases/structures/tuned_mass_damper_3d.evidence.md",
+    "source_sha256": "267c32a7e7678ea3b06eb81bd246806f9aaf171b9467f77f4acff9189d7f02da",
+    "evidence_sha256": "fb1f9b31e9ef8214820b50fe500e0e4666e320c71fa2ab144786cdf03956a6b7"
+  },
+  {
+    "case_id": "variable_beam_10d",
+    "domain": "structures",
+    "input_dimension": 10,
+    "source": "doe_testbed/cases/structures/variable_beam_nd.py",
+    "evidence": "doe_testbed/cases/structures/variable_beam_10d.evidence.md",
+    "source_sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b",
+    "evidence_sha256": "61b3beb8e9b8df0be744cfe7679720c53db51ec09cdbd6cbbbb2855652b502ff"
+  },
+  {
+    "case_id": "variable_beam_20d",
+    "domain": "structures",
+    "input_dimension": 20,
+    "source": "doe_testbed/cases/structures/variable_beam_nd.py",
+    "evidence": "doe_testbed/cases/structures/variable_beam_20d.evidence.md",
+    "source_sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b",
+    "evidence_sha256": "00f5e26371ef903c79fb6814dcee3d60b3f78e4707a5b31609850bad395eac67"
+  },
+  {
+    "case_id": "variable_beam_5d",
+    "domain": "structures",
+    "input_dimension": 5,
+    "source": "doe_testbed/cases/structures/variable_beam_nd.py",
+    "evidence": "doe_testbed/cases/structures/variable_beam_5d.evidence.md",
+    "source_sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b",
+    "evidence_sha256": "6492abda573d0f4716a78e229e9babeef3b6743673017b2cc43547839bf3b44d"
+  }
+]

@@ -1,0 +1,47 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Supplementary Table S3.} Simulation case characteristics and validation evidence. For each of the \NumNCases{} cases: application domain, input dimension $d$, whether the case carries an explicit failure boundary, and the case-validation evidence tier. Here $d$ denotes the number of declared model inputs; the physical model's spatial dimension is a separate attribute.}
+\label{tab:si_cases}
+\SITableFont
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llccl@{}}
+\toprule
+\textbf{Case} & \textbf{Domain} & $d$ & \textbf{Failure} & \textbf{Evidence tier} \\
+\midrule
+Airfoil stall polar & Aerodynamics & 4 & Yes & Targeted plausibility only \\
+Waverider forebody & Aerodynamics & 4 & No & Targeted plausibility only \\
+Transonic airfoil drag & Aerodynamics & 5 & Yes & Targeted plausibility only \\
+Supersonic intake & Aerodynamics & 5 & Yes & Targeted plausibility only \\
+Rotor blade-element momentum & Aerodynamics & 6 & Yes & Targeted plausibility only \\
+Finite-wing lifting line & Aerodynamics & 6 & No & Targeted plausibility only \\
+Rocket specific impulse & Chemical process & 4 & No & External note + targeted regression \\
+Laminar flame speed & Chemical process & 5 & Yes & External note + targeted regression \\
+Membrane reactor & Chemical process & 5 & No & External note + targeted regression \\
+Supersonic nozzle & Chemical process & 5 & Yes & External note + targeted regression \\
+Fixed-bed reactor & Chemical process & 6 & Yes & External note + targeted regression \\
+Soil consolidation & Geomechanics & 5 & Yes & Targeted analytical control \\
+Dam seepage & Geomechanics & 6 & No & Targeted plausibility only \\
+Groundwater contamination & Geomechanics & 6 & Yes & Targeted plausibility only \\
+Oil-reservoir seepage & Geomechanics & 9 & No & Targeted plausibility only \\
+Fin heat sink & Heat transfer & 4 & Yes & External note + targeted regression \\
+Multilayer wall (4-layer) & Heat transfer & 4 & No & External note + analytic control \\
+Casting solidification & Heat transfer & 5 & No & External note + targeted regression \\
+Heterogeneous conduction & Heat transfer & 5 & No & External note + targeted regression \\
+Battery thermal management & Heat transfer & 7 & Yes & External note + targeted regression \\
+Multilayer wall (8-layer) & Heat transfer & 8 & No & External note + analytic control \\
+Multilayer wall (16-layer) & Heat transfer & 16 & No & External note + analytic control \\
+Pressure vessel & Multidisciplinary & 4 & Yes & Targeted analytical control \\
+Solar photovoltaic yield & Multidisciplinary & 6 & No & Targeted plausibility only \\
+Wind-turbine power & Multidisciplinary & 6 & No & Targeted plausibility only \\
+Aircraft conceptual design & Multidisciplinary & 8 & No & Targeted plausibility only \\
+Tuned mass damper & Structures & 3 & Yes & External note + targeted regression \\
+Cantilever beam & Structures & 5 & Yes & External note + targeted regression \\
+Plate with hole & Structures & 5 & Yes & External note + targeted regression \\
+Thin-plate buckling & Structures & 5 & No & External note + targeted regression \\
+Variable-section beam (5-D) & Structures & 5 & No & External note + targeted regression \\
+Ten-bar truss & Structures & 10 & Yes & External note + targeted regression \\
+Variable-section beam (10-D) & Structures & 10 & No & External note + targeted regression \\
+Variable-section beam (20-D) & Structures & 20 & No & External note + targeted regression \\
+\bottomrule
+\end{tabular}
+\end{table}

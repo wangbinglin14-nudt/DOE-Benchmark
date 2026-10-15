@@ -1,0 +1,103 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "DOE-Benchmark Communications Engineering submission package",
+      "description": "Research object for the DOE-Benchmark resource paper: source code, preregistered protocol, case-validation evidence, streamed headline results, analysis outputs, figure data, paper numbers, supplementary information, runtime telemetry, environment locks, command history, and manifests.",
+      "license": {
+        "@id": "LICENSE"
+      },
+      "hasPart": [
+        {
+          "@id": "CITATION.cff"
+        },
+        {
+          "@id": "codemeta.json"
+        },
+        {
+          "@id": "croissant-metadata.json"
+        },
+        {
+          "@id": "benchmark/results/full_benchmark/results.csv"
+        },
+        {
+          "@id": "benchmark/results/full_benchmark/RUN_MANIFEST.json"
+        },
+        {
+          "@id": "benchmark/results/full_benchmark/run_config.json"
+        },
+        {
+          "@id": "benchmark/results/full_benchmark/sweep_integrity_report.md"
+        },
+        {
+          "@id": "benchmark/results/full_benchmark/runtime_health_report.txt"
+        },
+        {
+          "@id": "paper/figdata/figdata_manifest.json"
+        },
+        {
+          "@id": "paper/figure_manifest.json"
+        },
+        {
+          "@id": "paper/numbers.json"
+        },
+        {
+          "@id": "docs/CASE_VALIDATION_SUMMARY.md"
+        },
+        {
+          "@id": "docs/EXPERIMENT_BENCHMARK_AUDIT.md"
+        },
+        {
+          "@id": "logs/pipeline_command_history.txt"
+        }
+      ]
+    },
+    {
+      "@id": "benchmark/results/full_benchmark/results.csv",
+      "@type": "File",
+      "name": "Headline row-level benchmark results",
+      "encodingFormat": "text/csv",
+      "description": "Canonical 34-case x 20-method x 4-budget x 30-repeat result table generated on the Linux server after row-level contract gates pass."
+    },
+    {
+      "@id": "croissant-metadata.json",
+      "@type": "File",
+      "name": "Croissant metadata",
+      "encodingFormat": "application/ld+json",
+      "description": "MLCommons Croissant-style machine-readable dataset metadata for the headline benchmark archive, including core distribution/recordSet fields and minimal Responsible AI metadata."
+    },
+    {
+      "@id": "benchmark/results/full_benchmark/RUN_MANIFEST.json",
+      "@type": "File",
+      "name": "Run manifest",
+      "encodingFormat": "application/json",
+      "description": "Machine-readable provenance, command, environment, source-hash, result-summary, and artifact-hash manifest for the completed pipeline."
+    },
+    {
+      "@id": "paper/figdata/figdata_manifest.json",
+      "@type": "File",
+      "name": "Figure-data manifest",
+      "encodingFormat": "application/json",
+      "description": "Machine-readable lineage for figure source data derived from the canonical results.csv and downstream D1/D2/D3 analyses."
+    },
+    {
+      "@id": "logs/pipeline_command_history.txt",
+      "@type": "File",
+      "name": "Pipeline command history",
+      "encodingFormat": "text/plain",
+      "description": "Recorded formal pipeline commands used to launch, audit, analyse, and package the server run."
+    }
+  ]
+}

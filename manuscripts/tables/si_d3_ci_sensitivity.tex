@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Supplementary Table S7.} Cluster-vs-i.i.d.\ bootstrap sensitivity for the D3 signed bias. The primary case-cluster bootstrap is compared with an i.i.d.\ bootstrap. The Ratio column gives the case-cluster 95\% CI width divided by the i.i.d.\ 95\% CI width. The case-cluster interval is wider for every method, indicating greater estimated uncertainty under case-cluster resampling.}
+\label{tab:si_d3_ci_sensitivity}
+\SITableFont
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Method} & \textbf{CI width (cluster)} & \textbf{CI width (i.i.d.)} & \textbf{Ratio} \\
+\midrule
+Optimised LHS + Polynomial (deg. 5) & 0.0788 & 0.0140 & 5.65$\times$ \\
+Optimised LHS + Polynomial (deg. 3) & 0.0786 & 0.0140 & 5.61$\times$ \\
+Optimised LHS + RBF & 0.0730 & 0.0133 & 5.47$\times$ \\
+Optimised LHS + SVR & 0.0825 & 0.0151 & 5.46$\times$ \\
+Optimised LHS + Random forest & 0.0753 & 0.0140 & 5.39$\times$ \\
+Optimised LHS + Gradient boosting & 0.1319 & 0.0245 & 5.38$\times$ \\
+Optimised LHS + kNN & 0.0847 & 0.0161 & 5.25$\times$ \\
+Optimised LHS + MLP & 0.0904 & 0.0172 & 5.24$\times$ \\
+SAASBO & 0.0396 & 0.0078 & 5.11$\times$ \\
+Random + Linear & 0.1278 & 0.0250 & 5.10$\times$ \\
+BoTorch qEI & 0.0509 & 0.0104 & 4.91$\times$ \\
+Random + GP & 0.0394 & 0.0084 & 4.68$\times$ \\
+EGO (EI) & 0.0418 & 0.0090 & 4.66$\times$ \\
+Halton + GP & 0.0348 & 0.0077 & 4.50$\times$ \\
+AK-MCS & 0.0457 & 0.0103 & 4.45$\times$ \\
+LHS + GP & 0.0354 & 0.0079 & 4.45$\times$ \\
+Sobol' + GP & 0.0385 & 0.0087 & 4.44$\times$ \\
+Max-variance AL & 0.0356 & 0.0082 & 4.35$\times$ \\
+Optimised LHS + GP & 0.0366 & 0.0098 & 3.72$\times$ \\
+Optimised LHS + GP (RBF kernel) & 0.0537 & 0.0164 & 3.27$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}

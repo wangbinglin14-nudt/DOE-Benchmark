@@ -1,0 +1,40 @@
+{
+  "title": "doe-testbed: Physics-grounded engineering test problems and benchmark for DOE method evaluation",
+  "description": "A Python library of 34 physics-grounded engineering test problems (cantilever beam, airfoil stall, fin heat sink, ten-bar truss, ...) under a unified BaseCase interface, plus a standardised benchmark suite that compares the frozen 20-method nature_pool() DOE / surrogate / Bayesian-optimisation headline set on these cases. Includes per-(case, method, repeat) seed derivation, Holm-Bonferroni-corrected pairwise tests, Cliff's delta with bootstrap CIs, sensitivity recovery, sample-complexity analysis (n*/d per topology), failure-probability bias quantification, and a bilingual web dashboard. This deposit accompanies the manuscript 'Benchmarking design-of-experiments guidance in physics-grounded engineering simulations' (prepared for Communications Engineering).",
+  "version": "0.4.0-dev",
+  "creators": [
+    {
+      "name": "Wang, Binglin",
+      "affiliation": "National University of Defense Technology (NUDT), China"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "language": "eng",
+  "upload_type": "software",
+  "keywords": [
+    "design of experiments",
+    "DOE",
+    "test problems",
+    "benchmark",
+    "physics-based simulation",
+    "engineering simulation",
+    "sensitivity analysis",
+    "surrogate modeling",
+    "Gaussian process",
+    "Bayesian optimisation",
+    "reliability analysis",
+    "Sobol indices",
+    "scientific computing",
+    "Python"
+  ],
+  "communities": [
+    {
+      "identifier": "scientific-computing"
+    },
+    {
+      "identifier": "engineering-design"
+    }
+  ],
+  "notes": "No public repository URL and no archival DOI are claimed in this record. The author confirmed on 2026-09-27 that access has not yet been established. The archive remains in the local workspace; no public deposition or reviewer delivery is claimed. Actual access details will be added when available."
+}

@@ -1,0 +1,43 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "doe-testbed",
+  "applicationCategory": "Scientific benchmark suite",
+  "description": "Physics-grounded engineering test problems and benchmark pipeline for design-of-experiments method evaluation. The headline Communications Engineering protocol uses 34 fixed cases, 20 nature_pool methods, budgets {5, 10, 20, 50}, 30 repeats, paired case-repeat seeds, streamed row-level results, and generated paper figdata/numbers/SI artifacts.",
+  "version": "0.4.0-dev",
+  "license": "https://spdx.org/licenses/MIT",
+  "programmingLanguage": "Python",
+  "runtimePlatform": [
+    "Python 3",
+    "Linux server for full benchmark pipeline",
+    "Windows workstation for smoke, unit, physics, and preflight tests"
+  ],
+  "keywords": [
+    "design of experiments",
+    "benchmark",
+    "surrogate modeling",
+    "Bayesian optimization",
+    "physics-grounded test cases",
+    "reproducibility",
+    "scientific computing"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Binglin",
+      "familyName": "Wang",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "National University of Defense Technology (NUDT), China"
+      }
+    }
+  ],
+  "citation": "CITATION.cff",
+  "softwareRequirements": [
+    "requirements.lock",
+    "pyproject.toml"
+  ],
+  "readme": "README.md",
+  "buildInstructions": "docs/REPRODUCIBILITY.md",
+  "codeRepository": "Not yet public. Supply the public repository URL here before submission (see docs/SUBMISSION_EXTERNAL_INPUT_TEMPLATE_20260901.md); the previous candidate URL returned 404, so no link is asserted."
+}

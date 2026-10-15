@@ -1,0 +1,8 @@
+{
+  "branin_2d": "multilayer_wall_8d",
+  "ishigami_3d": "rotor_bemt_6d",
+  "friedman_5d": "membrane_reactor_5d",
+  "hartmann_6d": "aircraft_conceptual_8d",
+  "sobol_g_8d": "casting_solidification_5d",
+  "wing_weight_10d": "supersonic_nozzle_5d"
+}

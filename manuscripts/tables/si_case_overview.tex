@@ -1,0 +1,57 @@
+\begingroup
+\SITableFont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}p{0.29\linewidth}r p{0.63\linewidth}@{}}
+\caption{\textbf{Supplementary Table S15.} Physical overview of all 34 simulation cases. Case names match the other supplementary tables; $d$ counts declared inputs. Responses are listed in output order. Scalable beam and wall variants are listed separately.}\label{tab:case_overview}\\
+\toprule Case & $d$ & Physical model and returned quantities \\ \midrule
+\endfirsthead
+\multicolumn{3}{l}{\normalsize\textbf{Supplementary Table S15 (continued)}}\\
+\toprule Case & $d$ & Physical model and returned quantities \\ \midrule
+\endhead
+\midrule\multicolumn{3}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+\multicolumn{3}{@{}l}{\textbf{Structures}}\\*
+Cantilever beam & 5 & Rectangular cantilever bending with shear-deflection correction; maximum bending stress, tip deflection and maximum shear stress. \\
+Plate with hole & 5 & Elliptical-hole stress concentration with a finite-width correction; peak edge stress, concentration factor and peak shear stress. \\
+Ten-bar truss & 10 & Planar truss stiffness solution with ten member areas; maximum horizontal displacement, maximum vertical displacement and total mass. \\
+Thin-plate buckling & 5 & Thin-plate buckling relations with boundary-condition corrections; critical line load, critical stress and buckling coefficient. \\
+Tuned mass damper & 3 & Two-degree-of-freedom forced-vibration model; peak amplification, half-power bandwidth and peak damper-force ratio. \\
+Variable-section beam (10-D) & 10 & Finite-element vibration model with 10 variable-height beam segments; first natural frequency, second natural frequency and total mass. \\
+Variable-section beam (20-D) & 20 & Finite-element vibration model with 20 variable-height beam segments; first natural frequency, second natural frequency and total mass. \\
+Variable-section beam (5-D) & 5 & Finite-element vibration model with 5 variable-height beam segments; first natural frequency, second natural frequency and total mass. \\
+\multicolumn{3}{@{}l}{\textbf{Heat transfer}}\\*
+Battery thermal management & 7 & Lumped transient battery heat balance; peak temperature, final temperature and maximum temperature rise. \\
+Casting solidification & 5 & One-dimensional enthalpy-method solidification model; solidification time, mean front speed and centre peak temperature. \\
+Fin heat sink & 4 & One-dimensional rectangular-fin heat equation; heat dissipation, fin efficiency and thermal resistance. \\
+Heterogeneous conduction & 5 & Two-dimensional steady heterogeneous conduction; mid-line mean temperature, peak heat flux and a boundary-check temperature. Five inputs are declared. \\
+Multilayer wall (16-layer) & 16 & Series conduction through 16 layers; total thermal resistance, steady heat flux and mid-layer interface temperature. \\
+Multilayer wall (4-layer) & 4 & Series conduction through 4 layers; total thermal resistance, steady heat flux and mid-layer interface temperature. \\
+Multilayer wall (8-layer) & 8 & Series conduction through 8 layers; total thermal resistance, steady heat flux and mid-layer interface temperature. \\
+\multicolumn{3}{@{}l}{\textbf{Aerodynamics}}\\*
+Airfoil stall polar & 4 & Two-dimensional low-speed airfoil polar with stall and a subsonic correction; lift, drag and lift-to-drag ratio. \\
+Transonic airfoil drag & 5 & Airfoil polar with engineering transonic corrections; drag, lift and lift-to-drag ratio. This is a drag-divergence surrogate, not direct transonic CFD. \\
+Rotor blade-element momentum & 6 & Blade-element/momentum hover model; thrust coefficient, power coefficient and figure of merit. \\
+Supersonic intake & 5 & Two-ramp shock relations with a terminal normal shock; total-pressure recovery, downstream Mach number and static-pressure ratio. \\
+Waverider forebody & 4 & Modified-Newtonian hypersonic model; lift-to-drag ratio, lift coefficient and volumetric efficiency. \\
+Finite-wing lifting line & 6 & Prandtl lifting-line model; lift coefficient, induced drag coefficient and Oswald efficiency. \\
+\multicolumn{3}{@{}l}{\textbf{Chemical engineering}}\\*
+Fixed-bed reactor & 6 & Adiabatic reaction and heat-balance equations; exit conversion, peak temperature and exit temperature. The two temperatures coincide in this model. \\
+Laminar flame speed & 5 & Low-order premixed-flame correlations with an optional detailed backend; burning velocity, adiabatic flame temperature and expansion ratio. Backend scope is recorded in the evidence note. \\
+Membrane reactor & 5 & Plug-flow reaction and membrane-removal equations; conversion, product concentration and permeation efficiency. The declared Peclet input is inactive in this version. \\
+Rocket specific impulse & 4 & Low-order thermochemical correlations and ideal-nozzle equations; vacuum specific impulse, characteristic velocity and chamber temperature. \\
+Supersonic nozzle & 5 & One-dimensional isentropic and normal-shock nozzle relations; exit Mach number, exit temperature and total-pressure recovery. \\
+\multicolumn{3}{@{}l}{\textbf{Geomechanics}}\\*
+Dam seepage & 6 & Two-dimensional Darcy seepage with a simplified curtain and drain; total uplift, midpoint uplift pressure and uplift reduction factor. \\
+Groundwater contamination & 6 & Advection--dispersion surrogate with adsorption and separable decay; relative concentration maximum, front position and arrival time. \\
+Oil-reservoir seepage & 9 & Two-dimensional Darcy flow through nine permeability blocks; boundary conductance, maximum pressure gradient and effective permeability. \\
+Soil consolidation & 5 & Terzaghi one-dimensional consolidation series; settlement, average consolidation degree and mid-depth excess pore pressure. \\
+\multicolumn{3}{@{}l}{\textbf{Multidisciplinary design}}\\*
+Aircraft conceptual design & 8 & Conceptual aircraft correlations and the Breguet range equation; range, lift-to-drag ratio and empty-weight fraction. \\
+Pressure vessel & 4 & Thin-wall cylindrical membrane-stress model; strength safety factor, mass per unit length and equivalent stress. \\
+Solar photovoltaic yield & 6 & Solar-resource and module-performance correlations; specific annual yield, capacity factor and mean operating temperature. \\
+Wind-turbine power & 6 & Parameterised wind-power curve and Rayleigh wind distribution; maximum power coefficient, rated power and annual energy production. \\
+\end{longtable}
+\endgroup

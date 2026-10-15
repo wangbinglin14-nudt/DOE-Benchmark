@@ -1,0 +1,43 @@
+\begingroup
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\SITableFont
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{3pt}
+\setlength{\LTpre}{6pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{6.3cm}@{}}
+\caption{\textbf{Supplementary Table S1.} Method pool and actual benchmark settings. For sequential methods, the sampler supplies the initial design; the model column identifies the final predictor. Initial fraction denotes the share of the training budget allocated before sequential selection. Output numbers refer to the response order in Table~S15.}\label{tab:si_hyperparameters}\\
+\toprule
+\textbf{Method} & \textbf{Sampler} & \textbf{Final model} & \textbf{Settings} \\
+\midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textbf{Supplementary Table S1 (continued)}}\\
+\toprule
+\textbf{Method} & \textbf{Sampler} & \textbf{Final model} & \textbf{Settings} \\
+\midrule
+\endhead
+\midrule\multicolumn{4}{r}{Continued on next page}\\
+\endfoot
+\bottomrule
+\endlastfoot
+AK-MCS & Optimised LHS & Gaussian process & Initial fraction $0.5$; $512$ candidates; output 1; acquisition threshold $0$, direction above. \\
+BoTorch qEI & Optimised LHS & SingleTaskGP & Initial fraction $0.6$; $512$ candidates; output 1. \\
+SAASBO & Optimised LHS & SingleTaskGP refit & Initial fraction $0.9$; $64$ candidates; output 1. SAAS acquisition: $4$ warm-up steps, $4$ sampling steps, thinning $1$. \\
+EGO (EI) & Optimised LHS & Gaussian process & Initial fraction $0.6$; $256$ candidates; output 1. \\
+Halton + GP & Halton & Gaussian process & Initial length scale $1.0$; $3$ optimiser restarts. \\
+LHS + GP & LHS & Gaussian process & Initial length scale $1.0$; $3$ optimiser restarts. \\
+Optimised LHS + Gradient boosting & Optimised LHS & Gradient boosting & At most $200$ boosting iterations; learning rate $0.1$; maximum tree depth $6$. \\
+Optimised LHS + GP & Optimised LHS & Gaussian process & Initial length scale $1.0$; $3$ optimiser restarts. \\
+Optimised LHS + GP (RBF kernel) & Optimised LHS & GP (RBF kernel) & Initial length scale $1.0$; $3$ optimiser restarts. \\
+Optimised LHS + kNN & Optimised LHS & $k$-nearest neighbours & $5$ neighbours; inverse-distance weighting. \\
+Optimised LHS + MLP & Optimised LHS & Multilayer perceptron & Two hidden layers of $64$ units each; at most $2{,}000$ iterations; $L_2$ regularisation coefficient $10^{-4}$. \\
+Optimised LHS + Polynomial (deg. 3) & Optimised LHS & Polynomial (ridge) & Degree $3$; ridge coefficient $10^{-3}$. \\
+Optimised LHS + Polynomial (deg. 5) & Optimised LHS & Polynomial chaos & Degree $5$; regularisation coefficient $0.01$. \\
+Optimised LHS + RBF & Optimised LHS & RBF interpolation & Thin-plate-spline kernel; smoothing parameter $0$. \\
+Optimised LHS + Random forest & Optimised LHS & Random forest & $200$ trees; no maximum-depth restriction. \\
+Optimised LHS + SVR & Optimised LHS & Support vector regression & Penalty $C=1.0$; $\epsilon$-insensitive margin $0.05$; kernel coefficient $\gamma=[d\,\mathrm{Var}(X)]^{-1}$. \\
+Max-variance AL & Optimised LHS & Gaussian process & Initial fraction $0.6$; $256$ candidates. \\
+Random + GP & Random & Gaussian process & Initial length scale $1.0$; $3$ optimiser restarts. \\
+Random + Linear & Random & Linear regression & Ordinary least squares; no additional hyperparameters. \\
+Sobol' + GP & Sobol' & Gaussian process & Initial length scale $1.0$; $3$ optimiser restarts. \\
+\end{longtable}
+\endgroup

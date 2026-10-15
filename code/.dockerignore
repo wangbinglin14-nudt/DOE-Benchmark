@@ -1,0 +1,85 @@
+# =====================================================================
+# .dockerignore — keeps the build context small (<10 MB) and makes
+# Dockerfile.benchmark builds reproducible.
+# =====================================================================
+
+# ─── Version-control ───
+.git/
+.gitignore
+.github/
+.gitattributes
+
+# ─── Python build artefacts ───
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+build/
+dist/
+.eggs/
+*.whl
+
+# ─── Virtual envs ───
+.venv/
+venv/
+env/
+
+# ─── Test / coverage / type-check caches ───
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ─── IDE / editor ───
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ─── Documentation builds ───
+site/
+docs/_build/
+
+# ─── Web frontend ───
+web/frontend/node_modules/
+web/frontend/dist/
+web/frontend/.vite/
+web/backend/__pycache__/
+
+# ─── Heavy benchmark outputs (results are written in-container) ───
+benchmark/results/
+*.parquet
+*.feather
+*.npy
+*.npz
+
+# ─── Working notes (private) ───
+progress.txt
+TODO_*.md
+NOTES_*.md
+_audit*.py
+_critique*.py
+_case_dump*.txt
+
+# ─── LaTeX intermediate ───
+*.aux
+*.log
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+
+# ─── Misc ───
+.env
+.env.*
+*.key
+*.pem

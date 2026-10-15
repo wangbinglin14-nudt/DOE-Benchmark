@@ -1,0 +1,21 @@
+# Keep source and documentation files portable between the Windows review
+# workstation and the Linux server.  Server-facing shell wrappers are also
+# checked by scripts/check_server_launch_ready.py before launch.
+* text=auto eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.pkl binary
+*.joblib binary
+*.npy binary
+*.npz binary

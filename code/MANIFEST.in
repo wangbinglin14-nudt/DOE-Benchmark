@@ -1,0 +1,19 @@
+include LICENSE
+include README.md
+include docs/project/CHANGELOG.md
+include docs/project/CONTRIBUTING.md
+include docs/project/CODE_OF_CONDUCT.md
+include CITATION.cff
+include pyproject.toml
+
+recursive-include doe_testbed *.py *.evidence.md
+recursive-include docs *.md
+recursive-include examples *.py
+
+prune tests
+prune scripts
+prune .github
+prune paper
+prune dist
+prune build
+prune site

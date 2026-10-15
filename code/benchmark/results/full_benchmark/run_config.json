@@ -1,0 +1,593 @@
+{
+  "artifact": "doe-benchmark-stage2-run-config",
+  "bo_n_jobs": 4,
+  "bo_timeout_s": 1800.0,
+  "budgets": [
+    5,
+    10,
+    20,
+    50
+  ],
+  "cases": [
+    {
+      "case_id": "tuned_mass_damper_3d",
+      "case_source_path": "doe_testbed/cases/structures/tuned_mass_damper_3d.py",
+      "case_source_sha256": "267c32a7e7678ea3b06eb81bd246806f9aaf171b9467f77f4acff9189d7f02da",
+      "dim": 3,
+      "domain": "structures",
+      "n_output": 3
+    },
+    {
+      "case_id": "airfoil_stall_2d",
+      "case_source_path": "doe_testbed/cases/aerodynamics/airfoil_stall_2d.py",
+      "case_source_sha256": "88035ceaba53cea3b8934d355db880f75e4b8c7f4bd488bbf920ccf3a30db2e5",
+      "dim": 4,
+      "domain": "aerodynamics",
+      "n_output": 3
+    },
+    {
+      "case_id": "fin_heat_sink_4d",
+      "case_source_path": "doe_testbed/cases/heat_transfer/fin_heat_sink_4d.py",
+      "case_source_sha256": "ff6ddb7545511635e91ca335e485235288a13ac6fa163e54346b81227eb13f6a",
+      "dim": 4,
+      "domain": "heat_transfer",
+      "n_output": 3
+    },
+    {
+      "case_id": "multilayer_wall_4d",
+      "case_source_path": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+      "case_source_sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15",
+      "dim": 4,
+      "domain": "heat_transfer",
+      "n_output": 3
+    },
+    {
+      "case_id": "pressure_vessel_4d",
+      "case_source_path": "doe_testbed/cases/multidisciplinary/pressure_vessel_4d.py",
+      "case_source_sha256": "f1c490fd5f6f06b4c6ece4420d2335d781839293879dcc59253c0222cb339049",
+      "dim": 4,
+      "domain": "multidisciplinary",
+      "n_output": 3
+    },
+    {
+      "case_id": "rocket_isp_4d",
+      "case_source_path": "doe_testbed/cases/chemical/rocket_isp_4d.py",
+      "case_source_sha256": "0b510476170bee1781bceb25efc8b59a4e78a8656dcb7cbb7def3f9568c42b27",
+      "dim": 4,
+      "domain": "chemical_process",
+      "n_output": 3
+    },
+    {
+      "case_id": "waverider_4d",
+      "case_source_path": "doe_testbed/cases/aerodynamics/waverider_4d.py",
+      "case_source_sha256": "8705dd8af153bf8e2629e30de2ff5fb6d560df65f3d4c1b09f522b27ce39c3b1",
+      "dim": 4,
+      "domain": "aerodynamics",
+      "n_output": 3
+    },
+    {
+      "case_id": "airfoil_transonic_5d",
+      "case_source_path": "doe_testbed/cases/aerodynamics/airfoil_transonic_5d.py",
+      "case_source_sha256": "cf9078fe670750182b4f7264163ef9278c419efc967030c068886a0153f6f2c4",
+      "dim": 5,
+      "domain": "aerodynamics",
+      "n_output": 3
+    },
+    {
+      "case_id": "cantilever_beam_5d",
+      "case_source_path": "doe_testbed/cases/structures/cantilever_beam_5d.py",
+      "case_source_sha256": "5a80619dd8ce8f76be6169fa1dc698280a05c6e487ffec0af4effb16b7c693e5",
+      "dim": 5,
+      "domain": "structures",
+      "n_output": 3
+    },
+    {
+      "case_id": "casting_solidification_5d",
+      "case_source_path": "doe_testbed/cases/heat_transfer/casting_solidification_5d.py",
+      "case_source_sha256": "5f444d32fa126707c511362d72afcaa18341b580ccf9074529c326cb5e28be2b",
+      "dim": 5,
+      "domain": "heat_transfer",
+      "n_output": 3
+    },
+    {
+      "case_id": "hetero_conduction_2d",
+      "case_source_path": "doe_testbed/cases/heat_transfer/hetero_conduction_2d.py",
+      "case_source_sha256": "07a709b222bf347ac306702c6f785e27732b4d72e3d46f2555036bb81d13f2a9",
+      "dim": 5,
+      "domain": "heat_transfer",
+      "n_output": 3
+    },
+    {
+      "case_id": "laminar_flame_speed_5d",
+      "case_source_path": "doe_testbed/cases/chemical/laminar_flame_speed_5d.py",
+      "case_source_sha256": "80e2d0f6cc26b09b1072aa19956aaf77e9d0be31b8e0fd67de9b047b3c6a773b",
+      "dim": 5,
+      "domain": "chemical_process",
+      "n_output": 3
+    },
+    {
+      "case_id": "membrane_reactor_5d",
+      "case_source_path": "doe_testbed/cases/chemical/membrane_reactor_5d.py",
+      "case_source_sha256": "c783701685596c2bbe1ca2d722e10cf79c8daf68ba47e3cb894cb7cad58a5026",
+      "dim": 5,
+      "domain": "chemical_process",
+      "n_output": 3
+    },
+    {
+      "case_id": "plate_with_hole_5d",
+      "case_source_path": "doe_testbed/cases/structures/plate_with_hole_5d.py",
+      "case_source_sha256": "8c2789cc1c9c6b8b6bcdce8477edaf97ff1fc8defe2589c0e36422567197a077",
+      "dim": 5,
+      "domain": "structures",
+      "n_output": 3
+    },
+    {
+      "case_id": "soil_consolidation_5d",
+      "case_source_path": "doe_testbed/cases/geomechanics/soil_consolidation_5d.py",
+      "case_source_sha256": "c765fdafd89325620e62980758b27181e14fe6c3eedd75f5540bb3ba8afeee9e",
+      "dim": 5,
+      "domain": "geomechanics",
+      "n_output": 3
+    },
+    {
+      "case_id": "supersonic_intake_5d",
+      "case_source_path": "doe_testbed/cases/aerodynamics/supersonic_intake_5d.py",
+      "case_source_sha256": "9b2b1315cfa88aee53dd3cb27cb003e9cf14574e50d8df895611ceadc824312b",
+      "dim": 5,
+      "domain": "aerodynamics",
+      "n_output": 3
+    },
+    {
+      "case_id": "supersonic_nozzle_5d",
+      "case_source_path": "doe_testbed/cases/chemical/supersonic_nozzle_5d.py",
+      "case_source_sha256": "335a9a5f692fd2e5cd87567059d48d646c8a4113327fe7ac1e86b21785d7a701",
+      "dim": 5,
+      "domain": "chemical_process",
+      "n_output": 3
+    },
+    {
+      "case_id": "thin_plate_buckling_5d",
+      "case_source_path": "doe_testbed/cases/structures/thin_plate_buckling_5d.py",
+      "case_source_sha256": "8ab577de3729b2f17a1f7e64e53ec1622386eaff9bddc12407f02bbb948d6f6f",
+      "dim": 5,
+      "domain": "structures",
+      "n_output": 3
+    },
+    {
+      "case_id": "variable_beam_5d",
+      "case_source_path": "doe_testbed/cases/structures/variable_beam_nd.py",
+      "case_source_sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b",
+      "dim": 5,
+      "domain": "structures",
+      "n_output": 3
+    },
+    {
+      "case_id": "dam_seepage_6d",
+      "case_source_path": "doe_testbed/cases/geomechanics/dam_seepage_6d.py",
+      "case_source_sha256": "45a9bb98d67c38734aff662d7f60d3faad657ba9fa3abafcafc1756b839f316b",
+      "dim": 6,
+      "domain": "geomechanics",
+      "n_output": 3
+    },
+    {
+      "case_id": "fixed_bed_reactor_6d",
+      "case_source_path": "doe_testbed/cases/chemical/fixed_bed_reactor_6d.py",
+      "case_source_sha256": "514f5c5c0cc569a98381ffc468e50be8d69c578c7f5a8515d75dc3a9b6e57f4f",
+      "dim": 6,
+      "domain": "chemical_process",
+      "n_output": 3
+    },
+    {
+      "case_id": "groundwater_contamination_6d",
+      "case_source_path": "doe_testbed/cases/geomechanics/groundwater_contamination_6d.py",
+      "case_source_sha256": "69c7fdd4d231c3f81fd2bd4375c9cbd2dafd8c6bd77de6ae0de301bbf45c4fde",
+      "dim": 6,
+      "domain": "geomechanics",
+      "n_output": 3
+    },
+    {
+      "case_id": "rotor_bemt_6d",
+      "case_source_path": "doe_testbed/cases/aerodynamics/rotor_bemt_6d.py",
+      "case_source_sha256": "2ec3c801ddc7fe336f953cf59f9dde8535302f729fe97a375fc0cde7fa847e58",
+      "dim": 6,
+      "domain": "aerodynamics",
+      "n_output": 3
+    },
+    {
+      "case_id": "solar_pv_yield_6d",
+      "case_source_path": "doe_testbed/cases/multidisciplinary/solar_pv_yield_6d.py",
+      "case_source_sha256": "de4f082afef77d9cb1138e9c2c66d531b22a3058e68d5e1adf0fff574bdf52d1",
+      "dim": 6,
+      "domain": "multidisciplinary",
+      "n_output": 3
+    },
+    {
+      "case_id": "wind_turbine_power_6d",
+      "case_source_path": "doe_testbed/cases/multidisciplinary/wind_turbine_power_6d.py",
+      "case_source_sha256": "a57d91d1283228e39cb46c9484b1384a4d7be1c61fce73faf7658c40984b38ed",
+      "dim": 6,
+      "domain": "multidisciplinary",
+      "n_output": 3
+    },
+    {
+      "case_id": "wing_vlm_6d",
+      "case_source_path": "doe_testbed/cases/aerodynamics/wing_vlm_6d.py",
+      "case_source_sha256": "59851eb49d46baacbf2c1eea7c6d3699af7710cd99f0fbf9504fd9cff8108fba",
+      "dim": 6,
+      "domain": "aerodynamics",
+      "n_output": 3
+    },
+    {
+      "case_id": "battery_thermal_7d",
+      "case_source_path": "doe_testbed/cases/heat_transfer/battery_thermal_7d.py",
+      "case_source_sha256": "29d437699939fa7e44f834f5fefb1d2e88e4638f8c3ad23209210a7380f99255",
+      "dim": 7,
+      "domain": "heat_transfer",
+      "n_output": 3
+    },
+    {
+      "case_id": "aircraft_conceptual_8d",
+      "case_source_path": "doe_testbed/cases/multidisciplinary/aircraft_conceptual_8d.py",
+      "case_source_sha256": "e4c5f735d5c92aa6b21ffe6a991dd0414c771fe4bbd31d4d29a5cf3c397cbacb",
+      "dim": 8,
+      "domain": "multidisciplinary",
+      "n_output": 3
+    },
+    {
+      "case_id": "multilayer_wall_8d",
+      "case_source_path": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+      "case_source_sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15",
+      "dim": 8,
+      "domain": "heat_transfer",
+      "n_output": 3
+    },
+    {
+      "case_id": "oil_reservoir_9d",
+      "case_source_path": "doe_testbed/cases/geomechanics/oil_reservoir_9d.py",
+      "case_source_sha256": "ceb213b31c17f4cf4cdf9ed623772ae9a72d3d7fb6c48c86921fc0129ee210fd",
+      "dim": 9,
+      "domain": "geomechanics",
+      "n_output": 3
+    },
+    {
+      "case_id": "ten_bar_truss_10d",
+      "case_source_path": "doe_testbed/cases/structures/ten_bar_truss_10d.py",
+      "case_source_sha256": "2fe48f989efa7dab9d1bebdccf189031702b5a02f7f82c92625e46a8115a7e88",
+      "dim": 10,
+      "domain": "structures",
+      "n_output": 3
+    },
+    {
+      "case_id": "variable_beam_10d",
+      "case_source_path": "doe_testbed/cases/structures/variable_beam_nd.py",
+      "case_source_sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b",
+      "dim": 10,
+      "domain": "structures",
+      "n_output": 3
+    },
+    {
+      "case_id": "multilayer_wall_16d",
+      "case_source_path": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+      "case_source_sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15",
+      "dim": 16,
+      "domain": "heat_transfer",
+      "n_output": 3
+    },
+    {
+      "case_id": "variable_beam_20d",
+      "case_source_path": "doe_testbed/cases/structures/variable_beam_nd.py",
+      "case_source_sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b",
+      "dim": 20,
+      "domain": "structures",
+      "n_output": 3
+    }
+  ],
+  "created_utc": "2026-06-17T19:07:38-04:00",
+  "environment": {
+    "cwd": "/home/user/Desktop/DOE",
+    "machine": "x86_64",
+    "node": "ubuntu",
+    "packages": {
+      "aerosandbox": {
+        "status": "installed",
+        "version": "4.2.9"
+      },
+      "botorch": {
+        "status": "installed",
+        "version": "0.17.2"
+      },
+      "gpytorch": {
+        "status": "installed",
+        "version": "1.15.2"
+      },
+      "neuralfoil": {
+        "status": "installed",
+        "version": "0.3.2"
+      },
+      "numpy": {
+        "status": "installed",
+        "version": "2.4.4"
+      },
+      "pandas": {
+        "status": "installed",
+        "version": "3.0.2"
+      },
+      "psutil": {
+        "status": "installed",
+        "version": "7.2.2"
+      },
+      "scikit-learn": {
+        "status": "installed",
+        "version": "1.8.0"
+      },
+      "scipy": {
+        "status": "installed",
+        "version": "1.17.1"
+      },
+      "torch": {
+        "status": "installed",
+        "version": "2.11.0+cpu"
+      }
+    },
+    "platform": "Linux-5.15.0-140-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "python_executable": "/home/user/.conda/envs/wbl/bin/python",
+    "python_version": "3.11.15",
+    "schema_version": 1,
+    "torch_reproducibility": {
+      "applied": false,
+      "errors": [],
+      "policy": {
+        "allow_tf32": false,
+        "cublas_workspace_config": ":4096:8",
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "deterministic_algorithms": true,
+        "deterministic_warn_only": true,
+        "float32_matmul_precision": "highest"
+      },
+      "schema_version": 1,
+      "state": {
+        "cublas_workspace_config": ":4096:8",
+        "cuda_available": false,
+        "cuda_matmul_allow_tf32": false,
+        "cudnn_allow_tf32": false,
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "deterministic_algorithms": true,
+        "deterministic_warn_only": true,
+        "float32_matmul_precision": "highest",
+        "torch_version": "2.11.0+cu130"
+      },
+      "status": "ok"
+    }
+  },
+  "heartbeat_s": 60.0,
+  "max_wall_clock_s": null,
+  "mem_cap_gb": 56.0,
+  "methods": [
+    {
+      "memory_class": "light",
+      "method": "random+gp",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "5a94c00faaf695f4a810a021694f6796b608fd7a1d0bdca056ccba9e77f22da0",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs+gp",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "1746a3415b678a980f60f5d6ff57a9df4936aa314b3508a0e89b4c7a61e17446",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "sobol+gp",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "81673a8f4f685798a98b89b0ee78f1be77e0f46cb5e8ad1fc34b5d4a16bc19cf",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+gp",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "b8281b4029f6971bdd5b14f841f9a698c4d25825a82f99661b82604241186bf2",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "halton+gp",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "ebf3333e527251e3ce3073bf8178a4c794fa660e5199714ef01a129e8611ca8f",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+rbf",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "61a0ff301e84056759da0049827dcb44c1f32587dfcdaeab2bb9dbd65ce45cf2",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+rf",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "2d3d4d99bacc034b0a540cf5792a670dcaa6ca9f4151e300c73aedc203ce3e6a",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+mlp",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "f395eb01b9db33f949d4d086bb7ce50699ba7b27a11594d40890843824879144",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+poly3",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "832a0ffb08df2e39f34d4004352fb8ecc52e3275b0fd754cebe5d5c15aa1d4cd",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "random+linear",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "ac71fa2ac9a4cab9e8c4769b28550104dd749272e17fc5a222efe61aa2b1104c",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+gp_rbf",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "fe334f1722f62123739c812ffe7fd76b80ca1df9c38ec2254b204a475d755f6a",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+svr",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "8dae83de7d4c38a423e877336b60b1a9f7aad343440f0167ad59915b1a02bfa1",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+knn",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "c7e0cc4f8e0638689fd3502062b3f69e7b48a73e6b12804039e6f2d5c069f207",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+gb",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "28fb2c09cc0247e45c4c8b7b69a2a761b28df0175b5eff6645222ce64cadd273",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "light",
+      "method": "lhs_opt+poly5",
+      "method_family": "static_design",
+      "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+      "method_source_sha256": "024f8a0d80bc488738c37ecf7e2e6ca3164509a86177189825cc35a0e5c9b0e7",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "medium",
+      "method": "ego_ei",
+      "method_family": "sequential_ego",
+      "method_source_path": "benchmark/sequential.py",
+      "method_source_sha256": "5a65adfdf74f7e9b775d33d186c3734c41f600d66ec92b469155123d2c95bf76",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "medium",
+      "method": "max_variance",
+      "method_family": "sequential_active_learning",
+      "method_source_path": "benchmark/sequential.py",
+      "method_source_sha256": "192e92d0b7e3dd3163845eef06287ba3fb038240cf16e57816bbb2a4d7df0bee",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "medium",
+      "method": "akmcs",
+      "method_family": "sequential_reliability",
+      "method_source_path": "benchmark/sequential.py",
+      "method_source_sha256": "007c32c651272e998d86808943cb3ae204934a84d02136912de1751ab5edd6e4",
+      "parallel_backend": "loky"
+    },
+    {
+      "memory_class": "medium",
+      "method": "botorch_qei",
+      "method_family": "sequential_botorch_ei",
+      "method_source_path": "benchmark/bo_methods.py",
+      "method_source_sha256": "6899ea2001e51213b7fcfc90f8a2dba64e450540f05bf8ec824f3ca6cc0861ec",
+      "parallel_backend": "threading"
+    },
+    {
+      "memory_class": "heavy",
+      "method": "botorch_saasbo",
+      "method_family": "sequential_botorch_saas",
+      "method_source_path": "benchmark/bo_methods.py",
+      "method_source_sha256": "dfdc09324eada8f63ac7d24e02085ca670aa020f508497e60a7111ce8e447731",
+      "parallel_backend": "loky"
+    }
+  ],
+  "n_jobs": 16,
+  "n_repeats": 30,
+  "n_test": 1000,
+  "output_dir": "benchmark/results/full_benchmark",
+  "ref_timeout_s": 600.0,
+  "result_schema_version": 2,
+  "seed_start": 1000,
+  "seed_strategy": "case_repeat",
+  "skip_existing": true,
+  "temp_storage": {
+    "env": {
+      "JOBSCRATCH": null,
+      "LOCAL_SCRATCH": null,
+      "SCRATCH": null,
+      "SLURM_TMPDIR": null,
+      "TEMP": null,
+      "TEMPDIR": null,
+      "TMP": null,
+      "TMPDIR": null
+    },
+    "exists": true,
+    "free_gb": 78.585995,
+    "resolved_path": "/tmp",
+    "schema_version": 1,
+    "writable": true
+  },
+  "test_seed": 0,
+  "thread_env": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "timeout_s": 600.0,
+  "torch_reproducibility": {
+    "applied": true,
+    "errors": [],
+    "policy": {
+      "allow_tf32": false,
+      "cublas_workspace_config": ":4096:8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "deterministic_warn_only": true,
+      "float32_matmul_precision": "highest"
+    },
+    "schema_version": 1,
+    "state": {
+      "cublas_workspace_config": ":4096:8",
+      "cuda_available": false,
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "deterministic_warn_only": true,
+      "float32_matmul_precision": "highest",
+      "torch_version": "2.11.0+cu130"
+    },
+    "status": "ok"
+  },
+  "total_cells": 81600,
+  "watchdog_s": null
+}

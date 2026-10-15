@@ -1,0 +1,1742 @@
+{
+  "generated_at": "2026-08-31T13:39:33.479904+00:00",
+  "amended_at": "2026-09-03T08:25:49.706138+00:00",
+  "amendments": [
+    {
+      "scope": "python_environment",
+      "reason": "A post-run manifest preview refreshed the adjacent pip-freeze file. The replacement is retained as a packaging-environment record and is not represented as a full formal run-host lock; the formal startup environment remains the environment snapshot in run_config.json."
+    }
+  ],
+  "manifest_script": "scripts/generate_run_manifest.py",
+  "manifest_command": "'C:\\Miniconda3\\python.exe' 'scripts\\generate_run_manifest.py' --results-dir benchmark/results/full_benchmark --pool nature --budgets 5 10 20 50 --n-repeats 30 --n-test 1000 --seed-strategy case_repeat --seed-start 1000 --command-file logs/pipeline_command_history.txt --require-complete-archive",
+  "git": {
+    "commit": "1b691bf5c8884c1ce576d431c6059bdf84dd17ad",
+    "branch": "codex/provenance-close",
+    "dirty": true,
+    "status_porcelain": [
+      " M paper/numbers.json",
+      " M paper/numbers.tex"
+    ],
+    "source_dirty": false,
+    "source_dirty_entries": [],
+    "derived_dirty_entries": [
+      " M paper/numbers.json",
+      " M paper/numbers.tex"
+    ]
+  },
+  "machine": {
+    "node": "ubuntu",
+    "platform": "Linux-5.15.0-140-generic-x86_64-with-glibc2.35",
+    "system": "Linux",
+    "release": "5.15.0-140-generic",
+    "machine": "x86_64",
+    "python_version": "3.11.15",
+    "python_executable": "/home/user/.conda/envs/wbl/bin/python",
+    "cpu_count": 8,
+    "ram_gb": 15.749,
+    "effective_ram_gb": 15.749,
+    "effective_ram_source": "physical RAM",
+    "cgroup_memory": {
+      "schema_version": 1,
+      "detected": false,
+      "source": null,
+      "path": null,
+      "raw": null,
+      "limit_gb": null,
+      "unlimited": null
+    },
+    "resource_limits": {
+      "schema_version": 1,
+      "status": "unavailable",
+      "error": "ModuleNotFoundError: No module named 'resource'",
+      "limits": {}
+    },
+    "thread_env": {
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null,
+      "BLIS_NUM_THREADS": null
+    },
+    "temp_storage": {
+      "env": {
+        "JOBSCRATCH": null,
+        "LOCAL_SCRATCH": null,
+        "SCRATCH": null,
+        "SLURM_TMPDIR": null,
+        "TEMP": null,
+        "TEMPDIR": null,
+        "TMP": null,
+        "TMPDIR": null
+      },
+      "exists": true,
+      "free_gb": 78.585995,
+      "resolved_path": "/tmp",
+      "schema_version": 1,
+      "writable": true
+    },
+    "capture_scope": "formal run identity from archived run_config/log; hardware telemetry unavailable in returned archive"
+  },
+  "torch_reproducibility": {
+    "schema_version": 1,
+    "policy": {
+      "deterministic_algorithms": true,
+      "deterministic_warn_only": true,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "allow_tf32": false,
+      "float32_matmul_precision": "highest",
+      "cublas_workspace_config": ":4096:8"
+    },
+    "applied": true,
+    "status": "ok",
+    "errors": [],
+    "state": {
+      "torch_version": "2.11.0+cpu",
+      "cuda_available": false,
+      "deterministic_algorithms": true,
+      "deterministic_warn_only": true,
+      "cublas_workspace_config": ":4096:8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "cudnn_allow_tf32": false,
+      "cuda_matmul_allow_tf32": false,
+      "float32_matmul_precision": "highest"
+    }
+  },
+  "scheduler": {
+    "schema_version": 1,
+    "name": "none",
+    "detected": false,
+    "env": {
+      "SLURM_JOB_ID": null,
+      "SLURM_JOB_NAME": null,
+      "SLURM_JOB_PARTITION": null,
+      "SLURM_JOB_NODELIST": null,
+      "SLURM_NTASKS": null,
+      "SLURM_CPUS_PER_TASK": null,
+      "SLURM_MEM_PER_NODE": null,
+      "SLURM_MEM_PER_CPU": null,
+      "SLURM_GPUS": null,
+      "SLURM_SUBMIT_DIR": null,
+      "PBS_JOBID": null,
+      "PBS_JOBNAME": null,
+      "PBS_QUEUE": null,
+      "PBS_NODEFILE": null,
+      "LSB_JOBID": null,
+      "LSB_QUEUE": null,
+      "LSB_HOSTS": null,
+      "SGE_JOB_ID": null,
+      "JOB_ID": null,
+      "NSLOTS": null
+    }
+  },
+  "accelerator": {
+    "schema_version": 1,
+    "cuda_visible_devices": null,
+    "nvidia_smi": {
+      "status": "not_found",
+      "command": "nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv,noheader"
+    },
+    "torch_cuda": {
+      "status": "ok",
+      "torch_version": "2.11.0+cpu",
+      "cuda_available": false,
+      "torch_cuda_version": null,
+      "device_count": 0,
+      "devices": []
+    }
+  },
+  "container": {
+    "schema_version": 1,
+    "detected": false,
+    "env": {
+      "APPTAINER_CONTAINER": null,
+      "SINGULARITY_CONTAINER": null,
+      "CONTAINER_IMAGE": null,
+      "DOCKER_IMAGE": null,
+      "KUBERNETES_SERVICE_HOST": null
+    },
+    "marker_files": {
+      "/.dockerenv": false,
+      "/run/.containerenv": false
+    }
+  },
+  "python_environment": {
+    "schema_version": 1,
+    "status": "ok",
+    "command": "'C:\\Miniconda3\\python.exe' -m pip freeze --all",
+    "returncode": 0,
+    "package_count": 186,
+    "pip_freeze_sha256": "859bc9204169cd90f70ebe46fd757d4ad71461f47e9217abbdc4ca6384e97623",
+    "pip_freeze_path": "python_environment_pip_freeze.txt",
+    "capture_scope": "post-run packaging environment; core scientific package versions cross-checked against the formal run_config.json startup snapshot; not a full formal run-host lock"
+  },
+  "run_window": {
+    "source": "formal_sweep_log_and_preregistration_decisions",
+    "started_at_utc": "2026-06-15T13:09:42.291996+00:00",
+    "finished_at_utc": "2026-06-20T00:10:53.065781+00:00",
+    "n_artifacts": 28,
+    "scope": "batch that produced the archived artefacts; this is not necessarily the span of results.csv, which see dataset_window"
+  },
+  "dataset_window": {
+    "status": "ok",
+    "source": "results.csv cell_started_utc and cell_finished_utc",
+    "batch_gap_hours": 6.0,
+    "n_rows": 81600,
+    "n_cases": 34,
+    "started_at_utc": "2026-06-11T16:39:05+00:00",
+    "finished_at_utc": "2026-06-17T23:36:50+00:00",
+    "n_batches": 3,
+    "batches": [
+      {
+        "started_at_utc": "2026-06-11T16:39:05+00:00",
+        "finished_at_utc": "2026-06-15T04:34:18+00:00",
+        "n_rows": 67080,
+        "n_cases": 28
+      },
+      {
+        "started_at_utc": "2026-06-15T13:27:28+00:00",
+        "finished_at_utc": "2026-06-15T19:31:14+00:00",
+        "n_rows": 2514,
+        "n_cases": 2
+      },
+      {
+        "started_at_utc": "2026-06-16T01:33:48+00:00",
+        "finished_at_utc": "2026-06-17T23:36:50+00:00",
+        "n_rows": 12006,
+        "n_cases": 6
+      }
+    ]
+  },
+  "packages": {
+    "doe-testbed": "0.4.0.dev0",
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.9",
+    "torch": "2.11.0+cpu",
+    "botorch": "0.17.2",
+    "gpytorch": "1.15.2"
+  },
+  "experiment": {
+    "pool": "nature",
+    "n_methods_declared": 20,
+    "methods_declared": [
+      "random+gp",
+      "lhs+gp",
+      "sobol+gp",
+      "lhs_opt+gp",
+      "halton+gp",
+      "lhs_opt+rbf",
+      "lhs_opt+rf",
+      "lhs_opt+mlp",
+      "lhs_opt+poly3",
+      "random+linear",
+      "lhs_opt+gp_rbf",
+      "lhs_opt+svr",
+      "lhs_opt+knn",
+      "lhs_opt+gb",
+      "lhs_opt+poly5",
+      "ego_ei",
+      "max_variance",
+      "akmcs",
+      "botorch_qei",
+      "botorch_saasbo"
+    ],
+    "budgets": [
+      5,
+      10,
+      20,
+      50
+    ],
+    "n_repeats": 30,
+    "n_test": 1000,
+    "seed_strategy": "case_repeat",
+    "seed_start": 1000,
+    "seed_derivation": "blake2b(f'{seed_start}|{case_id}|{repeat}', digest_size=4) & 0x7fffffff",
+    "cases_requested": [
+      "ALL"
+    ],
+    "case_resolution_error": null,
+    "n_cases_declared": 34,
+    "case_ids_declared": [
+      "aircraft_conceptual_8d",
+      "airfoil_stall_2d",
+      "airfoil_transonic_5d",
+      "battery_thermal_7d",
+      "cantilever_beam_5d",
+      "casting_solidification_5d",
+      "dam_seepage_6d",
+      "fin_heat_sink_4d",
+      "fixed_bed_reactor_6d",
+      "groundwater_contamination_6d",
+      "hetero_conduction_2d",
+      "laminar_flame_speed_5d",
+      "membrane_reactor_5d",
+      "multilayer_wall_16d",
+      "multilayer_wall_4d",
+      "multilayer_wall_8d",
+      "oil_reservoir_9d",
+      "plate_with_hole_5d",
+      "pressure_vessel_4d",
+      "rocket_isp_4d",
+      "rotor_bemt_6d",
+      "soil_consolidation_5d",
+      "solar_pv_yield_6d",
+      "supersonic_intake_5d",
+      "supersonic_nozzle_5d",
+      "ten_bar_truss_10d",
+      "thin_plate_buckling_5d",
+      "tuned_mass_damper_3d",
+      "variable_beam_10d",
+      "variable_beam_20d",
+      "variable_beam_5d",
+      "waverider_4d",
+      "wind_turbine_power_6d",
+      "wing_vlm_6d"
+    ],
+    "command_files_requested": [
+      "logs/pipeline_command_history.txt"
+    ],
+    "command_files_missing": [],
+    "command_file_parse_errors": [],
+    "command_entries": [
+      {
+        "label": "pipeline_invocation",
+        "command": "/home/user/.conda/envs/wbl/bin/python /home/user/Desktop/DOE/scripts/run_pipeline.py --profile full --confirm-full-run --pool nature --budgets 5 10 20 50 --n-repeats 30 --n-test 1000 --seed-strategy case_repeat --seed-start 1000 --sweep-dir /home/user/Desktop/DOE/benchmark/results/full_benchmark"
+      },
+      {
+        "label": "smoke",
+        "command": "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\benchmark\\scripts\\run_full_benchmark.py' --cases cantilever_beam_5d --pool default --budgets 5 10 --n-repeats 2 --n-test 100 --seed-strategy case_repeat --seed-start 1000 --n-jobs 1 --output-dir 'C:\\wbl\\DOE\\benchmark\\results\\_smoke_gate' --quiet"
+      },
+      {
+        "label": "validate",
+        "command": "'C:\\Miniconda3\\python.exe' 'C:\\wbl\\DOE\\scripts\\validate_run_config.py' --pool default --budgets 5 10 --n-repeats 2 --n-test 100 --seed-strategy case_repeat --seed-start 1000 --cases cantilever_beam_5d --allow-deviation --output-dir 'C:\\wbl\\DOE\\benchmark\\results\\_smoke'"
+      },
+      {
+        "label": "case_readiness",
+        "command": "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\scripts\\audit_case_experiment_readiness.py' --output 'C:\\wbl\\DOE\\docs\\case_experiment_readiness.csv' --fail-on-warning"
+      },
+      {
+        "label": "dependency_preflight",
+        "command": "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\scripts\\check_optional_dependencies.py' --pool default"
+      },
+      {
+        "label": "sweep",
+        "command": "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\benchmark\\scripts\\run_full_benchmark.py' --cases cantilever_beam_5d --pool default --budgets 5 10 --n-repeats 2 --n-test 100 --seed-strategy case_repeat --seed-start 1000 --n-jobs 1 --bo-n-jobs 1 --mem-cap-gb 4.0 --timeout-per-cell 600.0 --bo-timeout-per-cell 1800.0 --ref-timeout-s 600.0 --heartbeat-s 60.0 --output-dir 'C:\\wbl\\DOE\\benchmark\\results\\_smoke'"
+      },
+      {
+        "label": "sweep_audit",
+        "command": "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\scripts\\audit_sweep_integrity.py' 'C:\\wbl\\DOE\\benchmark\\results\\_smoke\\results.csv' --expected-cases cantilever_beam_5d --expected-methods random+gp,lhs+gp,sobol+gp,lhs_opt+gp,halton+gp,lhs_opt+rbf,lhs_opt+rf,lhs_opt+mlp,lhs_opt+poly3,random+linear --expected-method-families random+gp:static_design,lhs+gp:static_design,sobol+gp:static_design,lhs_opt+gp:static_design,halton+gp:static_design,lhs_opt+rbf:static_design,lhs_opt+rf:static_design,lhs_opt+mlp:static_design,lhs_opt+poly3:static_design,random+linear:static_design --expected-budgets 5 10 --expected-repeats 2 --expected-n-test 100 --expected-test-seed 0 --seed-strategy case_repeat --seed-start 1000 --min-repeats-per-cell 2 --min-ok-fraction 0.95 --max-timeout-fraction 0.05 --run-config-json 'C:\\wbl\\DOE\\benchmark\\results\\_smoke\\run_config.json' --require-run-config --output 'C:\\wbl\\DOE\\benchmark\\results\\_smoke\\sweep_integrity_report.md'"
+      },
+      {
+        "label": "report",
+        "command": "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\benchmark\\scripts\\generate_report.py' 'C:\\wbl\\DOE\\benchmark\\results\\_smoke'"
+      }
+    ],
+    "commands": [
+      "/home/user/.conda/envs/wbl/bin/python /home/user/Desktop/DOE/scripts/run_pipeline.py --profile full --confirm-full-run --pool nature --budgets 5 10 20 50 --n-repeats 30 --n-test 1000 --seed-strategy case_repeat --seed-start 1000 --sweep-dir /home/user/Desktop/DOE/benchmark/results/full_benchmark",
+      "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\benchmark\\scripts\\run_full_benchmark.py' --cases cantilever_beam_5d --pool default --budgets 5 10 --n-repeats 2 --n-test 100 --seed-strategy case_repeat --seed-start 1000 --n-jobs 1 --output-dir 'C:\\wbl\\DOE\\benchmark\\results\\_smoke_gate' --quiet",
+      "'C:\\Miniconda3\\python.exe' 'C:\\wbl\\DOE\\scripts\\validate_run_config.py' --pool default --budgets 5 10 --n-repeats 2 --n-test 100 --seed-strategy case_repeat --seed-start 1000 --cases cantilever_beam_5d --allow-deviation --output-dir 'C:\\wbl\\DOE\\benchmark\\results\\_smoke'",
+      "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\scripts\\audit_case_experiment_readiness.py' --output 'C:\\wbl\\DOE\\docs\\case_experiment_readiness.csv' --fail-on-warning",
+      "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\scripts\\check_optional_dependencies.py' --pool default",
+      "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\benchmark\\scripts\\run_full_benchmark.py' --cases cantilever_beam_5d --pool default --budgets 5 10 --n-repeats 2 --n-test 100 --seed-strategy case_repeat --seed-start 1000 --n-jobs 1 --bo-n-jobs 1 --mem-cap-gb 4.0 --timeout-per-cell 600.0 --bo-timeout-per-cell 1800.0 --ref-timeout-s 600.0 --heartbeat-s 60.0 --output-dir 'C:\\wbl\\DOE\\benchmark\\results\\_smoke'",
+      "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\scripts\\audit_sweep_integrity.py' 'C:\\wbl\\DOE\\benchmark\\results\\_smoke\\results.csv' --expected-cases cantilever_beam_5d --expected-methods random+gp,lhs+gp,sobol+gp,lhs_opt+gp,halton+gp,lhs_opt+rbf,lhs_opt+rf,lhs_opt+mlp,lhs_opt+poly3,random+linear --expected-method-families random+gp:static_design,lhs+gp:static_design,sobol+gp:static_design,lhs_opt+gp:static_design,halton+gp:static_design,lhs_opt+rbf:static_design,lhs_opt+rf:static_design,lhs_opt+mlp:static_design,lhs_opt+poly3:static_design,random+linear:static_design --expected-budgets 5 10 --expected-repeats 2 --expected-n-test 100 --expected-test-seed 0 --seed-strategy case_repeat --seed-start 1000 --min-repeats-per-cell 2 --min-ok-fraction 0.95 --max-timeout-fraction 0.05 --run-config-json 'C:\\wbl\\DOE\\benchmark\\results\\_smoke\\run_config.json' --require-run-config --output 'C:\\wbl\\DOE\\benchmark\\results\\_smoke\\sweep_integrity_report.md'",
+      "'C:\\Miniconda3\\python.exe' -u 'C:\\wbl\\DOE\\benchmark\\scripts\\generate_report.py' 'C:\\wbl\\DOE\\benchmark\\results\\_smoke'"
+    ]
+  },
+  "case_sources": {
+    "schema_version": 1,
+    "status": "ok",
+    "cases": [
+      {
+        "case_id": "aircraft_conceptual_8d",
+        "status": "ok",
+        "class_name": "AircraftConceptual8D",
+        "module": "doe_testbed.cases.multidisciplinary.aircraft_conceptual_8d",
+        "source_path": "doe_testbed/cases/multidisciplinary/aircraft_conceptual_8d.py",
+        "sha256": "e4c5f735d5c92aa6b21ffe6a991dd0414c771fe4bbd31d4d29a5cf3c397cbacb"
+      },
+      {
+        "case_id": "airfoil_stall_2d",
+        "status": "ok",
+        "class_name": "AirfoilStall2D",
+        "module": "doe_testbed.cases.aerodynamics.airfoil_stall_2d",
+        "source_path": "doe_testbed/cases/aerodynamics/airfoil_stall_2d.py",
+        "sha256": "88035ceaba53cea3b8934d355db880f75e4b8c7f4bd488bbf920ccf3a30db2e5"
+      },
+      {
+        "case_id": "airfoil_transonic_5d",
+        "status": "ok",
+        "class_name": "AirfoilTransonic5D",
+        "module": "doe_testbed.cases.aerodynamics.airfoil_transonic_5d",
+        "source_path": "doe_testbed/cases/aerodynamics/airfoil_transonic_5d.py",
+        "sha256": "cf9078fe670750182b4f7264163ef9278c419efc967030c068886a0153f6f2c4"
+      },
+      {
+        "case_id": "battery_thermal_7d",
+        "status": "ok",
+        "class_name": "BatteryThermal7D",
+        "module": "doe_testbed.cases.heat_transfer.battery_thermal_7d",
+        "source_path": "doe_testbed/cases/heat_transfer/battery_thermal_7d.py",
+        "sha256": "29d437699939fa7e44f834f5fefb1d2e88e4638f8c3ad23209210a7380f99255"
+      },
+      {
+        "case_id": "cantilever_beam_5d",
+        "status": "ok",
+        "class_name": "CantileverBeam5D",
+        "module": "doe_testbed.cases.structures.cantilever_beam_5d",
+        "source_path": "doe_testbed/cases/structures/cantilever_beam_5d.py",
+        "sha256": "5a80619dd8ce8f76be6169fa1dc698280a05c6e487ffec0af4effb16b7c693e5"
+      },
+      {
+        "case_id": "casting_solidification_5d",
+        "status": "ok",
+        "class_name": "CastingSolidification5D",
+        "module": "doe_testbed.cases.heat_transfer.casting_solidification_5d",
+        "source_path": "doe_testbed/cases/heat_transfer/casting_solidification_5d.py",
+        "sha256": "5f444d32fa126707c511362d72afcaa18341b580ccf9074529c326cb5e28be2b"
+      },
+      {
+        "case_id": "dam_seepage_6d",
+        "status": "ok",
+        "class_name": "DamSeepage6D",
+        "module": "doe_testbed.cases.geomechanics.dam_seepage_6d",
+        "source_path": "doe_testbed/cases/geomechanics/dam_seepage_6d.py",
+        "sha256": "45a9bb98d67c38734aff662d7f60d3faad657ba9fa3abafcafc1756b839f316b"
+      },
+      {
+        "case_id": "fin_heat_sink_4d",
+        "status": "ok",
+        "class_name": "FinHeatSink4D",
+        "module": "doe_testbed.cases.heat_transfer.fin_heat_sink_4d",
+        "source_path": "doe_testbed/cases/heat_transfer/fin_heat_sink_4d.py",
+        "sha256": "ff6ddb7545511635e91ca335e485235288a13ac6fa163e54346b81227eb13f6a"
+      },
+      {
+        "case_id": "fixed_bed_reactor_6d",
+        "status": "ok",
+        "class_name": "FixedBedReactor6D",
+        "module": "doe_testbed.cases.chemical.fixed_bed_reactor_6d",
+        "source_path": "doe_testbed/cases/chemical/fixed_bed_reactor_6d.py",
+        "sha256": "514f5c5c0cc569a98381ffc468e50be8d69c578c7f5a8515d75dc3a9b6e57f4f"
+      },
+      {
+        "case_id": "groundwater_contamination_6d",
+        "status": "ok",
+        "class_name": "GroundwaterContamination6D",
+        "module": "doe_testbed.cases.geomechanics.groundwater_contamination_6d",
+        "source_path": "doe_testbed/cases/geomechanics/groundwater_contamination_6d.py",
+        "sha256": "69c7fdd4d231c3f81fd2bd4375c9cbd2dafd8c6bd77de6ae0de301bbf45c4fde"
+      },
+      {
+        "case_id": "hetero_conduction_2d",
+        "status": "ok",
+        "class_name": "HeterogeneousConduction5D",
+        "module": "doe_testbed.cases.heat_transfer.hetero_conduction_2d",
+        "source_path": "doe_testbed/cases/heat_transfer/hetero_conduction_2d.py",
+        "sha256": "07a709b222bf347ac306702c6f785e27732b4d72e3d46f2555036bb81d13f2a9"
+      },
+      {
+        "case_id": "laminar_flame_speed_5d",
+        "status": "ok",
+        "class_name": "LaminarFlameSpeed5D",
+        "module": "doe_testbed.cases.chemical.laminar_flame_speed_5d",
+        "source_path": "doe_testbed/cases/chemical/laminar_flame_speed_5d.py",
+        "sha256": "80e2d0f6cc26b09b1072aa19956aaf77e9d0be31b8e0fd67de9b047b3c6a773b"
+      },
+      {
+        "case_id": "membrane_reactor_5d",
+        "status": "ok",
+        "class_name": "MembraneReactor5D",
+        "module": "doe_testbed.cases.chemical.membrane_reactor_5d",
+        "source_path": "doe_testbed/cases/chemical/membrane_reactor_5d.py",
+        "sha256": "c783701685596c2bbe1ca2d722e10cf79c8daf68ba47e3cb894cb7cad58a5026"
+      },
+      {
+        "case_id": "multilayer_wall_16d",
+        "status": "ok",
+        "class_name": "MultilayerWall16D",
+        "module": "doe_testbed.cases.heat_transfer.multilayer_wall_nd",
+        "source_path": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+        "sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15"
+      },
+      {
+        "case_id": "multilayer_wall_4d",
+        "status": "ok",
+        "class_name": "MultilayerWall4D",
+        "module": "doe_testbed.cases.heat_transfer.multilayer_wall_nd",
+        "source_path": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+        "sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15"
+      },
+      {
+        "case_id": "multilayer_wall_8d",
+        "status": "ok",
+        "class_name": "MultilayerWall8D",
+        "module": "doe_testbed.cases.heat_transfer.multilayer_wall_nd",
+        "source_path": "doe_testbed/cases/heat_transfer/multilayer_wall_nd.py",
+        "sha256": "baba9984246e5eb1d9b3d93ed30520894934890ede8359d8390fbc9b35ae1d15"
+      },
+      {
+        "case_id": "oil_reservoir_9d",
+        "status": "ok",
+        "class_name": "OilReservoir9D",
+        "module": "doe_testbed.cases.geomechanics.oil_reservoir_9d",
+        "source_path": "doe_testbed/cases/geomechanics/oil_reservoir_9d.py",
+        "sha256": "ceb213b31c17f4cf4cdf9ed623772ae9a72d3d7fb6c48c86921fc0129ee210fd"
+      },
+      {
+        "case_id": "plate_with_hole_5d",
+        "status": "ok",
+        "class_name": "PlateWithHole5D",
+        "module": "doe_testbed.cases.structures.plate_with_hole_5d",
+        "source_path": "doe_testbed/cases/structures/plate_with_hole_5d.py",
+        "sha256": "8c2789cc1c9c6b8b6bcdce8477edaf97ff1fc8defe2589c0e36422567197a077"
+      },
+      {
+        "case_id": "pressure_vessel_4d",
+        "status": "ok",
+        "class_name": "PressureVessel4D",
+        "module": "doe_testbed.cases.multidisciplinary.pressure_vessel_4d",
+        "source_path": "doe_testbed/cases/multidisciplinary/pressure_vessel_4d.py",
+        "sha256": "f1c490fd5f6f06b4c6ece4420d2335d781839293879dcc59253c0222cb339049"
+      },
+      {
+        "case_id": "rocket_isp_4d",
+        "status": "ok",
+        "class_name": "RocketIsp4D",
+        "module": "doe_testbed.cases.chemical.rocket_isp_4d",
+        "source_path": "doe_testbed/cases/chemical/rocket_isp_4d.py",
+        "sha256": "0b510476170bee1781bceb25efc8b59a4e78a8656dcb7cbb7def3f9568c42b27"
+      },
+      {
+        "case_id": "rotor_bemt_6d",
+        "status": "ok",
+        "class_name": "RotorBEMT6D",
+        "module": "doe_testbed.cases.aerodynamics.rotor_bemt_6d",
+        "source_path": "doe_testbed/cases/aerodynamics/rotor_bemt_6d.py",
+        "sha256": "2ec3c801ddc7fe336f953cf59f9dde8535302f729fe97a375fc0cde7fa847e58"
+      },
+      {
+        "case_id": "soil_consolidation_5d",
+        "status": "ok",
+        "class_name": "SoilConsolidation5D",
+        "module": "doe_testbed.cases.geomechanics.soil_consolidation_5d",
+        "source_path": "doe_testbed/cases/geomechanics/soil_consolidation_5d.py",
+        "sha256": "c765fdafd89325620e62980758b27181e14fe6c3eedd75f5540bb3ba8afeee9e"
+      },
+      {
+        "case_id": "solar_pv_yield_6d",
+        "status": "ok",
+        "class_name": "SolarPVYield6D",
+        "module": "doe_testbed.cases.multidisciplinary.solar_pv_yield_6d",
+        "source_path": "doe_testbed/cases/multidisciplinary/solar_pv_yield_6d.py",
+        "sha256": "de4f082afef77d9cb1138e9c2c66d531b22a3058e68d5e1adf0fff574bdf52d1"
+      },
+      {
+        "case_id": "supersonic_intake_5d",
+        "status": "ok",
+        "class_name": "SupersonicIntake5D",
+        "module": "doe_testbed.cases.aerodynamics.supersonic_intake_5d",
+        "source_path": "doe_testbed/cases/aerodynamics/supersonic_intake_5d.py",
+        "sha256": "9b2b1315cfa88aee53dd3cb27cb003e9cf14574e50d8df895611ceadc824312b"
+      },
+      {
+        "case_id": "supersonic_nozzle_5d",
+        "status": "ok",
+        "class_name": "SupersonicNozzle5D",
+        "module": "doe_testbed.cases.chemical.supersonic_nozzle_5d",
+        "source_path": "doe_testbed/cases/chemical/supersonic_nozzle_5d.py",
+        "sha256": "335a9a5f692fd2e5cd87567059d48d646c8a4113327fe7ac1e86b21785d7a701"
+      },
+      {
+        "case_id": "ten_bar_truss_10d",
+        "status": "ok",
+        "class_name": "TenBarTruss10D",
+        "module": "doe_testbed.cases.structures.ten_bar_truss_10d",
+        "source_path": "doe_testbed/cases/structures/ten_bar_truss_10d.py",
+        "sha256": "2fe48f989efa7dab9d1bebdccf189031702b5a02f7f82c92625e46a8115a7e88"
+      },
+      {
+        "case_id": "thin_plate_buckling_5d",
+        "status": "ok",
+        "class_name": "ThinPlateBuckling5D",
+        "module": "doe_testbed.cases.structures.thin_plate_buckling_5d",
+        "source_path": "doe_testbed/cases/structures/thin_plate_buckling_5d.py",
+        "sha256": "8ab577de3729b2f17a1f7e64e53ec1622386eaff9bddc12407f02bbb948d6f6f"
+      },
+      {
+        "case_id": "tuned_mass_damper_3d",
+        "status": "ok",
+        "class_name": "TunedMassDamper3D",
+        "module": "doe_testbed.cases.structures.tuned_mass_damper_3d",
+        "source_path": "doe_testbed/cases/structures/tuned_mass_damper_3d.py",
+        "sha256": "267c32a7e7678ea3b06eb81bd246806f9aaf171b9467f77f4acff9189d7f02da"
+      },
+      {
+        "case_id": "variable_beam_10d",
+        "status": "ok",
+        "class_name": "VariableBeam10D",
+        "module": "doe_testbed.cases.structures.variable_beam_nd",
+        "source_path": "doe_testbed/cases/structures/variable_beam_nd.py",
+        "sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b"
+      },
+      {
+        "case_id": "variable_beam_20d",
+        "status": "ok",
+        "class_name": "VariableBeam20D",
+        "module": "doe_testbed.cases.structures.variable_beam_nd",
+        "source_path": "doe_testbed/cases/structures/variable_beam_nd.py",
+        "sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b"
+      },
+      {
+        "case_id": "variable_beam_5d",
+        "status": "ok",
+        "class_name": "VariableBeam5D",
+        "module": "doe_testbed.cases.structures.variable_beam_nd",
+        "source_path": "doe_testbed/cases/structures/variable_beam_nd.py",
+        "sha256": "3673c9f579617a15fb0a4afd420aa611454d17609b0a2c3d0bf2977ef7f9574b"
+      },
+      {
+        "case_id": "waverider_4d",
+        "status": "ok",
+        "class_name": "Waverider4D",
+        "module": "doe_testbed.cases.aerodynamics.waverider_4d",
+        "source_path": "doe_testbed/cases/aerodynamics/waverider_4d.py",
+        "sha256": "8705dd8af153bf8e2629e30de2ff5fb6d560df65f3d4c1b09f522b27ce39c3b1"
+      },
+      {
+        "case_id": "wind_turbine_power_6d",
+        "status": "ok",
+        "class_name": "WindTurbinePower6D",
+        "module": "doe_testbed.cases.multidisciplinary.wind_turbine_power_6d",
+        "source_path": "doe_testbed/cases/multidisciplinary/wind_turbine_power_6d.py",
+        "sha256": "a57d91d1283228e39cb46c9484b1384a4d7be1c61fce73faf7658c40984b38ed"
+      },
+      {
+        "case_id": "wing_vlm_6d",
+        "status": "ok",
+        "class_name": "WingVLM6D",
+        "module": "doe_testbed.cases.aerodynamics.wing_vlm_6d",
+        "source_path": "doe_testbed/cases/aerodynamics/wing_vlm_6d.py",
+        "sha256": "59851eb49d46baacbf2c1eea7c6d3699af7710cd99f0fbf9504fd9cff8108fba"
+      }
+    ]
+  },
+  "method_sources": {
+    "schema_version": 1,
+    "status": "ok",
+    "methods": [
+      {
+        "method": "random+gp",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "random+gp"
+            }
+          },
+          {
+            "class": "benchmark.samplers.RandomSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.GPSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "length_scale_init": 1.0,
+              "n_restarts": 3
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "5a94c00faaf695f4a810a021694f6796b608fd7a1d0bdca056ccba9e77f22da0"
+      },
+      {
+        "method": "lhs+gp",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs+gp"
+            }
+          },
+          {
+            "class": "benchmark.samplers.LHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.GPSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "length_scale_init": 1.0,
+              "n_restarts": 3
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "1746a3415b678a980f60f5d6ff57a9df4936aa314b3508a0e89b4c7a61e17446"
+      },
+      {
+        "method": "sobol+gp",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "sobol+gp"
+            }
+          },
+          {
+            "class": "benchmark.samplers.SobolSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.GPSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "length_scale_init": 1.0,
+              "n_restarts": 3
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "81673a8f4f685798a98b89b0ee78f1be77e0f46cb5e8ad1fc34b5d4a16bc19cf"
+      },
+      {
+        "method": "lhs_opt+gp",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+gp"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.GPSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "length_scale_init": 1.0,
+              "n_restarts": 3
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "b8281b4029f6971bdd5b14f841f9a698c4d25825a82f99661b82604241186bf2"
+      },
+      {
+        "method": "halton+gp",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "halton+gp"
+            }
+          },
+          {
+            "class": "benchmark.samplers.HaltonSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.GPSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "length_scale_init": 1.0,
+              "n_restarts": 3
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "ebf3333e527251e3ce3073bf8178a4c794fa660e5199714ef01a129e8611ca8f"
+      },
+      {
+        "method": "lhs_opt+rbf",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+rbf"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.RBFSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "kernel": "thin_plate_spline",
+              "smoothing": 0.0
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "61a0ff301e84056759da0049827dcb44c1f32587dfcdaeab2bb9dbd65ce45cf2"
+      },
+      {
+        "method": "lhs_opt+rf",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+rf"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.RandomForestSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "n_estimators": 200,
+              "max_depth": null
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "2d3d4d99bacc034b0a540cf5792a670dcaa6ca9f4151e300c73aedc203ce3e6a"
+      },
+      {
+        "method": "lhs_opt+mlp",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+mlp"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.MLPSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "hidden_layer_sizes": [
+                64,
+                64
+              ],
+              "max_iter": 2000,
+              "alpha": 0.0001
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "f395eb01b9db33f949d4d086bb7ce50699ba7b27a11594d40890843824879144"
+      },
+      {
+        "method": "lhs_opt+poly3",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+poly3"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.PolynomialSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "degree": 3,
+              "alpha": 0.001
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "832a0ffb08df2e39f34d4004352fb8ecc52e3275b0fd754cebe5d5c15aa1d4cd"
+      },
+      {
+        "method": "random+linear",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "random+linear"
+            }
+          },
+          {
+            "class": "benchmark.samplers.RandomSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.LinearSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {}
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "ac71fa2ac9a4cab9e8c4769b28550104dd749272e17fc5a222efe61aa2b1104c"
+      },
+      {
+        "method": "lhs_opt+gp_rbf",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+gp_rbf"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.GPRBFSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "length_scale_init": 1.0,
+              "n_restarts": 3
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "fe334f1722f62123739c812ffe7fd76b80ca1df9c38ec2254b204a475d755f6a"
+      },
+      {
+        "method": "lhs_opt+svr",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+svr"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.SVRSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "C": 1.0,
+              "epsilon": 0.05,
+              "gamma": "scale"
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "8dae83de7d4c38a423e877336b60b1a9f7aad343440f0167ad59915b1a02bfa1"
+      },
+      {
+        "method": "lhs_opt+knn",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+knn"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.KNNSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "n_neighbors": 5,
+              "weights": "distance"
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "c7e0cc4f8e0638689fd3502062b3f69e7b48a73e6b12804039e6f2d5c069f207"
+      },
+      {
+        "method": "lhs_opt+gb",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+gb"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.GradientBoostingSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "max_iter": 200,
+              "learning_rate": 0.1,
+              "max_depth": 6
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "28fb2c09cc0247e45c4c8b7b69a2a761b28df0175b5eff6645222ce64cadd273"
+      },
+      {
+        "method": "lhs_opt+poly5",
+        "family": "static_design",
+        "status": "ok",
+        "class_name": "StaticDesignMethod",
+        "module": "benchmark.core",
+        "components": [
+          {
+            "class": "benchmark.core.StaticDesignMethod",
+            "path": "benchmark/core.py",
+            "sha256": "f57f818deef0d4f63de0b7d06e2eeb116dfd3804cb238b681f2404e848f5635f",
+            "config": {
+              "name": "lhs_opt+poly5"
+            }
+          },
+          {
+            "class": "benchmark.samplers.OptimisedLHSSampler",
+            "path": "benchmark/samplers.py",
+            "sha256": "36584c0502fdd50595118ad505ab663becb0734bba63874d8196a5c3e7325df9",
+            "config": {}
+          },
+          {
+            "class": "benchmark.surrogates.PolyChaosSurrogate",
+            "path": "benchmark/surrogates.py",
+            "sha256": "387322b10ed8185ef2f99f95f96a81f8feeb1dc6fa5cc0f032ad4ad399dc56d6",
+            "config": {
+              "degree": 5,
+              "alpha": 0.01
+            }
+          }
+        ],
+        "method_source_path": "benchmark/core.py;benchmark/samplers.py;benchmark/surrogates.py",
+        "method_source_sha256": "024f8a0d80bc488738c37ecf7e2e6ca3164509a86177189825cc35a0e5c9b0e7"
+      },
+      {
+        "method": "ego_ei",
+        "family": "sequential_ego",
+        "status": "ok",
+        "class_name": "EGOMethod",
+        "module": "benchmark.sequential",
+        "components": [
+          {
+            "class": "benchmark.sequential.EGOMethod",
+            "path": "benchmark/sequential.py",
+            "sha256": "ed7340a468f4e913b1c2885411af6ece7c6e8399105464c06a0b73dab2118bd1",
+            "config": {
+              "n_init_frac": 0.6,
+              "n_candidates": 256,
+              "output_idx": 0
+            }
+          }
+        ],
+        "method_source_path": "benchmark/sequential.py",
+        "method_source_sha256": "5a65adfdf74f7e9b775d33d186c3734c41f600d66ec92b469155123d2c95bf76"
+      },
+      {
+        "method": "max_variance",
+        "family": "sequential_active_learning",
+        "status": "ok",
+        "class_name": "MaxVarianceMethod",
+        "module": "benchmark.sequential",
+        "components": [
+          {
+            "class": "benchmark.sequential.MaxVarianceMethod",
+            "path": "benchmark/sequential.py",
+            "sha256": "ed7340a468f4e913b1c2885411af6ece7c6e8399105464c06a0b73dab2118bd1",
+            "config": {
+              "n_init_frac": 0.6,
+              "n_candidates": 256
+            }
+          }
+        ],
+        "method_source_path": "benchmark/sequential.py",
+        "method_source_sha256": "192e92d0b7e3dd3163845eef06287ba3fb038240cf16e57816bbb2a4d7df0bee"
+      },
+      {
+        "method": "akmcs",
+        "family": "sequential_reliability",
+        "status": "ok",
+        "class_name": "AKMCSMethod",
+        "module": "benchmark.sequential",
+        "components": [
+          {
+            "class": "benchmark.sequential.AKMCSMethod",
+            "path": "benchmark/sequential.py",
+            "sha256": "ed7340a468f4e913b1c2885411af6ece7c6e8399105464c06a0b73dab2118bd1",
+            "config": {
+              "output_idx": 0,
+              "threshold": 0.0,
+              "direction": "above",
+              "n_init_frac": 0.5,
+              "n_candidates": 512
+            }
+          }
+        ],
+        "method_source_path": "benchmark/sequential.py",
+        "method_source_sha256": "007c32c651272e998d86808943cb3ae204934a84d02136912de1751ab5edd6e4"
+      },
+      {
+        "method": "botorch_qei",
+        "family": "sequential_botorch_ei",
+        "status": "ok",
+        "class_name": "BoTorchQEIMethod",
+        "module": "benchmark.bo_methods",
+        "components": [
+          {
+            "class": "benchmark.bo_methods.BoTorchQEIMethod",
+            "path": "benchmark/bo_methods.py",
+            "sha256": "f7dc1e85360ff3a67620c85484b54fa0a1e77d81f49ed574db683a8bcbae76fb",
+            "config": {
+              "n_init_frac": 0.6,
+              "n_candidates": 512,
+              "output_idx": 0
+            }
+          }
+        ],
+        "method_source_path": "benchmark/bo_methods.py",
+        "method_source_sha256": "6899ea2001e51213b7fcfc90f8a2dba64e450540f05bf8ec824f3ca6cc0861ec"
+      },
+      {
+        "method": "botorch_saasbo",
+        "family": "sequential_botorch_saas",
+        "status": "ok",
+        "class_name": "BoTorchSAASMethod",
+        "module": "benchmark.bo_methods",
+        "components": [
+          {
+            "class": "benchmark.bo_methods.BoTorchSAASMethod",
+            "path": "benchmark/bo_methods.py",
+            "sha256": "f7dc1e85360ff3a67620c85484b54fa0a1e77d81f49ed574db683a8bcbae76fb",
+            "config": {
+              "n_init_frac": 0.9,
+              "n_candidates": 64,
+              "output_idx": 0,
+              "warmup_steps": 4,
+              "num_samples": 4,
+              "thinning": 1
+            }
+          }
+        ],
+        "method_source_path": "benchmark/bo_methods.py",
+        "method_source_sha256": "dfdc09324eada8f63ac7d24e02085ca670aa020f508497e60a7111ce8e447731"
+      }
+    ]
+  },
+  "results_summary": {
+    "exists": true,
+    "path": "C:/wbl/DOE/benchmark/results/full_benchmark/results.csv",
+    "csv_contract_errors": [],
+    "n_csv_contract_errors": 0,
+    "columns": [
+      "case_id",
+      "result_schema_version",
+      "case_source_path",
+      "case_source_sha256",
+      "domain",
+      "dim",
+      "n_output",
+      "method",
+      "method_family",
+      "method_source_path",
+      "method_source_sha256",
+      "budget_mult",
+      "n_train",
+      "n_test",
+      "repeat",
+      "seed",
+      "seed_strategy",
+      "seed_start",
+      "test_seed",
+      "worker_host",
+      "worker_pid",
+      "cell_started_utc",
+      "rss_gb_start",
+      "status",
+      "failure_category",
+      "error",
+      "t_total_s",
+      "n_train_effective",
+      "n_train_failed",
+      "t_sample_s",
+      "t_eval_train_s",
+      "t_fit_s",
+      "t_predict_s",
+      "rmse",
+      "nrmse",
+      "mae",
+      "maxae",
+      "q95ae",
+      "r2",
+      "nrmse_worst",
+      "nrmse_best",
+      "nrmse_spread",
+      "rmse_worst",
+      "r2_worst",
+      "rmse_out0",
+      "nrmse_out0",
+      "r2_out0",
+      "rmse_out1",
+      "nrmse_out1",
+      "r2_out1",
+      "rmse_out2",
+      "nrmse_out2",
+      "r2_out2",
+      "nll",
+      "picp_95",
+      "mpiw_95",
+      "pf_true_o0",
+      "pf_pred_o0",
+      "pf_abs_err_o0",
+      "pf_rel_err_o0",
+      "f_precision_o0",
+      "f_recall_o0",
+      "f_f1_o0",
+      "f_bal_acc_o0",
+      "f_brier_o0",
+      "pf_abs_err_mean",
+      "pf_abs_err_max",
+      "f_bal_acc_mean",
+      "cell_finished_utc",
+      "rss_gb_end",
+      "rss_gb_peak",
+      "protocol_digest",
+      "n_init",
+      "n_sequential",
+      "t_sequential_s",
+      "t_final_fit_s",
+      "t_total_method_s",
+      "pf_true_o1",
+      "pf_pred_o1",
+      "pf_abs_err_o1",
+      "pf_rel_err_o1",
+      "f_precision_o1",
+      "f_recall_o1",
+      "f_f1_o1",
+      "f_bal_acc_o1",
+      "f_brier_o1",
+      "pf_true_o2",
+      "pf_pred_o2",
+      "pf_abs_err_o2",
+      "pf_rel_err_o2",
+      "f_precision_o2",
+      "f_recall_o2",
+      "f_f1_o2",
+      "f_bal_acc_o2",
+      "f_brier_o2"
+    ],
+    "n_rows": 81600,
+    "n_cases_observed": 34,
+    "case_ids_observed": [
+      "aircraft_conceptual_8d",
+      "airfoil_stall_2d",
+      "airfoil_transonic_5d",
+      "battery_thermal_7d",
+      "cantilever_beam_5d",
+      "casting_solidification_5d",
+      "dam_seepage_6d",
+      "fin_heat_sink_4d",
+      "fixed_bed_reactor_6d",
+      "groundwater_contamination_6d",
+      "hetero_conduction_2d",
+      "laminar_flame_speed_5d",
+      "membrane_reactor_5d",
+      "multilayer_wall_16d",
+      "multilayer_wall_4d",
+      "multilayer_wall_8d",
+      "oil_reservoir_9d",
+      "plate_with_hole_5d",
+      "pressure_vessel_4d",
+      "rocket_isp_4d",
+      "rotor_bemt_6d",
+      "soil_consolidation_5d",
+      "solar_pv_yield_6d",
+      "supersonic_intake_5d",
+      "supersonic_nozzle_5d",
+      "ten_bar_truss_10d",
+      "thin_plate_buckling_5d",
+      "tuned_mass_damper_3d",
+      "variable_beam_10d",
+      "variable_beam_20d",
+      "variable_beam_5d",
+      "waverider_4d",
+      "wind_turbine_power_6d",
+      "wing_vlm_6d"
+    ],
+    "n_methods_observed": 20,
+    "methods_observed": [
+      "akmcs",
+      "botorch_qei",
+      "botorch_saasbo",
+      "ego_ei",
+      "halton+gp",
+      "lhs+gp",
+      "lhs_opt+gb",
+      "lhs_opt+gp",
+      "lhs_opt+gp_rbf",
+      "lhs_opt+knn",
+      "lhs_opt+mlp",
+      "lhs_opt+poly3",
+      "lhs_opt+poly5",
+      "lhs_opt+rbf",
+      "lhs_opt+rf",
+      "lhs_opt+svr",
+      "max_variance",
+      "random+gp",
+      "random+linear",
+      "sobol+gp"
+    ],
+    "budgets_observed": [
+      5,
+      10,
+      20,
+      50
+    ],
+    "repeats_observed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "invalid_budget_mult_values": [],
+    "n_invalid_budget_mult_values": 0,
+    "invalid_repeat_values": [],
+    "n_invalid_repeat_values": 0,
+    "missing_protocol_key_values": [],
+    "n_missing_protocol_key_values": 0,
+    "status_counts": {
+      "failed": 18,
+      "ok": 78605,
+      "timeout": 2977
+    },
+    "invalid_status_values": [],
+    "n_invalid_status_values": 0,
+    "failure_category_counts": {
+      "exception": 18,
+      "ok": 78605,
+      "timeout": 2977
+    },
+    "missing_failure_category_values": [],
+    "n_missing_failure_category_values": 0,
+    "invalid_failure_category_values": [],
+    "n_invalid_failure_category_values": 0,
+    "failure_category_status_mismatch_values": [],
+    "n_failure_category_status_mismatch_values": 0,
+    "invalid_ok_nrmse_values": [],
+    "n_invalid_ok_nrmse_values": 0,
+    "invalid_t_total_s_values": [],
+    "n_invalid_t_total_s_values": 0,
+    "invalid_runtime_timestamp_values": [],
+    "n_invalid_runtime_timestamp_values": 0,
+    "invalid_runtime_time_order_values": [],
+    "n_invalid_runtime_time_order_values": 0,
+    "invalid_runtime_duration_values": [],
+    "n_invalid_runtime_duration_values": 0,
+    "runtime_timestamp_summary": {
+      "timestamp_trace_columns_present": true,
+      "missing_timestamp_trace_columns": [],
+      "n_rows": 81600,
+      "n_invalid_runtime_timestamp_values": 0,
+      "n_invalid_runtime_time_order_values": 0,
+      "n_invalid_runtime_duration_values": 0
+    },
+    "invalid_rss_gb_values": [],
+    "n_invalid_rss_gb_values": 0,
+    "invalid_rss_gb_peak_order_values": [],
+    "n_invalid_rss_gb_peak_order_values": 0,
+    "runtime_resource_summary": {
+      "rss_trace_columns_present": true,
+      "missing_rss_trace_columns": [],
+      "n_rows": 81600,
+      "n_rows_with_valid_rss_gb_peak": 81600,
+      "rss_gb_peak_min": 0.0,
+      "rss_gb_peak_p50": 0.178123,
+      "rss_gb_peak_p95": 1.293242,
+      "rss_gb_peak_max": 226.058216,
+      "rss_gb_peak_max_by_method": {
+        "akmcs": 44.249825,
+        "botorch_qei": 226.058216,
+        "botorch_saasbo": 12.44305,
+        "ego_ei": 0.592388,
+        "halton+gp": 0.808578,
+        "lhs+gp": 0.805798,
+        "lhs_opt+gb": 0.358833,
+        "lhs_opt+gp": 0.809052,
+        "lhs_opt+gp_rbf": 0.778225,
+        "lhs_opt+knn": 0.354759,
+        "lhs_opt+mlp": 0.5378,
+        "lhs_opt+poly3": 0.541103,
+        "lhs_opt+poly5": 1.007465,
+        "lhs_opt+rbf": 0.426872,
+        "lhs_opt+rf": 0.700531,
+        "lhs_opt+svr": 0.53627,
+        "max_variance": 0.579449,
+        "random+gp": 0.80846,
+        "random+linear": 0.507103,
+        "sobol+gp": 0.810234
+      }
+    },
+    "missing_failure_error_values": [],
+    "n_missing_failure_error_values": 0,
+    "ok_rows_with_error_values": [],
+    "n_ok_rows_with_error_values": 0
+  },
+  "artifacts": {
+    "results_dir": "C:/wbl/DOE/benchmark/results/full_benchmark",
+    "files": [
+      {
+        "path": "analysis/cross_metric_correlation.png",
+        "size_bytes": 114681,
+        "mtime_utc": "2026-06-20T07:28:55.123726+00:00",
+        "sha256": "e1229ef3a7466be0100a7ae34ca6d22af8b84bc4978c712cd5267e40c7645d8f",
+        "is_symlink": false
+      },
+      {
+        "path": "analysis/cross_metric_rank_correlation.csv",
+        "size_bytes": 376,
+        "mtime_utc": "2026-06-20T07:28:55.182858+00:00",
+        "sha256": "c43ef0e5a82651ee2c85c197d9abbde3e4fc4bfac59bd10942f38deaa4ee98f1",
+        "is_symlink": false
+      },
+      {
+        "path": "analysis/cross_metric_ranks.csv",
+        "size_bytes": 2788,
+        "mtime_utc": "2026-06-20T07:28:55.153927+00:00",
+        "sha256": "10cc437f624b9b0d6541bb811fa31215b0691a01de31ce2353fe9495ce4d978f",
+        "is_symlink": false
+      },
+      {
+        "path": "analysis/method_robustness.csv",
+        "size_bytes": 2327,
+        "mtime_utc": "2026-06-20T07:28:55.211775+00:00",
+        "sha256": "2a00439dda3ef67e182b2befde55b0820172e4a7d22cc26de2c15bc8467030af",
+        "is_symlink": false
+      },
+      {
+        "path": "analysis/method_robustness.png",
+        "size_bytes": 182670,
+        "mtime_utc": "2026-06-20T07:28:55.235156+00:00",
+        "sha256": "2d9aa9c4175dff76f831c74a49d6514e0488784fb0b08d52df4128e181cf6a57",
+        "is_symlink": false
+      },
+      {
+        "path": "analysis/per_output_nrmse.csv",
+        "size_bytes": 2621,
+        "mtime_utc": "2026-07-30T00:47:45.325663+00:00",
+        "sha256": "cb3d50fc4b9e75d580783d120a9c661970cccab59253d3fe9591703b79c6b915",
+        "is_symlink": false
+      },
+      {
+        "path": "analysis/test_set_sufficiency.csv",
+        "size_bytes": 3016,
+        "mtime_utc": "2026-06-20T07:28:55.267483+00:00",
+        "sha256": "2699db1e44d037da5c4e5f31855803cc49c13dd63d97e49286ea0149511a90a8",
+        "is_symlink": false
+      },
+      {
+        "path": "analysis/test_set_sufficiency.png",
+        "size_bytes": 166332,
+        "mtime_utc": "2026-06-20T07:28:55.293818+00:00",
+        "sha256": "aa44f88806bff3445ebd09a0220b5a19cd8a36e49ddf0ec9487ff2149b60b0ed",
+        "is_symlink": false
+      },
+      {
+        "path": "python_environment_pip_freeze.txt",
+        "size_bytes": 8216,
+        "mtime_utc": "2026-09-01T18:03:40.849514+00:00",
+        "sha256": "859bc9204169cd90f70ebe46fd757d4ad71461f47e9217abbdc4ca6384e97623",
+        "is_symlink": false
+      },
+      {
+        "path": "report/REPORT.md",
+        "size_bytes": 36698,
+        "mtime_utc": "2026-06-20T07:28:55.337000+00:00",
+        "sha256": "ce2957fd0158556d8571555e5b57017dc53bd5833b2929d84a0ab44136238618",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/01_cd_diagram.png",
+        "size_bytes": 606791,
+        "mtime_utc": "2026-06-20T07:28:55.409792+00:00",
+        "sha256": "ae5b8f1b71356108daab99a80ef3ad00c9b9ca7aa6533d64aa78f0e5dd76a0db",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/01b_budget_rank_shifts.png",
+        "size_bytes": 161379,
+        "mtime_utc": "2026-06-20T07:28:55.375412+00:00",
+        "sha256": "aec9b27daa6f7c49baca68e701d3fe9ef283e96f92fef4a0b4428d1ae19c5a95",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/02_rank_ci_forest.png",
+        "size_bytes": 210707,
+        "mtime_utc": "2026-06-20T07:28:55.436827+00:00",
+        "sha256": "06687b700f4f45289bf4375f91e776a70a344f264fc3063ef0edd1b79566ba82",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/03_pairwise_win_matrix.png",
+        "size_bytes": 710588,
+        "mtime_utc": "2026-06-20T07:28:55.506933+00:00",
+        "sha256": "7e92f8dcbf7db82b001a9559cb25cae519d01b4ce3be7c93bc3e5f28de5e26f7",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/03b_holm_significance.png",
+        "size_bytes": 250864,
+        "mtime_utc": "2026-06-20T07:28:55.465829+00:00",
+        "sha256": "d393d73746cc14df6d6a566c632ddca4c24a54474710aef423684bce1beab2f9",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/04_cliffs_delta.png",
+        "size_bytes": 445587,
+        "mtime_utc": "2026-06-20T07:28:55.542094+00:00",
+        "sha256": "12db805a9934c26ad4be62f296485f864279f8023673e5511004753b0b2f28e7",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/05_pareto.png",
+        "size_bytes": 192532,
+        "mtime_utc": "2026-06-20T07:28:55.570011+00:00",
+        "sha256": "470b8dfdd10bb9291023c7aa2e7b18917e14d90e8309ed4da4643a7a0d6c21c1",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/06_strat_grid.png",
+        "size_bytes": 703613,
+        "mtime_utc": "2026-06-20T07:28:55.604963+00:00",
+        "sha256": "efa2a57c3f59b6a380b9f0a96edd9d42abf537b5b493509eebe28c20c54ddb17",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/07b_learning_curves.png",
+        "size_bytes": 376643,
+        "mtime_utc": "2026-06-20T07:28:55.634731+00:00",
+        "sha256": "a6b5f8035117fce39a902f41de4fa1e0126e8ca25b63ccde94ff623f8b7aa99a",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/07c_dim_scaling.png",
+        "size_bytes": 318065,
+        "mtime_utc": "2026-06-20T07:28:55.662597+00:00",
+        "sha256": "bddcc7a5cdeba4793cc89ffe751f3109a1c8b047096dffb6b44e5f24a69bf04c",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/08_robustness.png",
+        "size_bytes": 177466,
+        "mtime_utc": "2026-06-20T07:28:55.689694+00:00",
+        "sha256": "850bdc8c8fbb5f420f033864eb2b85d7b02ae34d1c2f23118d79706d048e07c9",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/11_perf_heatmap.png",
+        "size_bytes": 507004,
+        "mtime_utc": "2026-06-20T07:28:55.722689+00:00",
+        "sha256": "b8448e4b2016cb81d407cfccfe29e78a0e6a566b6801c93ae18807c529120c7f",
+        "is_symlink": false
+      },
+      {
+        "path": "report/figs/11_winners.png",
+        "size_bytes": 108847,
+        "mtime_utc": "2026-06-20T07:28:55.746067+00:00",
+        "sha256": "03788172dd3f4947d7e974d61b342d9498b47e42a21f84bd6477131f8da25058",
+        "is_symlink": false
+      },
+      {
+        "path": "results.csv",
+        "size_bytes": 92204268,
+        "mtime_utc": "2026-06-20T07:28:54.203979+00:00",
+        "sha256": "71e72d937b64abc6f5c44da2f6b2183e293e228258ce4c0abce9bb4100f0ca0b",
+        "is_symlink": false
+      },
+      {
+        "path": "results.csv.bak.pre_mark",
+        "size_bytes": 77900590,
+        "mtime_utc": "2026-06-20T07:28:54.996032+00:00",
+        "sha256": "3315d3a41341b3eb3c8a2e3e3f191cb696f38b719aa8eaa1488e2f8ccd00f5e1",
+        "is_symlink": false
+      },
+      {
+        "path": "run_config.json",
+        "size_bytes": 21426,
+        "mtime_utc": "2026-08-31T13:39:06.691465+00:00",
+        "sha256": "2315ad8d984a753c5716d82846c7a60acddfd654441e99492198e03b5dec37d3",
+        "is_symlink": false
+      },
+      {
+        "path": "sweep_integrity_report.md",
+        "size_bytes": 898,
+        "mtime_utc": "2026-06-20T07:28:55.085741+00:00",
+        "sha256": "789caab7105ef9de2983aa215d933e23d73f9cdb305194f06436ad5373a0e710",
+        "is_symlink": false
+      },
+      {
+        "path": "sweep_integrity_report_current_check.md",
+        "size_bytes": 925,
+        "mtime_utc": "2026-08-31T19:21:08.032068+00:00",
+        "sha256": "a3d3476ceceb6e264d9d58c3b8ddefe2886a5686e10b1300d3d1c95b883bf0dd",
+        "is_symlink": false
+      }
+    ]
+  }
+}

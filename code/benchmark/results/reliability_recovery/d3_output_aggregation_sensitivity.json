@@ -1,0 +1,28 @@
+{
+  "budget_mult": 10,
+  "n_runs": 9570,
+  "n_cases": 16,
+  "pooled_mean_signed_bias": 0.019302925809822322,
+  "pooled_median_signed_bias": 0.003,
+  "cluster_bootstrap_ci_lo": 0.0007510482180293357,
+  "cluster_bootstrap_ci_hi": 0.03955882967607108,
+  "cluster_bootstrap_B": 10000,
+  "bootstrap_seed": 1000,
+  "wilcoxon_one_sided_greater_p": 7.84986164401758e-242,
+  "analysis": "Exploratory signed-mean output-aggregation sensitivity",
+  "output_aggregation": "Mean signed probability error across outputs with failure thresholds, within each successful run",
+  "source": "benchmark/results/full_benchmark/results.csv",
+  "derivation": [
+    "benchmark.reliability_recovery.extract_long_signed_bias(output_aggregate=\"mean\")",
+    "Restrict to budget_mult == 10",
+    "scripts.derive_pooled_reliability_stats.pooled_d3 with its archived B=10000 and seed=1000"
+  ],
+  "same_primary_population": true,
+  "manuscript_display": {
+    "mean": 0.0193,
+    "case_cluster_ci95": [
+      0.0008,
+      0.0396
+    ]
+  }
+}

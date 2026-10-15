@@ -1,0 +1,41 @@
+{
+  "n_runs": 9570,
+  "n_cases": 16,
+  "pooled_mean_signed_bias": 0.026370219435736676,
+  "percentile_ci": [
+    0.0015335583774164034,
+    0.058723774233880775
+  ],
+  "registered_percentile_ci": [
+    0.0017058516196447233,
+    0.05922979166666666
+  ],
+  "bca_ci": [
+    0.005707611380439394,
+    0.06921344229309584
+  ],
+  "loco_min": 0.013759754738015606,
+  "loco_max": 0.03199264214046823,
+  "loco_min_case": "fixed_bed_reactor_6d",
+  "loco_max_case": "pressure_vessel_4d",
+  "loco": {
+    "airfoil_stall_2d": 0.022062430323299884,
+    "airfoil_transonic_5d": 0.028183277591973244,
+    "battery_thermal_7d": 0.0281340022296544,
+    "cantilever_beam_5d": 0.02774080267558528,
+    "fin_heat_sink_4d": 0.0273396878483835,
+    "fixed_bed_reactor_6d": 0.013759754738015606,
+    "groundwater_contamination_6d": 0.02709163879598662,
+    "laminar_flame_speed_5d": 0.02719386845039019,
+    "plate_with_hole_5d": 0.026891304347826085,
+    "pressure_vessel_4d": 0.03199264214046823,
+    "rotor_bemt_6d": 0.026281270903010034,
+    "soil_consolidation_5d": 0.029989186176142695,
+    "supersonic_intake_5d": 0.026384615384615385,
+    "supersonic_nozzle_5d": 0.024257413600891863,
+    "ten_bar_truss_10d": 0.028603222222222224,
+    "tuned_mass_damper_3d": 0.02601092530657748
+  },
+  "bootstrap_B": 10000,
+  "seed": 1000
+}

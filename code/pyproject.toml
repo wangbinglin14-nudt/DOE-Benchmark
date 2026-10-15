@@ -1,0 +1,176 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doe-testbed"
+version = "0.4.0.dev0"
+description = "Physics-grounded engineering test problem library and benchmark suite for DOE method evaluation"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [
+    { name = "Binglin Wang", email = "wangbinglin14@nudt.edu.cn" },
+]
+keywords = [
+    "design of experiments", "DOE", "test problems", "testbed",
+    "engineering", "physics", "PDE", "test problem library",
+    "variable screening", "surrogate modeling", "multi-fidelity",
+    "reliability analysis", "sensitivity analysis",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+# Aerodynamics cases
+aero = [
+    "neuralfoil>=0.1",
+    "aerosandbox>=4.0",
+]
+# Chemical cases (laminar combustion)
+chem = [
+    "cantera>=3.0",
+]
+# Visualisation
+viz = [
+    "matplotlib>=3.5",
+]
+# Full installation (excludes cantera, which must be installed via conda)
+full = [
+    "doe-testbed[aero,viz]",
+]
+# Benchmark suite (heavy: sklearn, torch, botorch, etc.)
+benchmark = [
+    "doe-testbed[full]",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "joblib>=1.3",
+    "torch>=2.2,<2.5",
+    "gpytorch>=1.11",
+    "botorch>=0.10",
+    "SALib>=1.4",
+    "seaborn>=0.13",
+    "tqdm>=4.65",
+    "psutil>=5.9",
+    "pytest>=7",
+    "pytest-cov>=4",
+]
+# Development dependencies
+dev = [
+    "doe-testbed[full]",
+    "pytest>=7",
+    "pytest-cov",
+    "SALib>=1.4",
+    "ipykernel",
+    "jupyter",
+    "black",
+    "isort",
+    "flake8",
+    "mypy",
+    "mkdocs-material>=9",
+]
+
+# Public repository/documentation URLs will be added after verified deposition.
+
+[project.scripts]
+doe-testbed = "doe_testbed.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["doe_testbed*", "benchmark*"]
+
+[tool.setuptools.package-data]
+doe_testbed = ["cases/*/*.evidence.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "web/backend/tests"]
+addopts = "-q --tb=short"
+filterwarnings = [
+    "ignore::UserWarning",
+    "ignore::RuntimeWarning",
+    "ignore::DeprecationWarning",
+    "ignore::FutureWarning",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312", "py313"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+# ─── Ruff (lint) ────────────────────────────────────────────────────────
+# Used by the `Benchmark / Lint` CI job.  Strict enough to catch real
+# bugs but does not enforce style preferences (black handles that).
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [
+    "site",
+    "build",
+    "dist",
+    "web/frontend/node_modules",
+    "benchmark/results",
+    "doe_testbed.egg-info",
+]
+
+[tool.ruff.lint]
+# Conservative starting set — pyflakes (F), pycodestyle errors (E),
+# import sorting (I), bugbear (B), comprehensions (C4), security (S).
+select = ["E", "F", "I", "B", "C4", "UP", "RUF"]
+ignore = [
+    "E501",   # line length handled by black
+    "B008",   # Default mutable arguments handled case-by-case
+    "B904",   # raise from — too noisy on legacy code
+    "B028",   # no-explicit-stacklevel — research code prefers default
+    "RUF001", # ambiguous unicode in strings (Greek letters in docs)
+    "RUF002", # ambiguous unicode in docstrings (physics symbols)
+    "RUF003", # ambiguous unicode in comments
+    "RUF012", # mutable class attribute typing — tracked separately
+    "UP006",  # typing.Dict → dict — keep stable for Python 3.9
+    "UP007",  # Optional → X | None — keep stable for Python 3.9
+    "UP035",  # typing.Tuple, etc. — keep stable for Python 3.9
+    "UP037",  # remove quotes from annotations — minor
+    "UP038",  # use `X | Y` in isinstance — keep stable for Python 3.9
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["B011", "S101"]                 # asserts ok in tests
+"benchmark/tests/**" = ["B011", "S101"]
+"benchmark/scripts/**" = ["E402"]             # late imports for sys.path setup
+"doe_testbed/__init__.py" = ["F401"]          # re-exports
+# Physics case code keeps named intermediate variables for clarity
+# (e.g. raw vs. swept aerodynamic coefficients).
+"doe_testbed/cases/**" = ["F841", "B007", "E741"]
+
+# ─── mypy (type check; informational) ───────────────────────────────────
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+follow_imports = "silent"
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+disable_error_code = ["misc", "import-untyped"]
+
+[[tool.mypy.overrides]]
+module = ["benchmark.scripts.*", "tests.*", "benchmark.tests.*"]
+ignore_errors = true

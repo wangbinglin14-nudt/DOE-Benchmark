@@ -1,0 +1,88 @@
+{
+  "d1_loo_min_rho_10d": 0.856549702406254,
+  "d1_loo_min_rho_20d": 0.8380419662563335,
+  "d1_loo_min_rho_all_pairings": 0.8380419662563335,
+  "d1_policy_rhos": {
+    "dimension_10_complete_case": 0.9135196374622357,
+    "dimension_10_penalized": 0.9294882367600598,
+    "dimension_20_complete_case": 0.912716328066215,
+    "dimension_20_penalized": 0.9566871955483982,
+    "topology_10_complete_case": 0.9430409659701101,
+    "topology_10_penalized": 0.9468336561884424,
+    "topology_20_complete_case": 0.9213399222355073,
+    "topology_20_penalized": 0.9532610693235053,
+    "random_10_complete_case": 0.935045317220544,
+    "random_10_penalized": 0.9393156523663347,
+    "random_20_complete_case": 0.8999247554552294,
+    "random_20_penalized": 0.9385607206862508
+  },
+  "d3": {
+    "n_runs": 9570,
+    "n_cases": 16,
+    "pooled_mean_signed_bias": 0.026370219435736676,
+    "percentile_ci": [
+      0.0015335583774164034,
+      0.058723774233880775
+    ],
+    "registered_percentile_ci": [
+      0.0017058516196447233,
+      0.05922979166666666
+    ],
+    "bca_ci": [
+      0.005707611380439394,
+      0.06921344229309584
+    ],
+    "loco_min": 0.013759754738015606,
+    "loco_max": 0.03199264214046823,
+    "loco_min_case": "fixed_bed_reactor_6d",
+    "loco_max_case": "pressure_vessel_4d",
+    "bootstrap_B": 10000,
+    "seed": 1000
+  },
+  "per_output": {
+    "n_cases": 34,
+    "median_spread": 0.25705,
+    "max_spread": 0.7382,
+    "max_spread_case": "ten_bar_truss_10d",
+    "n_worst_exceeds_mean_by_010": 21,
+    "n_worst_exceeds_mean_by_020": 10
+  },
+  "d1_rank_statistics": [
+    {
+      "pairing": "dimension",
+      "budget": 10,
+      "rho": 0.9135196374622357,
+      "tau": 0.772972972972973
+    },
+    {
+      "pairing": "dimension",
+      "budget": 20,
+      "rho": 0.912716328066215,
+      "tau": 0.7513227513227513
+    },
+    {
+      "pairing": "topology",
+      "budget": 10,
+      "rho": 0.9430409659701101,
+      "tau": 0.822592533796944
+    },
+    {
+      "pairing": "topology",
+      "budget": 20,
+      "rho": 0.9213399222355073,
+      "tau": 0.7692334753457366
+    },
+    {
+      "pairing": "random",
+      "budget": 10,
+      "rho": 0.935045317220544,
+      "tau": 0.8162162162162161
+    },
+    {
+      "pairing": "random",
+      "budget": 20,
+      "rho": 0.8999247554552294,
+      "tau": 0.7407407407407408
+    }
+  ]
+}

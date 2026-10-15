@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Supplementary Table S4.} Multiple-testing policy.}
+\label{tab:si_multiple_testing}
+\SITableFont
+\begin{tabular}{@{}lp{0.68\linewidth}@{}}
+\toprule
+\textbf{Item} & \textbf{Policy} \\
+\midrule
+Family-wise rule & Holm--Bonferroni at $\alpha=0.05$ across D1, D2 and D3; ordered thresholds are $0.05/3$, $0.05/2$ and $0.05$. \\
+D1 & Spearman $\rho$ is the effect-size estimator; bootstrap confidence intervals quantify precision. \\
+D2 & The primary criterion is a one-sided Clopper--Pearson upper confidence bound on the feature-group pass rate, so no group-level Holm correction is applied. \\
+D3 & Signed-bias tests use method-level Holm adjustment; cluster-aware confidence intervals are primary. \\
+Sensitivity & Bonferroni and BH-FDR are reserved for sensitivity tables after the full sweep and do not replace the preregistered Holm decision rule. \\
+\bottomrule
+\end{tabular}
+\end{table}

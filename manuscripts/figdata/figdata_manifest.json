@@ -1,0 +1,204 @@
+{
+  "generated_at": "2026-09-01T07:01:29.742428+00:00",
+  "script": "scripts/prepare_figdata.py",
+  "status": "complete",
+  "results_csv": "benchmark/results/full_benchmark/results.csv",
+  "d1_dir": "benchmark/results/ranking_reversal",
+  "d2_dir": "benchmark/results/sample_complexity_0.20",
+  "d3_dir": "benchmark/results/reliability_recovery",
+  "analysis_policy": {
+    "schema_version": 1,
+    "d1_primary_analysis": "complete_case",
+    "d2_primary_analysis": "penalized_failed_in_denominator",
+    "fig6_primary_analysis": "penalized_failed_in_denominator",
+    "d3_primary_cluster_by": "case_id",
+    "d3_sensitivity_cluster_by": "iid",
+    "failure_policy": "penalized_failed_in_denominator for D2 and Fig. 6 primary",
+    "d1_failure_policy": "complete_case"
+  },
+  "results_summary": {
+    "exists": true,
+    "n_rows": 81600,
+    "n_cases": 34,
+    "n_methods": 20,
+    "budgets": [
+      5,
+      10,
+      20,
+      50
+    ],
+    "repeats": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "status_counts": {
+      "failed": 18,
+      "ok": 78605,
+      "timeout": 2977
+    },
+    "failure_category_counts": {
+      "exception": 18,
+      "ok": 78605,
+      "timeout": 2977
+    }
+  },
+  "inputs": [
+    {
+      "label": "results_csv",
+      "path": "benchmark/results/full_benchmark/results.csv",
+      "exists": true,
+      "size_bytes": 92204268,
+      "sha256": "71e72d937b64abc6f5c44da2f6b2183e293e228258ce4c0abce9bb4100f0ca0b"
+    },
+    {
+      "label": "d1_correlation",
+      "path": "benchmark/results/ranking_reversal/correlation.json",
+      "exists": true,
+      "size_bytes": 5325,
+      "sha256": "8b93d88cac11e8a778c5f66f0933c7497ff6dd2cffab9484b5bbcad67a5a3103"
+    },
+    {
+      "label": "d1_rank_comparison",
+      "path": "benchmark/results/ranking_reversal/pairing_dimension/rank_comparison.csv",
+      "exists": true,
+      "size_bytes": 3067,
+      "sha256": "ae2ea9ca40a8fcb01d894d51a6af3788b62e6b597216f3a75a280e2a57c2c74c"
+    },
+    {
+      "label": "d1_rank_comparison",
+      "path": "benchmark/results/ranking_reversal/pairing_random/rank_comparison.csv",
+      "exists": true,
+      "size_bytes": 2985,
+      "sha256": "1e644f7acaf45d01a32dcf48ce6fd1d4801c6b926ec8307df762270bd997e5a7"
+    },
+    {
+      "label": "d1_rank_comparison",
+      "path": "benchmark/results/ranking_reversal/pairing_topology/rank_comparison.csv",
+      "exists": true,
+      "size_bytes": 3112,
+      "sha256": "2700a5898ebde3ac77474535bed95fcef7ca3c8f08bce3b3983801d2b60ff335"
+    },
+    {
+      "label": "d1_legacy_rank_comparison",
+      "path": "benchmark/results/ranking_reversal/rank_comparison.csv",
+      "exists": true,
+      "size_bytes": 1148,
+      "sha256": "7e3ab6451e7d486aafbfe19eb1d6fec45b75fa029fc64fc72abe0a631a233505"
+    },
+    {
+      "label": "d2_learning_curves",
+      "path": "benchmark/results/sample_complexity_0.20/learning_curves.csv",
+      "exists": true,
+      "size_bytes": 53333,
+      "sha256": "d7b2dd98af7d272d76f81c00a7c8f7b63286b80b6a6a931fd13a27ab0dd8ed24"
+    },
+    {
+      "label": "d2_rule_summary",
+      "path": "benchmark/results/sample_complexity_0.20/rule_summary.csv",
+      "exists": true,
+      "size_bytes": 2397,
+      "sha256": "6742062716f8c42d08f9f4004f59defa87851d13aba9b5d13ce04feade02e38b"
+    },
+    {
+      "label": "d3_reliability_per_method",
+      "path": "benchmark/results/reliability_recovery/reliability_per_method.csv",
+      "exists": true,
+      "size_bytes": 5691,
+      "sha256": "6ddd6a98741aedf430900a7c36b9047e5c2e52510c3ce3cd9031b5ff67c6b6b6"
+    }
+  ],
+  "figdata_files": [
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig1_case_catalog.csv",
+      "exists": true,
+      "size_bytes": 5050,
+      "sha256": "2fd2fa7206b2d41ec604ff23b563c689182f011ffe23efd9fd4cf03156a33dbe"
+    },
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig1_method_catalog.csv",
+      "exists": true,
+      "size_bytes": 2176,
+      "sha256": "63bb69a5358e3e6d02eab2137c9bc1752107f5a94c610fd29f0fe9dae87659b7"
+    },
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig2_d1_ranks.csv",
+      "exists": true,
+      "size_bytes": 20683,
+      "sha256": "347edecb135ab7078489e1d1a0ee6b04fe0318833d9eae685f89a43430803484"
+    },
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig2_d1_spearman.csv",
+      "exists": true,
+      "size_bytes": 2405,
+      "sha256": "639216e8328ca52f73b04ffc08a614d7307d19f522a571632b01d500eb366a54"
+    },
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig3_d2_learning.csv",
+      "exists": true,
+      "size_bytes": 105214,
+      "sha256": "8d9a2fe11c86f0bf620f86e1506d58d0bd44075c94a323dd8e641c979f2e42e0"
+    },
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig3_d2_rule.csv",
+      "exists": true,
+      "size_bytes": 3056,
+      "sha256": "adbf47473815eceb79757bda7dfc65b8793c249e02bb0ec2c09475a1fa973798"
+    },
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig4_d3_bias.csv",
+      "exists": true,
+      "size_bytes": 9817,
+      "sha256": "fb095d661bb20866834367bf81b8cc16ceef7d6545386cce5b4bcff2410c1818"
+    },
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig5_mechanism.csv",
+      "exists": true,
+      "size_bytes": 25110,
+      "sha256": "e44c48caa36554fc1eeec07a716ea966be9aaf2475456f1c1c730822b47e7ab8"
+    },
+    {
+      "label": "figdata_csv",
+      "path": "paper/.figdata.tmp.7qq9621c/figdata/fig6_pareto.csv",
+      "exists": true,
+      "size_bytes": 32920,
+      "sha256": "5a53388c2e1189f475047307b232272e0e459a85cb93b685783368bf19885d34"
+    }
+  ],
+  "errors": []
+}

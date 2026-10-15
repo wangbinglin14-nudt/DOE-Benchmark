@@ -1,0 +1,8 @@
+{
+  "branin_2d": "tuned_mass_damper_3d",
+  "ishigami_3d": "fin_heat_sink_4d",
+  "friedman_5d": "cantilever_beam_5d",
+  "hartmann_6d": "wing_vlm_6d",
+  "sobol_g_8d": "aircraft_conceptual_8d",
+  "wing_weight_10d": "ten_bar_truss_10d"
+}

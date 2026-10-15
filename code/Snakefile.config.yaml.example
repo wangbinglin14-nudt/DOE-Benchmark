@@ -1,0 +1,30 @@
+# Example Snakefile config — rename to Snakefile.config.yaml to apply.
+# Override any of these from the CLI with `--config <key>=<value>`.
+
+# Number of independent repeats per (case, method, budget).  The
+# Nature-grade run uses 30; the JOSS smoke run uses 6.
+n_repeats: 30
+
+# Training-budget multipliers (n = m * d).  Add 50 for the
+# Nature-grade plateau study.
+budgets: [5, 10, 20, 50]
+
+# Reference test set size.  1000 keeps the per-cell overhead small
+# while still resolving the worst-case fitting noise.
+n_test: 1000
+
+# Method pool.  Choose 'nature' (= full + BoTorch BO) for
+# headline runs; 'extended' is the static-only pool from v0.3.
+pool: nature
+
+# How per-cell seeds are derived; case_repeat is the only choice
+# that gives valid Friedman / Wilcoxon paired-sample tests on
+# multi-case sweeps.
+seed_strategy: case_repeat
+
+# Output sub-directory under benchmark/results/.
+output_subdir: full_benchmark_v04
+
+# The ranking-reversal experiment's own repeat count
+# (separate from the main benchmark above).
+ranking_reversal_repeats: 30

@@ -1,0 +1,42 @@
+{
+  "pairing_mode": "dimension",
+  "budget_mult": 10,
+  "metric": "nrmse",
+  "n_methods": 20,
+  "n_analytical_cases": 6,
+  "n_physical_cases": 6,
+  "spearman_rho": 0.9135196374622357,
+  "spearman_rho_registered": 0.9135196374622357,
+  "n_analytical_cases_complete": 6,
+  "n_physical_cases_complete": 4,
+  "case_axis_bootstrap": {
+    "n_boot": 10000,
+    "bootstrap_seed": 1000,
+    "ci_lo": 0.32101288158045516,
+    "ci_hi": 0.9351711913122462,
+    "n_finite_draws": 10000,
+    "median": 0.7806621519939804,
+    "prob_below_reference": 0.3349,
+    "reference_rho": 0.7
+  },
+  "split_half_analytical": {
+    "n_cases": 6,
+    "half_size": 3,
+    "n_splits": 10,
+    "scheme": "exhaustive",
+    "reliability": 0.7398545544345947,
+    "reliability_sd": 0.10311589548030207
+  },
+  "split_half_physical": {
+    "n_cases": 4,
+    "half_size": 2,
+    "n_splits": 3,
+    "scheme": "exhaustive",
+    "reliability": 0.6960358784988646,
+    "reliability_sd": 0.0972734394650674
+  },
+  "reliability_ceiling": 0.7176108379597322,
+  "source_analytical": "benchmark/results/ranking_reversal/analytical/results.csv",
+  "source_physical": "benchmark/results/ranking_reversal/pairing_dimension/physical/results.csv",
+  "script": "scripts/derive_d1_case_axis_reliability.py"
+}

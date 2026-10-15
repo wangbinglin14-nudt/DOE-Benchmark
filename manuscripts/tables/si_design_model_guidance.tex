@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\caption{\textbf{Supplementary Table S14.} Exploratory design--surrogate guidance from the frozen physical-case sweep. Each entry gives the first and second method by mean within-case rank (lower is better) of median NRMSE over successful repeats. Response-feature labels overlap; the strong-interaction label denotes case metadata rather than the separate Sobol' threshold. This is a descriptive ranking of fixed bundles, not an estimate of independent design or model effects.}
+\label{tab:si_design_model_guidance}
+\SITableFont
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrll@{}}
+\toprule
+Group & Cases & Budget & First (rank) & Second (rank) \\
+\midrule
+All registered cases & 34 & $10d$ & Optimised LHS + GP (3.41) & Maximum variance + GP (4.00) \\
+All registered cases & 34 & $20d$ & Optimised LHS + GP (3.12) & Sobol' + GP (3.29) \\
+Strong-interaction label & 21 & $10d$ & Optimised LHS + GP (3.14) & Maximum variance + GP (3.95) \\
+Strong-interaction label & 21 & $20d$ & Optimised LHS + GP (2.76) & Sobol' + GP (3.14) \\
+Sparse-effects label & 5 & $10d$ & Sobol' + GP (2.20) & Halton + GP (2.80) \\
+Sparse-effects label & 5 & $20d$ & Halton + GP (2.00) & Optimised LHS + GP (2.60) \\
+\bottomrule
+\end{tabular}
+\end{table}

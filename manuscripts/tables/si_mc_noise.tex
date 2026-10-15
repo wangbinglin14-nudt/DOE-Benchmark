@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Supplementary Table S9.} Finite-test-set sensitivity of a pooled-output error diagnostic. An optimised-LHS--GP model is fitted at $20d$ on each of \NumMCNoiseNCases{} cases. At \NumMCNoiseNTest{} test points, the table reports bootstrap-mean $E_{\mathrm{pool}}$ and relative 95\% interval width (width divided by that mean). This scale-weighted diagnostic differs from the primary output-averaged NRMSE. Median and maximum relative widths are \NumMCNoiseMedianRelWidthPct{}\% and \NumMCNoiseMaxRelWidthPct{}\%.}
+\label{tab:si_mc_noise}
+\SITableFont
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Case} & \textbf{$n_{\mathrm{test}}$} & \textbf{Mean $E_{\mathrm{pool}}$} & \textbf{Rel.\ CI width} \\
+\midrule
+Cantilever beam & 1,000 & 0.303 & 61.0\% \\
+Fin heat sink & 1,000 & 0.061 & 29.1\% \\
+Ten-bar truss & 1,000 & 0.459 & 12.5\% \\
+Tuned mass damper & 1,000 & 0.354 & 17.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,113 @@
+{
+  "source": "benchmark/results/full_benchmark/results.csv",
+  "primary": {
+    "metric": "nrmse",
+    "threshold": 0.2,
+    "rule_budget": 10,
+    "n_classes": 7,
+    "n_classes_point_estimate_pass": 3,
+    "classes_point_estimate_pass": [
+      "discontinuous",
+      "smooth_unimodal",
+      "strong_interaction"
+    ],
+    "per_topology": [
+      {
+        "topology": "discontinuous",
+        "frac_pass_at_10d": 0.55,
+        "methods_pass_at_10d": 11,
+        "median_n_star": 10.0
+      },
+      {
+        "topology": "heterogeneous",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 20.0
+      },
+      {
+        "topology": "smooth_monotone",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 50.0
+      },
+      {
+        "topology": "smooth_unimodal",
+        "frac_pass_at_10d": 0.55,
+        "methods_pass_at_10d": 11,
+        "median_n_star": 5.0
+      },
+      {
+        "topology": "sparse_effects",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 50.0
+      },
+      {
+        "topology": "strong_interaction",
+        "frac_pass_at_10d": 0.6,
+        "methods_pass_at_10d": 12,
+        "median_n_star": 10.0
+      },
+      {
+        "topology": "threshold_jump",
+        "frac_pass_at_10d": 0.3,
+        "methods_pass_at_10d": 6,
+        "median_n_star": 15.0
+      }
+    ]
+  },
+  "alternate": {
+    "metric": "nrmse_worst",
+    "threshold": 0.2,
+    "rule_budget": 10,
+    "n_classes": 7,
+    "n_classes_point_estimate_pass": 0,
+    "classes_point_estimate_pass": [],
+    "per_topology": [
+      {
+        "topology": "discontinuous",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": null
+      },
+      {
+        "topology": "heterogeneous",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 50.0
+      },
+      {
+        "topology": "smooth_monotone",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 50.0
+      },
+      {
+        "topology": "smooth_unimodal",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 50.0
+      },
+      {
+        "topology": "sparse_effects",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 50.0
+      },
+      {
+        "topology": "strong_interaction",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 50.0
+      },
+      {
+        "topology": "threshold_jump",
+        "frac_pass_at_10d": 0.0,
+        "methods_pass_at_10d": 0,
+        "median_n_star": 50.0
+      }
+    ]
+  },
+  "archived_rule_summary_reproduced": true,
+  "script": "scripts/derive_d2_metric_sensitivity.py"
+}

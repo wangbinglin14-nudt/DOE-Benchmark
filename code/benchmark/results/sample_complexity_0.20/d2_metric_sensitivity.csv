@@ -1,0 +1,8 @@
+topology,frac_pass_at_10d_nrmse,methods_pass_at_10d_nrmse,frac_pass_at_10d_nrmse_worst,methods_pass_at_10d_nrmse_worst
+discontinuous,0.55,11,0.0,0
+heterogeneous,0.0,0,0.0,0
+smooth_monotone,0.0,0,0.0,0
+smooth_unimodal,0.55,11,0.0,0
+sparse_effects,0.0,0,0.0,0
+strong_interaction,0.6,12,0.0,0
+threshold_jump,0.3,6,0.0,0

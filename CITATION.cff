@@ -1,0 +1,63 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+type: software
+title: 'doe-testbed: Physics-grounded engineering test problems and benchmark for
+  DOE method evaluation'
+version: 0.4.0-dev
+date-released: 2026-04-30
+license: MIT
+keywords:
+- design of experiments
+- DOE
+- test problems
+- benchmark
+- engineering simulation
+- sensitivity analysis
+- surrogate modeling
+- reliability analysis
+- Bayesian optimisation
+authors:
+- given-names: Binglin
+  family-names: Wang
+  affiliation: National University of Defense Technology (NUDT), China
+preferred-citation:
+  type: article
+  title: Benchmarking design-of-experiments guidance in physics-grounded engineering
+    simulations
+  authors:
+  - given-names: Binglin
+    family-names: Wang
+    affiliation: National Key Laboratory of Parallel and Distributed Computing; College
+      of Computer Science and Technology, National University of Defense Technology,
+      Changsha 410073, China
+  - given-names: Shaoxiong
+    family-names: Cai
+    affiliation: School of Electronic Information Engineering, Beihang University,
+      Beijing 100191, China
+  - given-names: Junbo
+    family-names: Zhang
+    affiliation: National Key Laboratory of Parallel and Distributed Computing; College
+      of Computer Science and Technology, National University of Defense Technology,
+      Changsha 410073, China
+  - given-names: Xiaojun
+    family-names: Duan
+    affiliation: Department of Systems Science, College of Science, National
+      University of Defense Technology, Changsha 410073, Hunan, China
+  - given-names: Yongdao
+    family-names: Zhou
+    affiliation: NITFID, LPMC & KLMDASR, School of Statistics and Data Science, Nankai
+      University, Tianjin, 300071, China
+  - given-names: Fasheng
+    family-names: Sun
+    affiliation: KLAS and School of Mathematics and Statistics, Northeast Normal University,
+      Changchun, China
+  - given-names: Zhaohui
+    family-names: Li
+    affiliation: State Key Laboratory of Mathematical Sciences (SKLMS), Academy of
+      Mathematics and Systems Science, Chinese Academy of Sciences, Beijing 100190,
+      China
+  - given-names: Jianguo
+    family-names: Sun
+    affiliation: Xidian University, Hangzhou Institute of Technology, Hangzhou, China
+  year: 2026
+  journal: Communications Engineering (prepared for submission)

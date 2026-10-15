@@ -1,0 +1,9 @@
+{
+  "n_main_topologies": 7,
+  "n_pass_at_10d": 3,
+  "frac_pass": 0.42857142857142855,
+  "clopper_pearson_one_sided_upper95": 0.7746784159675522,
+  "registered_cutoff_fraction": 0.5714285714285714,
+  "_source": "benchmark\\results\\sample_complexity_0.20\\rule_summary.csv",
+  "_script": "scripts/derive_pooled_reliability_stats.py"
+}

@@ -1,0 +1,47 @@
+\SITableFont
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{2.7cm}c>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{3.9cm}rrr@{}}
+\toprule
+\textbf{Case} & $d$ & \textbf{Response-feature labels} & \textbf{Leading input (unit)} & $S_T$ & $\sum S_T$ & \textbf{Inter.} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Case} & $d$ & \textbf{Response-feature labels} & \textbf{Leading input (unit)} & $S_T$ & $\sum S_T$ & \textbf{Inter.} \\
+\midrule
+\endhead
+Airfoil stall polar & 4 & smooth unimodal, threshold jump, heterogeneous & Attack angle ($^\circ$)\newline (\texttt{alpha}) & 0.962 & 1.112 & 0.198 \\
+Waverider forebody & 4 & smooth unimodal, strong interaction & Cone half-angle ($^\circ$)\newline (\texttt{theta\_c}) & 0.816 & 1.133 & 0.266 \\
+Transonic airfoil drag & 5 & threshold jump, heterogeneous, smooth unimodal & Flight Mach number (--)\newline (\texttt{Ma}) & 0.960 & 1.079 & 0.151 \\
+Supersonic intake & 5 & smooth unimodal, threshold jump, strong interaction, discontinuous & Freestream Mach number (--)\newline (\texttt{Ma\_in}) & 0.957 & 1.012 & 0.016 \\
+Rotor blade-element momentum & 6 & smooth unimodal, strong interaction, discontinuous & Root collective pitch ($^\circ$)\newline (\texttt{theta\_0}) & 0.711 & 1.093 & 0.168 \\
+Finite-wing lifting line & 6 & smooth unimodal, strong interaction & Attack angle ($^\circ$)\newline (\texttt{alpha}) & 0.736 & 1.025 & 0.041 \\
+Rocket specific impulse & 4 & smooth unimodal & Oxidiser/fuel mass ratio (--)\newline (\texttt{MR}) & 0.755 & 1.006 & 0.008 \\
+Laminar flame speed & 5 & smooth unimodal, strong interaction & CH$_4$ volume fraction (--)\newline (\texttt{fuel\_frac}) & 0.488 & 1.101 & 0.206 \\
+Membrane reactor & 5 & smooth monotone, strong interaction & Damk\"ohler number (--)\newline (\texttt{Da}) & 0.879 & 1.076 & 0.150 \\
+Supersonic nozzle & 5 & threshold jump, discontinuous & Back/stagnation pressure ratio (--)\newline (\texttt{p\_back\_ratio}) & 0.754 & 1.717 & 1.249 \\
+Fixed-bed reactor & 6 & smooth unimodal, strong interaction, heterogeneous & Activation energy (kJ mol$^{-1}$)\newline (\texttt{Ea}) & 0.802 & 1.409 & 0.596 \\
+Soil consolidation & 5 & smooth monotone, strong interaction, heterogeneous & Volume compressibility (Pa$^{-1}$)\newline (\texttt{m\_v}) & 0.758 & 1.755 & 1.089 \\
+Dam seepage & 6 & smooth monotone, strong interaction, threshold jump, discontinuous & Upstream head (m)\newline (\texttt{H1}) & 0.564 & 1.115 & 0.250 \\
+Groundwater contamination & 6 & smooth monotone, strong interaction, sparse effects, heterogeneous, threshold jump, discontinuous & Degradation half-life (day)\newline (\texttt{t\_half}) & 0.680 & 1.108 & 0.197 \\
+Oil-reservoir seepage & 9 & smooth monotone, strong interaction & Block (2,2) permeability (mD)\newline (\texttt{K22}) & 0.301 & 1.730 & 1.270 \\
+Fin heat sink & 4 & smooth monotone, strong interaction & Convective coefficient (W m$^{-2}$ K$^{-1}$)\newline (\texttt{h\_coef}) & 0.815 & 1.108 & 0.190 \\
+Multilayer wall (4-layer) & 4 & smooth monotone & Layer 4 conductivity (W m$^{-1}$ K$^{-1}$)\newline (\texttt{k4}) & 0.250 & 0.999 & 0.000 \\
+Casting solidification & 5 & smooth unimodal, strong interaction, heterogeneous & Casting half-thickness (m)\newline (\texttt{L\_half}) & 0.716 & 1.118 & 0.229 \\
+Heterogeneous conduction & 5 & smooth monotone, threshold jump, heterogeneous & Hot-side temperature ($^\circ$C)\newline (\texttt{T\_hot}) & 0.800 & 1.000 & 0.000 \\
+Battery thermal management & 7 & smooth unimodal, strong interaction & Coolant temperature ($^\circ$C)\newline (\texttt{T\_cool}) & 0.899 & 1.061 & 0.125 \\
+Multilayer wall (8-layer) & 8 & smooth monotone & Layer 3 conductivity (W m$^{-1}$ K$^{-1}$)\newline (\texttt{k3}) & 0.127 & 1.011 & 0.024 \\
+Multilayer wall (16-layer) & 16 & smooth monotone & Layer 14 conductivity (W m$^{-1}$ K$^{-1}$)\newline (\texttt{k14}) & 0.064 & 1.011 & 0.029 \\
+Pressure vessel & 4 & smooth monotone, strong interaction & Internal pressure (MPa)\newline (\texttt{P}) & 0.779 & 1.368 & 0.709 \\
+Solar photovoltaic yield & 6 & smooth unimodal, strong interaction & Annual global horizontal irradiation (kWh m$^{-2}$)\newline (\texttt{GHI\_annual}) & 0.788 & 1.017 & 0.031 \\
+Wind-turbine power & 6 & smooth monotone, strong interaction & Optimal tip-speed ratio (--)\newline (\texttt{lam\_opt}) & 0.828 & 1.007 & 0.012 \\
+Aircraft conceptual design & 8 & smooth monotone, strong interaction & Fuel-weight fraction (--)\newline (\texttt{W\_frac}) & 0.645 & 1.025 & 0.059 \\
+Tuned mass damper & 3 & smooth unimodal, strong interaction, heterogeneous & Damper/primary mass ratio (--)\newline (\texttt{mu}) & 0.423 & 1.191 & 0.337 \\
+Cantilever beam & 5 & smooth monotone, strong interaction & Cross-section height (m)\newline (\texttt{h}) & 0.740 & 1.583 & 0.961 \\
+Plate with hole & 5 & smooth monotone, strong interaction & Nominal $x$-stress (MPa)\newline (\texttt{sigma\_x}) & 0.466 & 1.230 & 0.473 \\
+Thin-plate buckling & 5 & threshold jump, smooth unimodal & Thickness/width ratio (--)\newline (\texttt{h\_over\_b}) & 0.834 & 1.159 & 0.329 \\
+Variable-section beam (5-D) & 5 & smooth monotone, sparse effects & Segment 1 height (m)\newline (\texttt{h1}) & 0.566 & 1.237 & 0.467 \\
+Ten-bar truss & 10 & smooth monotone, sparse effects & Bar 2 area (cm$^2$)\newline (\texttt{A2}) & 0.318 & 1.012 & 0.006 \\
+Variable-section beam (10-D) & 10 & smooth monotone, sparse effects & Segment 1 height (m)\newline (\texttt{h1}) & 0.376 & 1.279 & 0.530 \\
+Variable-section beam (20-D) & 20 & smooth monotone, sparse effects & Segment 2 height (m)\newline (\texttt{h2}) & 0.253 & 1.345 & 0.570 \\
+\bottomrule
+\end{longtable}
