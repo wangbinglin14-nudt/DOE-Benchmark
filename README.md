@@ -156,8 +156,6 @@ Repeating the full simulation sweep additionally requires reconstruction of the
 original execution environment. The current benchmark-extra Torch constraint
 is `>=2.2,<2.5`; the archived startup record lists `2.11.0+cpu`.
 
-The [release check](project_docs/RELEASE_CHECK.md) records the verified file
-coverage and outstanding environment and workflow-portability items.
 Some older manuscript-generation scripts retain `code/paper/` defaults;
 scripts with path options should be pointed to `manuscripts/`.
 
@@ -184,7 +182,7 @@ DOE-Benchmark/
 │   ├── figures/         Reference figure exports
 │   ├── tables/          Supplementary table fragments
 │   └── protocol/        Protocol and amendments
-└── project_docs/        Retained exploratory summaries and release checks
+└── project_docs/        Retained exploratory analysis tables
 ```
 
 Start with the [case overview](code/docs/CASE_OVERVIEW.md),
