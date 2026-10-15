@@ -66,19 +66,24 @@ fresh results. See [CONTRIBUTING.md](project/CONTRIBUTING.md).
 
 ## Reproduce existing figures and numbers
 
-The following historical commands ran from the development code directory in a
-disposable workspace. Some retain `paper/` defaults; use explicit path options
-for `manuscripts/` where supported, as described in the [repository README](../../README.md):
+Run the following commands from `code/` in a disposable copy of the repository.
+Their defaults are configured in `scripts/project_layout.py`: figure-source
+tables go to `../manuscripts/figdata/`, figures to `../manuscripts/figures/`,
+and numerical summaries to `../manuscripts/numbers.tex` and `numbers.json`.
+Explicit input/output path options remain available.
 
 ```sh
 python scripts/prepare_figdata.py --require-headline-source
 python scripts/plots_nature.py
 python scripts/fill_paper_numbers.py --require-results-csv --require-results-contract --require-headline-source --require-submission-complete
-python scripts/check_submission_ready.py paper
 ```
 
-These commands reproduce from retained derived artifacts and the frozen raw
-archive. To recompute D2 and D3 from the raw CSV as well:
+These commands use the retained derived artifacts and the frozen raw archive.
+They regenerate outputs rather than simply inspecting the archive. Full
+submission-readiness checks additionally require the manuscript's LaTeX and
+editorial sources, which are not included in this public data-and-code package;
+correct paths alone do not establish a complete submission package.
+To recompute D2 and D3 from the raw CSV as well:
 
 ```sh
 python benchmark/scripts/run_sample_complexity.py benchmark/results/full_benchmark/results.csv --threshold 0.20 --output-dir benchmark/results/sample_complexity_0.20 --require-headline-source

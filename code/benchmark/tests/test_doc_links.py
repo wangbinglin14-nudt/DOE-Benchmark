@@ -1,11 +1,9 @@
 """CI guard: every relative Markdown link in the repo resolves.
 
 Wraps ``scripts/check_doc_links.py`` so a broken cross-reference fails
-CI before a reviewer encounters it.  This is the safety net for the
-``docs/`` and ``paper/`` directories the project added on 2026-05-23
-(`PROJECT_STATUS.md`, `STATISTICAL_ANALYSIS_PLAN.md`,
-`GAP_ANALYSIS_TO_NATURE_SUB.md`, `REPRODUCIBILITY.md`,
-`paper/preregistration.md`, `paper/preregistration_amendments.md`).
+CI before a reviewer encounters it. This is the safety net for public technical
+documentation and the ``manuscripts/`` research records. Private plans are not
+required public artifacts.
 
 The test:
 1. Imports ``scripts/check_doc_links.py`` as a module (no subprocess so
@@ -15,6 +13,7 @@ The test:
    so a future ``rm`` cannot quietly delete a key publication-track
    document and have the link checker pass on a vacuous repo.
 """
+
 from __future__ import annotations
 
 import importlib.util
@@ -45,29 +44,27 @@ def test_all_relative_links_resolve(capsys):
     mod = _import_check_doc_links()
     rc = mod.main(["--quiet"])
     out = capsys.readouterr().out
-    assert rc == 0, (
-        "scripts/check_doc_links.py reported broken Markdown links:\n" + out
-    )
+    assert rc == 0, "scripts/check_doc_links.py reported broken Markdown links:\n" + out
 
 
 # ─── 2. Pin the publication-track documents ─────────────────────────────
 REQUIRED_DOCS = (
     "docs/README.md",
-    "docs/PROJECT_STATUS.md",
     "docs/CASE_EVIDENCE_INDEX.md",
     "docs/STATISTICAL_ANALYSIS_PLAN.md",
     "docs/REPRODUCIBILITY.md",
-    "paper/protocol/preregistration.md",
-    "paper/protocol/preregistration_amendments.md",
-    "paper/README.md",
+    "../manuscripts/protocol/preregistration.md",
+    "../manuscripts/protocol/preregistration_amendments.md",
+    "../manuscripts/protocol/preregistration_decisions.md",
+    "../manuscripts/numbers.tex",
+    "../manuscripts/numbers.json",
     "scripts/README.md",
     "scripts/check_doc_links.py",
     "scripts/generate_run_manifest.py",
     "scripts/launch_sweep_local_16gb.ps1",
     "benchmark/README.md",
     "benchmark/tests/test_experiment_contracts.py",
-    "README.md",
-    "README_zh.md",
+    "../README.md",
 )
 
 
@@ -150,3 +147,17 @@ def test_relative_link_to_missing_file_is_flagged(tmp_path):
     bad = mod.check_file(md)
     assert len(bad) == 1
     assert "does/not/exist.md" in bad[0][0]
+
+
+def test_default_scan_includes_the_public_repository_root():
+    mod = _import_check_doc_links()
+    assert mod.ROOT == ROOT.parent
+
+
+def test_temporary_audit_copies_are_not_public_documentation(tmp_path, monkeypatch):
+    mod = _import_check_doc_links()
+    monkeypatch.setattr(mod, "ROOT", tmp_path)
+    (tmp_path / "_tmp").mkdir()
+    snapshot = tmp_path / "_tmp" / "README.md"
+    snapshot.write_text("[old](missing.md)\n", encoding="utf-8")
+    assert list(mod._iter_markdown_files([tmp_path], mod.DEFAULT_EXCLUDE_DIRS)) == []

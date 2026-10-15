@@ -28,7 +28,9 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-PAPER = ROOT / "paper"
+from scripts.project_layout import MANUSCRIPTS_DIR  # noqa: E402
+
+PAPER = MANUSCRIPTS_DIR
 FULL_SWEEP = ROOT / "benchmark" / "results" / "full_benchmark"
 RESULTS_ROOT = ROOT / "benchmark" / "results"
 DEFAULT_OUTPUT = ROOT / "docs" / "PUBLICATION_READINESS_AUDIT.md"

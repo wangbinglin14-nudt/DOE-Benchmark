@@ -11,7 +11,7 @@ Usage::
         --d1-dir        benchmark/results/ranking_reversal \
         --d2-dir        benchmark/results/sample_complexity_0.20 \
         --d3-dir        benchmark/results/reliability_recovery \
-        --out-dir       paper/figdata
+        --out-dir       ../manuscripts/figdata
 """
 from __future__ import annotations
 
@@ -27,6 +27,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from scripts.project_layout import FIGDATA_DIR, portable_path  # noqa: E402
 
 import numpy as np
 import pandas as pd
@@ -103,24 +105,6 @@ def _sha256(path: Path) -> str:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
-
-
-def _portable_path(path: Path) -> str:
-    # Preserve archive-relative names across workspace directory junctions.
-    try:
-        return path.absolute().relative_to(ROOT).as_posix()
-    except ValueError:
-        pass
-    for name in ("paper", "submission"):
-        try:
-            suffix = path.resolve().relative_to((ROOT / name).resolve())
-            return (Path(name) / suffix).as_posix()
-        except ValueError:
-            pass
-    try:
-        return path.resolve().relative_to(ROOT).as_posix()
-    except ValueError:
-        return path.resolve().as_posix()
 
 
 def _save(df: pd.DataFrame, path: Path, source: str) -> None:
@@ -203,7 +187,7 @@ def validate_headline_results_source(
     if results_csv.resolve() != HEADLINE_RESULTS_CSV.resolve():
         raise AssertionError(
             "headline paper artifacts must read the canonical results source "
-            f"{_portable_path(HEADLINE_RESULTS_CSV)}; got {_portable_path(results_csv)}"
+            f"{portable_path(HEADLINE_RESULTS_CSV, ROOT)}; got {portable_path(results_csv, ROOT)}"
         )
 
     expected_methods = set(current_headline_methods())
@@ -982,7 +966,7 @@ def parse_args(argv=None):
     p.add_argument(
         "--out-dir",
         type=Path,
-        default=ROOT / "paper" / "figdata",
+        default=FIGDATA_DIR,
     )
     p.add_argument(
         "--expected-methods",
@@ -1087,7 +1071,7 @@ def _replace_directory_atomically(src: Path, dst: Path) -> None:
 def _manifest_entry(path: Path, *, label: str) -> dict[str, object]:
     entry: dict[str, object] = {
         "label": label,
-        "path": _portable_path(path),
+        "path": portable_path(path, ROOT),
         "exists": path.exists(),
     }
     if path.exists() and path.is_file():
@@ -1177,10 +1161,10 @@ def write_figdata_manifest(
         "generated_at": _ts(),
         "script": "scripts/prepare_figdata.py",
         "status": status,
-        "results_csv": _portable_path(args.results_csv),
-        "d1_dir": _portable_path(args.d1_dir),
-        "d2_dir": _portable_path(args.d2_dir),
-        "d3_dir": _portable_path(args.d3_dir),
+        "results_csv": portable_path(args.results_csv, ROOT),
+        "d1_dir": portable_path(args.d1_dir, ROOT),
+        "d2_dir": portable_path(args.d2_dir, ROOT),
+        "d3_dir": portable_path(args.d3_dir, ROOT),
         "analysis_policy": ANALYSIS_POLICY,
         "results_summary": _results_csv_summary(args.results_csv),
         "inputs": _analysis_inputs(args),
@@ -1198,7 +1182,7 @@ def write_figdata_manifest(
 
 
 def main(argv=None):
-    """Derive every paper/figdata CSV from the frozen sweep and analysis artifacts, so each figure has a single traceable data source."""
+    """Derive figure-source CSVs from the frozen sweep and analysis artifacts."""
     args = parse_args(argv)
 
     print(f"Loading results.csv from {args.results_csv}...")

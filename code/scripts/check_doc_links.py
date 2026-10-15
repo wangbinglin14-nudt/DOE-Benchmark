@@ -36,7 +36,7 @@ Exit codes
 Usage
 -----
     python scripts/check_doc_links.py            # scan the whole repo
-    python scripts/check_doc_links.py --root docs paper
+    python scripts/check_doc_links.py --root docs ../manuscripts
     python scripts/check_doc_links.py --quiet    # only print broken links
 
 This script is exercised by ``benchmark/tests/test_doc_links.py`` so
@@ -50,7 +50,7 @@ import sys
 from pathlib import Path
 from typing import Iterable, List, Sequence
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 # Inline link:    [text](target "optional title")
 # Reference link target: [label]: target "optional title"
@@ -72,11 +72,14 @@ DEFAULT_EXCLUDE_DIRS = (
     "submission",  # Generated delivery snapshots are checked by their own manifests.
     "review_nature_style",
     "tmp",
+    "_tmp",
+    "code/_tmp",
+    "code/logs",
     "_archive",
     # benchmark/results/<run>/REPORT.md files reference results CSVs by
     # relative path that may move with the run; treat them as data, not
     # documentation.
-    "benchmark/results",
+    "code/benchmark/results",
 )
 
 
@@ -96,7 +99,7 @@ def _iter_markdown_files(roots: Sequence[Path], exclude: Sequence[str]) -> Itera
             except OSError:
                 continue
             # Skip if any ancestor of ``path`` is in the exclude set.
-            if any(str(resolved).startswith(str(ex)) for ex in excl_resolved):
+            if any(resolved == ex or ex in resolved.parents for ex in excl_resolved):
                 continue
             yield path
 

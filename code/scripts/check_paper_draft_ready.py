@@ -21,8 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.project_layout import paper_file, metadata_file
-PAPER = ROOT / "paper"
+from scripts.project_layout import MANUSCRIPTS_DIR, paper_file, metadata_file
+PAPER = MANUSCRIPTS_DIR
 
 
 def _load_module(rel_path: str, module_name: str):

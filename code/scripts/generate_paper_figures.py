@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Generate publication-quality figures for paper/fig/.
+"""Generate additional figures in ../manuscripts/figures/supplementary/.
 
 Figures produced
 ----------------
@@ -21,8 +21,9 @@ import numpy as np
 # Ensure doe_testbed is importable
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 import doe_testbed as db
+from scripts.project_layout import FIGURES_DIR  # noqa: E402
 
-OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "paper", "fig")
+OUT_DIR = FIGURES_DIR / "supplementary"
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # ──────────────────────────────────────────────────────────────────

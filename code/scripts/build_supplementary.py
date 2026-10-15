@@ -2,7 +2,7 @@
 """Regenerate the Supplementary Information tables from archived data artifacts.
 
 Reads only committed analysis outputs (no hand-entered numbers) and writes the
-LaTeX table fragments consumed by paper/supplementary.tex:
+LaTeX table fragments in ../manuscripts/tables/ for supplementary material:
 
   S1  si_hyperparameters_clean.tex   (wrapping method/hyperparameter table)
   S2  si_sobol_clean.tex             (wrapping per-case Sobol' table)
@@ -22,8 +22,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
-PAPER = os.path.join(ROOT, "paper")
-TABLES = os.path.join(PAPER, "tables") if os.path.isdir(os.path.join(PAPER, "tables")) else PAPER
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
+from scripts.project_layout import MANUSCRIPTS_DIR, TABLES_DIR  # noqa: E402
+
+PAPER = MANUSCRIPTS_DIR
+TABLES = TABLES_DIR
 REL = os.path.join(ROOT, "benchmark", "results", "reliability_recovery")
 FULL = os.path.join(ROOT, "benchmark", "results", "full_benchmark", "analysis")
 

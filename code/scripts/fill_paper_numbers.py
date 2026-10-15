@@ -1,7 +1,7 @@
 """
 scripts/fill_paper_numbers.py
 ==============================
-从实验结果中提取所有论文数字，写入 paper/numbers.tex 和 paper/numbers.json。
+从实验结果中提取所有论文数字，默认写入 ../manuscripts/numbers.tex 和 numbers.json。
 所有数字来自 figdata / D1-D3 分析结果，不手动填写。
 
 Usage::
@@ -11,9 +11,9 @@ Usage::
         --rr-dir      benchmark/results/ranking_reversal \
         --d2-dir      benchmark/results/sample_complexity_0.20 \
         --d3-dir      benchmark/results/reliability_recovery \
-        --figdata-dir paper/figdata \
-        --output-tex  paper/numbers.tex \
-        --output-json paper/numbers.json
+        --figdata-dir ../manuscripts/figdata \
+        --output-tex  ../manuscripts/numbers.tex \
+        --output-json ../manuscripts/numbers.json
 """
 from __future__ import annotations
 
@@ -30,6 +30,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from scripts.project_layout import FIGDATA_DIR, MANUSCRIPTS_DIR, portable_path  # noqa: E402
 
 import numpy as np
 import pandas as pd
@@ -143,28 +145,10 @@ def _sha256(path: Path) -> str:
     return h.hexdigest()
 
 
-def _portable_path(path: Path) -> str:
-    # Preserve archive-relative names across workspace directory junctions.
-    try:
-        return path.absolute().relative_to(ROOT).as_posix()
-    except ValueError:
-        pass
-    for name in ("paper", "submission"):
-        try:
-            suffix = path.resolve().relative_to((ROOT / name).resolve())
-            return (Path(name) / suffix).as_posix()
-        except ValueError:
-            pass
-    try:
-        return path.resolve().relative_to(ROOT).as_posix()
-    except ValueError:
-        return path.resolve().as_posix()
-
-
 def _artifact_entry(path: Path, *, label: str) -> dict[str, object]:
     entry: dict[str, object] = {
         "label": label,
-        "path": _portable_path(path),
+        "path": portable_path(path, ROOT),
         "exists": path.exists(),
     }
     if path.exists() and path.is_file():
@@ -1034,7 +1018,7 @@ def parse_args(argv=None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description=(
             "Compute and emit all numerical macros (D1/D2/D3 + protocol) "
-            "for paper/numbers.tex + numbers.json (GAP-8)."
+            "for manuscript numbers.tex + numbers.json (GAP-8)."
         ),
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
@@ -1056,7 +1040,7 @@ def parse_args(argv=None) -> argparse.Namespace:
     )
     p.add_argument(
         "--figdata-dir", type=Path,
-        default=ROOT / "paper" / "figdata",
+        default=FIGDATA_DIR,
     )
     p.add_argument(
         "--test-protocol-dir", type=Path,
@@ -1069,11 +1053,11 @@ def parse_args(argv=None) -> argparse.Namespace:
     )
     p.add_argument(
         "--output-tex", type=Path,
-        default=ROOT / "paper" / "numbers.tex",
+        default=MANUSCRIPTS_DIR / "numbers.tex",
     )
     p.add_argument(
         "--output-json", type=Path,
-        default=ROOT / "paper" / "numbers.json",
+        default=MANUSCRIPTS_DIR / "numbers.json",
     )
     p.add_argument(
         "--require-results-csv",
@@ -1104,7 +1088,7 @@ def parse_args(argv=None) -> argparse.Namespace:
         "--require-submission-complete",
         action="store_true",
         help=(
-            "Fail instead of writing paper/numbers outputs when any "
+            "Fail instead of writing manuscript numbers outputs when any "
             "submission-critical macro would still be N/A."
         ),
     )

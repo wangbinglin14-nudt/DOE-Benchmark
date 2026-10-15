@@ -1,12 +1,12 @@
 """
 scripts/plots_nature.py
 =========================
-从 paper/figdata/*.csv 生成论文全部图表（Nature 格式）。
+从 ../manuscripts/figdata/*.csv 生成论文全部图表（Nature 格式）。
 
 Usage::
 
-    python scripts/plots_nature.py --figdata paper/figdata --out-dir paper/figures
-    python scripts/plots_nature.py --figdata paper/figdata --out-dir paper/figures --fig 2
+    python scripts/plots_nature.py
+    python scripts/plots_nature.py --figdata ../manuscripts/figdata --out-dir ../manuscripts/figures --fig 2
 """
 from __future__ import annotations
 
@@ -25,6 +25,8 @@ if str(ROOT) not in sys.path:
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
+
+from scripts.project_layout import FIGDATA_DIR, FIGURES_DIR  # noqa: E402
 
 from paper_names import domain_label, family_label, method_label
 
@@ -953,11 +955,11 @@ def parse_args(argv=None):
     )
     p.add_argument(
         "--figdata", type=Path,
-        default=ROOT / "paper" / "figdata",
+        default=FIGDATA_DIR,
     )
     p.add_argument(
         "--out-dir", type=Path,
-        default=ROOT / "paper" / "figures",
+        default=FIGURES_DIR,
     )
     p.add_argument(
         "--fig", type=int, nargs="+", default=list(range(1, 7)),

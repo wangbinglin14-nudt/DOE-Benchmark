@@ -17,8 +17,8 @@ of truth in the codebase:
 
 Each table is emitted in two formats:
 
-* ``paper/tables/si_<id>.tex`` — booktabs-style LaTeX for direct inclusion
-* ``paper/tables/si_<id>.md`` — companion Markdown
+* ``../manuscripts/tables/si_<id>.tex`` — booktabs-style LaTeX for direct inclusion
+* ``../manuscripts/tables/si_<id>.md`` — companion Markdown
 
 By regenerating SI from code we guarantee that the manuscript can
 never silently drift from the implementation — the same property
@@ -27,7 +27,7 @@ enforced by the CI hyperparameter-locking test.
 Usage
 -----
 
-    python scripts/generate_si.py                 # write to paper/tables/si_*.tex|md
+    python scripts/generate_si.py                 # write to ../manuscripts/tables/
     python scripts/generate_si.py --output-dir docs/SI
 
 """
@@ -47,6 +47,8 @@ from typing import Any, Dict, List, Optional, Tuple
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from scripts.project_layout import TABLES_DIR  # noqa: E402
 
 # Force UTF-8 stdout on Windows so the unicode glyphs render correctly.
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
@@ -618,7 +620,7 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     p.add_argument("--output-dir", type=Path,
-                   default=ROOT / "paper",
+                   default=TABLES_DIR,
                    help="Where to write si_*.tex and si_*.md.")
     return p.parse_args(argv)
 

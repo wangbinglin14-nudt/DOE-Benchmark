@@ -12,7 +12,11 @@ from pathlib import Path
 from typing import Set
 
 ROOT = Path(__file__).resolve().parents[1]
-PAPER = ROOT / "paper"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from scripts.project_layout import MANUSCRIPTS_DIR  # noqa: E402
+
+PAPER = MANUSCRIPTS_DIR
 
 USE_RE = re.compile(r"\\Num[A-Za-z0-9]+")
 DEF_RE = re.compile(r"\\newcommand\{\\(Num[A-Za-z0-9]+)\}")

@@ -78,7 +78,7 @@ from typing import Callable, Iterable, List, Optional, Sequence
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.project_layout import paper_file
+from scripts.project_layout import FIGDATA_DIR, FIGURES_DIR, MANUSCRIPTS_DIR, paper_file
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
@@ -114,9 +114,7 @@ SWEEP_DIR = RESULTS_ROOT / "full_benchmark"
 RR_DIR = RESULTS_ROOT / "ranking_reversal"
 SC_DIR = RESULTS_ROOT / "sample_complexity_0.20"
 RR3_DIR = RESULTS_ROOT / "reliability_recovery"
-PAPER_DIR = ROOT / "paper"
-FIGDATA_DIR = PAPER_DIR / "figdata"
-FIGURES_DIR = PAPER_DIR / "figures"
+PAPER_DIR = MANUSCRIPTS_DIR
 LOGS_DIR = ROOT / "logs"
 
 # The 34 cases of the frozen pre-registration (DOE-Benchmark §0.6.4 /
@@ -577,7 +575,7 @@ def _cmd_figures(cfg: PipelineConfig) -> List[str]:
 
 
 def _cmd_numbers(cfg: PipelineConfig) -> List[str]:
-    """Stage 10a: ``fill_paper_numbers.py`` — paper/numbers.tex macros."""
+    """Stage 10a: ``fill_paper_numbers.py`` — manuscript numerical macros."""
     cmd = [
         cfg.resolve_python(), "-u",
         str(ROOT / "scripts" / "fill_paper_numbers.py"),
@@ -920,7 +918,7 @@ def build_stages(cfg: PipelineConfig) -> List[Stage]:
         Stage(
             number=8,
             name="figdata",
-            description="Figure data package (paper/figdata/*.csv)",
+            description="Figure data package (configured figdata directory)",
             build_cmd=_cmd_figdata,
             expected_outputs=[
                 cfg.figdata_dir / "fig1_case_catalog.csv",
@@ -989,7 +987,7 @@ def build_stages(cfg: PipelineConfig) -> List[Stage]:
         Stage(
             number=10,
             name="numbers",
-            description="paper/numbers.tex + numbers.json macros",
+            description="Manuscript numbers.tex + numbers.json macros",
             build_cmd=_cmd_numbers,
             expected_outputs=[
                 cfg.paper_dir / "numbers.tex",

@@ -27,6 +27,7 @@ from typing import Sequence
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+from scripts.project_layout import MANUSCRIPTS_DIR  # noqa: E402
 from scripts.server_operator_contracts import server_operator_contract_nodeids  # noqa: E402
 
 CASE_VALIDATION_STATUS = ROOT / "docs" / "case_validation_status.csv"
@@ -177,7 +178,7 @@ SERVER_RESOURCE_CHECK_PATHS = (
     ROOT,
     ROOT / "benchmark" / "results",
     ROOT / "logs",
-    ROOT / "paper",
+    MANUSCRIPTS_DIR,
 )
 
 

@@ -30,11 +30,11 @@ from paper_names import case_label
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.project_layout import paper_file, metadata_file
+from scripts.project_layout import MANUSCRIPTS_DIR, paper_file, metadata_file
 RR = ROOT / "benchmark" / "results" / "ranking_reversal"
 D3 = ROOT / "benchmark" / "results" / "reliability_recovery"
 FB = ROOT / "benchmark" / "results" / "full_benchmark"
-PAPER = ROOT / "paper"
+PAPER = MANUSCRIPTS_DIR
 SEED = 1000
 N_BOOT = 10000
 

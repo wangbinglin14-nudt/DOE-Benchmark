@@ -9,13 +9,16 @@ Usage
 -----
 
     python scripts/check_submission_ready.py [paper_dir]
-    python scripts/check_submission_ready.py paper/
+    python scripts/check_submission_ready.py ../manuscripts/
 
-The bare ``paper/`` command uses the formal full-archive defaults: it checks
-``benchmark/results/full_benchmark/RUN_MANIFEST.json``, ``paper/numbers.*``,
-``paper/figure_manifest.json``, ``paper/figdata/``, D1/D2/D3 analysis
+The default command uses the formal full-archive checks, with manuscript
+artifacts under the repository-root ``manuscripts/`` directory: it checks
+``benchmark/results/full_benchmark/RUN_MANIFEST.json``, ``numbers.*``,
+``figure_manifest.json``, ``figdata/``, D1/D2/D3 analysis
 directories, the full-sweep test-protocol diagnostics, and the case-validation
 ledgers unless the caller explicitly passes a ``--skip-*`` flag.
+It also requires the full manuscript sources; the public artifact-only
+``manuscripts/`` directory is not a complete submission package.
 
 Return codes
 ------------
@@ -97,7 +100,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.project_layout import paper_file, metadata_file
+from scripts.project_layout import MANUSCRIPTS_DIR, paper_file, metadata_file
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -106,7 +109,7 @@ from benchmark.runtime_contracts import (  # noqa: E402
     invalid_runtime_duration_mask,
 )
 
-PAPER_DIR_DEFAULT = ROOT / "paper"
+PAPER_DIR_DEFAULT = MANUSCRIPTS_DIR
 MANIFEST_DEFAULT = ROOT / "benchmark" / "results" / "full_benchmark" / "RUN_MANIFEST.json"
 NUMBERS_DEFAULT = PAPER_DIR_DEFAULT / "numbers.json"
 NUMBERS_TEX_DEFAULT = PAPER_DIR_DEFAULT / "numbers.tex"
@@ -4804,11 +4807,13 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description=__doc__.splitlines()[0],
         epilog=(
-            "By default, the bare 'paper/' command validates the formal full "
+            "By default, the command validates the formal full "
             "archive: benchmark/results/full_benchmark/RUN_MANIFEST.json, "
-            "paper/numbers.*, paper/figure_manifest.json, paper/figdata/, "
+            "manuscripts/numbers.*, manuscripts/figure_manifest.json, "
+            "manuscripts/figdata/, "
             "D1/D2/D3 result directories, full-sweep analysis diagnostics, "
-            "and case-validation/readiness ledgers."
+            "and case-validation/readiness ledgers. Full manuscript sources "
+            "are additionally required and are not part of the public package."
         ),
     )
     p.add_argument(
@@ -4816,7 +4821,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         type=Path,
         nargs="?",
         default=PAPER_DIR_DEFAULT,
-        help="Manuscript source directory to scan (default: paper/).",
+        help=f"Manuscript source directory to scan (default: {PAPER_DIR_DEFAULT}).",
     )
     p.add_argument(
         "--allow",
@@ -4835,25 +4840,25 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--numbers",
         type=Path,
         default=NUMBERS_DEFAULT,
-        help="paper/numbers.json to validate against RUN_MANIFEST.",
+        help="Manuscript numbers.json to validate against RUN_MANIFEST.",
     )
     p.add_argument(
         "--numbers-tex",
         type=Path,
         default=NUMBERS_TEX_DEFAULT,
-        help="paper/numbers.tex whose macros must match paper/numbers.json.",
+        help="Manuscript numbers.tex whose macros must match numbers.json.",
     )
     p.add_argument(
         "--figure-manifest",
         type=Path,
         default=FIGURE_MANIFEST_DEFAULT,
-        help="paper/figure_manifest.json to validate against local figures and figdata.",
+        help="Manuscript figure_manifest.json to validate against local figures and figdata.",
     )
     p.add_argument(
         "--figdata-dir",
         type=Path,
         default=None,
-        help="paper/figdata directory whose CSV schemas must match plots_nature.py.",
+        help="Figure-source directory whose CSV schemas must match plots_nature.py.",
     )
     p.add_argument(
         "--d1-dir",

@@ -25,9 +25,11 @@ from pathlib import Path, PurePosixPath, PureWindowsPath
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+from scripts.project_layout import MANUSCRIPTS_DIR  # noqa: E402
+
 RESULTS_ROOT_DEFAULT = ROOT / "benchmark" / "results"
 FULL_SWEEP_DEFAULT = RESULTS_ROOT_DEFAULT / "full_benchmark"
-PAPER_DIR_DEFAULT = ROOT / "paper"
+PAPER_DIR_DEFAULT = MANUSCRIPTS_DIR
 DOCS_DIR_DEFAULT = ROOT / "docs"
 LOGS_DIR_DEFAULT = ROOT / "logs"
 

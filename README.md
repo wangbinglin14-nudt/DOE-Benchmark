@@ -156,8 +156,11 @@ Repeating the full simulation sweep additionally requires reconstruction of the
 original execution environment. The current benchmark-extra Torch constraint
 is `>=2.2,<2.5`; the archived startup record lists `2.11.0+cpu`.
 
-Some older manuscript-generation scripts retain `code/paper/` defaults;
-scripts with path options should be pointed to `manuscripts/`.
+The figure-data, plotting, numerical-summary and supplementary-table scripts
+default to the repository-root `manuscripts/` directory, independently of the
+calling directory. Explicit path options still override these defaults.
+The full pipeline uses the same location; smoke-profile outputs stay inside
+their own sweep directory.
 
 For a small sampling-API check, run from `code/` with pytest installed:
 
